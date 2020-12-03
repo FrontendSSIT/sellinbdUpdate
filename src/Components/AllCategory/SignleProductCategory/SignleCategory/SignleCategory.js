@@ -31,7 +31,7 @@
     
 //     return (
 
-//         <Col lg={5} >
+//        <Col lg={5} xs={6} >
 //         <Row>
 //             <Col lg={{span:4,offset:2}}>
 //             <Link to="/produtcDetails">

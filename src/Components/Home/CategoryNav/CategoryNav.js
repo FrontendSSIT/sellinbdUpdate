@@ -411,7 +411,7 @@ export const CategoryNav = () => {
                     <li><Link to="/laptop">Laptop</Link></li>
                     <li><Link to="/desktop">Desktops</Link></li>
                     <li><Link to="/l&d">Laptops and Desktop</Link></li>
-                    <li><Link to="l&da">Laptops and Desktop Accessories</Link></li>
+                    <li><Link to="/l&da">Laptops and Desktop Accessories</Link></li>
                     <li><Link to="/pp">Photocopiers and Printers</Link></li>
                     <li><Link to="/networkingA">Networking Accessories</Link></li>
                   </ul>:null

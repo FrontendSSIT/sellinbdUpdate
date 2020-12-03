@@ -42,8 +42,8 @@ export const NavBars = () => {
                {search? null:<SearchOutlined/>} <br/> <br/>
                 </div>
               {
-                  search? <> <Link to="LocNav" onClick={handleLoc}>Location</Link>
-                  <Link to="catNav" onClick={handleNav}>Category</Link> <br/> <br/></>:null
+                  search? <> <Link to="/LocNav" onClick={handleLoc}>Location</Link>
+                  <Link to="/catNav" onClick={handleNav}>Category</Link> <br/> <br/></>:null
               }
     
               </div>
@@ -53,16 +53,16 @@ export const NavBars = () => {
         <Link to="/">Home</Link>
       </Nav.Link>
 
-      <Nav.Link href="#link">
+      <Nav.Link >
         <Link to="/contact">Contact Us</Link>
       </Nav.Link>
       <Nav.Link>
         <Link to="/login">Login</Link>
       </Nav.Link>
-      <Nav.Link href="#link">
+      <Nav.Link >
         <Link to="/postAdd">Add Post </Link>
         </Nav.Link>
-      <Nav.Link href="#">
+      <Nav.Link >
         <Link to="/chat">Chat</Link>
       </Nav.Link>
     

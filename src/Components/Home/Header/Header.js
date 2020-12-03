@@ -30,7 +30,7 @@ export const Header = () => {
                 </Player> 
                   </div>
                     </Col>
-                  <Col lg={8}>
+                  <Col lg={8} xs={12}>
                   <Carousel className="CarouselSlider">
                 <Carousel.Item>
                 <Row>

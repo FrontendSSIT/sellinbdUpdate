@@ -75,7 +75,7 @@ export const Wholesales = (props) => {
             <Col lg={7} ><h1>{props.name}</h1></Col>
             </Row>
             <Row className="justify-content-center" >
-                <Col lg={8}>
+                <Col lg={8} xs={12}>
                 <Row className="justify-content-center" >
                
                 {
@@ -90,7 +90,7 @@ export const Wholesales = (props) => {
             <Col lg={7} ><h1>{props.name}</h1></Col>
             </Row>
             <Row className="justify-content-center" >
-                <Col lg={8}>
+                <Col lg={8} xs={12}>
                 <Row className="justify-content-center" >
                
                 {
@@ -105,7 +105,7 @@ export const Wholesales = (props) => {
             <Col lg={7} ><h1>{props.name}</h1></Col>
             </Row>
             <Row className="justify-content-center" >
-                <Col lg={8}>
+                <Col lg={8} xs={12}>
                 <Row className="justify-content-center" >
                
                 {
@@ -121,7 +121,7 @@ export const Wholesales = (props) => {
             <Col lg={7} ><h1>{props.name}</h1></Col>
             </Row>
             <Row className="justify-content-center" >
-                <Col lg={8}>
+                <Col lg={8} xs={12}>
                 <Row className="justify-content-center" >
                
                 {
@@ -140,7 +140,7 @@ export const Wholesales = (props) => {
 export const Wholesale = ({product,success}) => {
     return (
               
-                   <Col lg={5} md={3} m-auto>
+                  <Col lg={5} xs={6} md={3} m-auto>
                        {success?
                        <div className="category-items ">
                            <img src={product.image1} alt=""/>

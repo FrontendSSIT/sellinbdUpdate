@@ -10,7 +10,7 @@ export const Footer = () => {
         <section className="footer-section">
             <Container>
                 <Row>
-                    <Col lg={8}>
+                    <Col lg={8} xs={12}>
                         <Row>
                             <Col lg={3}>
                                 <ul>

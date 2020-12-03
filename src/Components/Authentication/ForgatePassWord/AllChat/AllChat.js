@@ -45,7 +45,7 @@ export const AllChat = () => {
                         </div>
 
                     </Col>
-                    <Col lg={8}>
+                    <Col lg={8} xs={12}>
                     <Row>
                         <Col lg={1}><Avatar src={cm}/></Col>
                         <Col lg={7}>

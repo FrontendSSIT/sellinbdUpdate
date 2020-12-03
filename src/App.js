@@ -113,6 +113,7 @@ import { OhersVehicles } from './Components/SearchProduct/Category/Vehicles/Oher
 import { ThreeWheelers } from './Components/SearchProduct/Category/Vehicles/ThreeWheelers/ThreeWheelers';
 import { TractorsAndHeavyDuty } from './Components/SearchProduct/Category/Vehicles/TractorsAndHeavyDuty/TractorsAndHeavyDuty';
 import { WaterTransports } from './Components/SearchProduct/Category/Vehicles/WaterTransports/WaterTransports';
+import { Location } from './Components/Home/Location/Location';
 
 
 function App() {
@@ -129,6 +130,9 @@ function App() {
         <ProductDetails/>
         </Route>
         {/* categoryNavbar &  */}
+        <Route path="/LocNav">
+        <Location/>
+        </Route>
         <Route path="/catNav">
         <CategoryNav/>
         </Route>

@@ -54,13 +54,13 @@ export const Categorys = (props) => {
     return (
           
         <section  className="category">
-            <Container >
+            <Container fluid="md">
                {/* <div className="primimum"> <img src={primimum } alt=""/> </div> */}
             <Row className="justify-content-center">
             <Col lg={7} ><h1>{props.name}</h1></Col>
             </Row>
             <Row className="justify-content-center" >
-                <Col lg={8}>
+                <Col lg={8} xs={12}>
                 <Row className="justify-content-center" >
                
                 {
@@ -70,12 +70,12 @@ export const Categorys = (props) => {
                 </Col>
                   </Row>
             </Container>
-            <Container >
+            <Container fluid="md">
             <Row className="justify-content-center">
-            <Col lg={7} ><h1>{props.name}</h1></Col>
+            <Col lg={7} sm={6}><h1>{props.name}</h1></Col>
             </Row>
             <Row className="justify-content-center" >
-                <Col lg={8}>
+                <Col lg={8} xs={12}>
                 <Row className="justify-content-center" >
                
                 {
@@ -85,12 +85,12 @@ export const Categorys = (props) => {
                 </Col>
                   </Row>
             </Container>
-            <Container >
+            <Container fluid="md">
             <Row className="justify-content-center">
             <Col lg={7} ><h1>{props.name}</h1></Col>
             </Row>
             <Row className="justify-content-center" >
-                <Col lg={8}>
+                <Col lg={8} xs={12}>
                 <Row className="justify-content-center" >
                
                 {
@@ -106,7 +106,7 @@ export const Categorys = (props) => {
             <Col lg={7} ><h1>{props.name}</h1></Col>
             </Row>
             <Row className="justify-content-center" >
-                <Col lg={8}>
+                <Col lg={8} xs={12}>
                 <Row className="justify-content-center" >
                
                 {
@@ -126,7 +126,7 @@ export const Categorys = (props) => {
 export const Category = ({product}) => {
     return (
               
-                   <Col lg={5} md={3} m-auto>
+               <Col lg={5} xs={6} m-auto>
                      <Link to="/produtcDetails">
                        <div className="category-items ">
                            <img src={product.image1} alt=""/>

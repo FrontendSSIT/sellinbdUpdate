@@ -16,7 +16,7 @@ export const ProductDetails = () => {
             <Container className="text-center pt-3">
                 <NavBars/>
                 <Row className="justify-content-center">
-                    <Col lg={8}>
+                    <Col lg={8} xs={12}>
                     <Carousel className="CarouselSlider">
                 <Carousel.Item>
                 <Row>

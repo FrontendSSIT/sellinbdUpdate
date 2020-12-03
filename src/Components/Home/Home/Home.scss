@@ -1,3 +1,6 @@
 .home-border{
     border:2px solid gray;
 }
+@media (max-width: 768px){
+    .headress{display: none;}
+}
