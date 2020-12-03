@@ -1,0 +1,34 @@
+.product-summary-container{
+    margin-top: 20px;
+    padding-top: 20px;
+.product-summary{
+    border:1px solid #707070;
+    padding: 20px;
+
+    border-radius: 10px;
+    box-shadow: 0 5px 5px rgba(112, 112, 112, 0.582);
+    margin-bottom: 20px;
+    h3,h5{
+        color:#707070;
+        font-size: 30px;
+    }
+}
+.call,.chat{
+    background: #3F9DFF;
+    padding: 10px 40px 10px 40px;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    outline: none;
+    
+}
+:focus{
+    outline:none;
+}
+.call{
+    margin-left: 20px;
+}
+.chat{
+    margin-left: 380px;
+}
+}

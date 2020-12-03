@@ -1,0 +1,122 @@
+.portfolio{
+    // background: #111430;
+    height: 390px;
+    margin-top: -50px;
+     img{
+        width: 465.49px;
+        height: 334.7px;
+        border-radius: 8.23879px;
+    }
+    .carousel-indicators {
+        bottom:-20px;
+    }
+    .carousel-control-next-icon{
+        background-color:#3F9DFF;
+        position: absolute;
+        right: 20px;
+      
+    }
+
+.carousel-control-prev-icon{
+    background-color:#3F9DFF;
+    position: absolute;
+    left: 30px;
+}
+
+.menu-bar{
+    a{
+    color:#707070;
+    position: relative;
+    &:hover {
+        color: #3F9DFF;
+        
+    }
+    &:hover::after{
+        position: absolute;
+        content: '';
+        width: 5px;height: 5px;
+        border:5px solid #3F9DFF;
+        border-radius: 50%;
+        left: 0px;
+        top:50%;
+        
+        transform: translate(-50%,-50%);
+    }
+    }
+}
+.slider-img{
+    width: 600px;
+    position: relative;
+    
+   
+}
+.carousel-inner{
+    margin-right: 100px;
+}
+}
+
+// .portfolio h2{
+//     font-size: 34px;
+//     color:#fff;
+//     text-align: center;
+//     letter-spacing: 0.396px;
+//     font-family: Poppins;
+//     font-style: normal;
+//     font-weight: 600;
+//     line-height: 43px;
+//     padding-bottom: 75px;
+// }
+
+
+// .carousel-control-prev{
+//     position: relative;
+// }
+
+.carousel-indicators li{
+    border-radius:50%;
+    width:10px !important;
+    height: 1px !important;
+    background: #242A65;
+    display: none;
+}
+.carousel-indicators .active{
+    border-radius:50%;
+    background:#3F9DFF;
+    width:10px !important;
+    height: 1px !important;
+    display: none;
+}
+.CarouselSlider{
+    p{
+        border:1px solid #707070;
+        border-radius: 10px;
+        display: inline-block;
+        padding: 5px 35px 5px 35px;
+       position: absolute;
+       bottom: 30px;
+       color:#3F9DFF;
+       background-color:#fff;
+
+       &::after{
+           position: absolute;
+           content: '';
+           width: 5px;height: 5px;
+           border:5px solid #3F9DFF;
+           border-radius: 50%;
+           left: 20px;
+           top:50%;
+           transform: translate(-50%,-50%);
+       }
+       
+    }
+    .ads{
+        height: 50px;
+        width: 80px;
+        margin-left: 150px;
+        margin-top: -50px;
+        position: absolute;
+       right: 20px;
+       bottom: 40px;
+    }
+      
+}

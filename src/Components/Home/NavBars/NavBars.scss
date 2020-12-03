@@ -1,0 +1,43 @@
+.nav-Bar{
+    img{
+        width:60px;
+        height:60px;
+    }
+    // .nav-search{
+    //     display: none;
+    // }
+    .search-btn{
+        margin-top: -50px;
+        position: absolute;
+        top:80px;
+        z-index: 1;
+        width: 100px;
+        height: 100px;
+        .MuiSvgIcon-root{
+            position: absolute;
+            bottom:90%;
+            right: -80px;
+            color: #3F9DFF;
+            font-size: 25px;
+        }
+        :focus{
+            outline: none;
+        }
+        ::placeholder{
+            color:#3F9DFF;
+        }
+        a{
+            margin-right: 10px;
+            border:none;
+            border:2px solid #3F9DFF;
+            background: #3F9DFF;
+            color: #fff;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            padding: 10px 15px 10px 15px;
+            
+            
+        }
+    
+    }
+}

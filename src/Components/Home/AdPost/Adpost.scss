@@ -1,0 +1,26 @@
+
+
+.Adpost{
+    div{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    a{
+        // background:$primary-color;
+        // color:$secondary-color;
+           margin-top: 30px;
+            padding: 10px 24px 10px 24px;
+            border-radius:15px;
+            text-decoration: none !important;
+            cursor: pointer;
+            
+            &:hover {
+            background: transparent;
+            border:0.8px solid rgba(6, 127, 241, 0.726);
+            border-radius: 10px;
+            box-shadow:0 0 40px #fff;
+            
+            }
+           
+    }
+}

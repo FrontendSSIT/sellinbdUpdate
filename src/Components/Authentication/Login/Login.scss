@@ -1,0 +1,88 @@
+
+
+.login{
+    text-align: center;
+    h2{
+        margin-top: 50px;
+        margin-bottom: 100px;
+    
+    }
+    
+    form{
+        margin-left: 400px;
+        .MuiFormControl-root{
+            width:100% ;
+            
+        }
+
+        .submit-btn {
+            .MuiInput-underline:before {
+                border-bottom:0;
+            }
+            input{
+            background:#fff;
+            color:#707070;
+            margin-top: 10px;
+            margin-left: 60px;
+            border-radius:15px;
+        }
+        
+    }
+    .pass{
+        position: relative;
+    }
+    .icon-eye{
+        position:absolute;
+        right: 20px;
+        top:20px;
+    }
+    p{
+     
+    .noAccount{
+        border-top: 1px solid rgba(128, 128, 128, 0.452);
+        margin-left: 0;
+       padding: 10px;
+    }
+    }
+    .btn{
+        
+           margin-top: 10px;
+            margin-left: 60px;
+            border-radius:15px;
+          
+        }
+    }
+}
+.ReactModal__Content--after-open{
+    width: 500px !important;
+    margin-left: 50% !important; 
+    transform: translate(-50%,-50%);
+    margin-top: 20% !important;
+    height: 200px !important;
+    padding-left: 50px !important;
+    padding-top: 50px !important;
+    
+    
+}
+.H{
+    width: 100% !important;
+    position: relative;
+}
+.modalForgatePass {
+    button{
+        background-color:#3F9DFF ;
+        border-radius: 10px;
+        outline: none;
+        border:none;
+        padding: 10px 20px 10px 20px;
+        margin-top: 20px;
+    }
+    :focus{
+    outline: none;
+    }
+    .MuiSvgIcon-root{
+        position: absolute;
+        bottom: 50%;
+        right: 40px;
+    }
+}
