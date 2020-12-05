@@ -166,9 +166,10 @@ const handleChattogram=()=>{
                <li onClick={handleBarishal}>{barishal?<ArrowUpward/>:<ArrowDownward/>}Barishal Division
                {barishal?
                 <ul>
-                  <li><Link to="/barishall">Barishal</Link></li>
-                  <li><Link to="/patuakhali">Patuakhali</Link></li>
-                  <li><Link to="/bhola">Jhalokati</Link></li>
+                  <li><Link to="/barishal">Barishal</Link></li>
+                  <li><Link to="/patuakhali">Patuakhali</Link></li> 
+                  <li><Link to="/bhola">Bhola</Link></li>
+                  <li><Link to="/jhalokati">Jhalokati</Link></li>
                   <li><Link to="/pirojpur">Pirojpur</Link></li>
                   <li><Link to="/barguna">Burguna</Link></li>
                 </ul>:null

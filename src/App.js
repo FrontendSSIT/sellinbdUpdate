@@ -114,6 +114,28 @@ import { ThreeWheelers } from './Components/SearchProduct/Category/Vehicles/Thre
 import { TractorsAndHeavyDuty } from './Components/SearchProduct/Category/Vehicles/TractorsAndHeavyDuty/TractorsAndHeavyDuty';
 import { WaterTransports } from './Components/SearchProduct/Category/Vehicles/WaterTransports/WaterTransports';
 import { Location } from './Components/Home/Location/Location';
+import { Barishal } from './Components/SearchProduct/LocationProduct/BarishalDivision/Barishal/Barishal';
+import { Bhola } from './Components/SearchProduct/LocationProduct/BarishalDivision/Bhola/Bhola';
+import { Burguna } from './Components/SearchProduct/LocationProduct/BarishalDivision/Burguna/Burguna';
+import { Jhalokati } from './Components/SearchProduct/LocationProduct/BarishalDivision/Jhalokati/Jhalokati';
+import { Patuakhali } from './Components/SearchProduct/LocationProduct/BarishalDivision/Patuakhali/Patuakhali';
+import { Pirojpur } from './Components/SearchProduct/LocationProduct/BarishalDivision/Pirojpur/Pirojpur';
+import { Bandarban } from './Components/SearchProduct/LocationProduct/ChattogramDivision/Bandarban/Bandarban';
+import { Brahmanbaria } from './Components/SearchProduct/LocationProduct/ChattogramDivision/Brahmanbaria/Brahmanbaria';
+import { Chandpur } from './Components/SearchProduct/LocationProduct/ChattogramDivision/Chandpur/Chandpur';
+import { Chattogram } from './Components/SearchProduct/LocationProduct/ChattogramDivision/Chattogram/Chattogram';
+import { CoxBazar } from './Components/SearchProduct/LocationProduct/ChattogramDivision/CoxBazar/CoxBazar';
+import { Cumilla } from './Components/SearchProduct/LocationProduct/ChattogramDivision/Cumilla/Cumilla';
+import { Feni } from './Components/SearchProduct/LocationProduct/ChattogramDivision/Feni/Feni';
+import { Khangrachari } from './Components/SearchProduct/LocationProduct/ChattogramDivision/Khangrachari/Khangrachari';
+import { Lakshmipur } from './Components/SearchProduct/LocationProduct/ChattogramDivision/Lakshmipur/Lakshmipur';
+import { Rangamati } from './Components/SearchProduct/LocationProduct/ChattogramDivision/Rangamati/Rangamati';
+import { Dhaka } from './Components/SearchProduct/LocationProduct/DhakaDivision/Dhaka/Dhaka';
+import { Faridpur } from './Components/SearchProduct/LocationProduct/DhakaDivision/Faridpur/Faridpur';
+import { Gazipur } from './Components/SearchProduct/LocationProduct/DhakaDivision/Gazipur/Gazipur';
+import { KishorGanj } from './Components/SearchProduct/LocationProduct/DhakaDivision/Kishorganj/KishorGanj';
+import { Madaripur } from './Components/SearchProduct/LocationProduct/DhakaDivision/Madaripur/Madaripur';
+import { Manikganj } from './Components/SearchProduct/LocationProduct/DhakaDivision/Manikganj/Manikganj';
 
 
 function App() {
@@ -477,11 +499,86 @@ function App() {
                                <Route path="/watertransports">
                                <WaterTransports/>
                                </Route>
-
-
-
-
                                {/* Vehicles   category End &  */}
+
+                               {/* Search  By Place category start*/}
+
+                               {/*  Barishale Division category start*/}
+
+                               <Route path="/barishal">
+                               <Barishal/>
+                               </Route>
+                               <Route path="/bhola">
+                               <Bhola/>
+                               </Route>
+                               <Route path="/barguna">
+                               <Burguna/>
+                               </Route>
+                               <Route path="/Jhalokati">
+                               <Jhalokati/>
+                               </Route>
+                               <Route path="/patuakhali">
+                               <Patuakhali/>
+                               </Route>
+                               <Route path="/pirojpur">
+                               <Pirojpur/>
+                               </Route>
+                                {/*  Barishale Division category End*/}
+
+                                {/*  Chattogram Division category Start*/}
+
+                                <Route path="/bandarban">
+                               <Bandarban/>
+                               </Route>
+                               <Route path="/brahmanbaria">
+                               <Brahmanbaria/>
+                               </Route>
+                               <Route path="/chandpur">
+                               <Chandpur/>
+                               </Route>
+                               <Route path="/chattogram">
+                               <Chattogram/>
+                               </Route>
+                               <Route path="/coxbazar">
+                               <CoxBazar/>
+                               </Route>
+                               <Route path="/cumilla">
+                               <Cumilla/>
+                               </Route>
+                               <Route path="/feni">
+                               <Feni/>
+                               </Route>
+                               <Route path="/khangrachari">
+                               <Khangrachari/>
+                               </Route>
+                               <Route path="/lakshmipur">
+                               <Lakshmipur/>
+                               </Route>
+                               <Route path="/rangamati">
+                               <Rangamati/>
+                               </Route>
+                                {/*  Chattogram Division category End*/}
+                                  {/*  Dhaka Division category Start*/}
+                                    <Route path="/dhaka">
+                                    <Dhaka/>
+                                    </Route>
+                                    <Route path="/faridpur">
+                                    <Faridpur/>
+                                    </Route>
+                                    <Route path="/gazipur">
+                                    <Gazipur/>
+                                    </Route>
+                                    <Route path="/kishorgang">
+                                    <KishorGanj/>
+                                    </Route>
+                                    <Route path="/madaripur">
+                                    <Madaripur/>
+                                    </Route>
+                                    <Route path="/manikganj">
+                                    <Manikganj/>
+                                    </Route>
+                                  {/*a Division category End*/}
+                                  {/* Search  By Place category End*/}
         <Route path="/contact">
         <Contact/>
         </Route>
