@@ -7,22 +7,23 @@ import './CategoryNav.scss'
 
 
 export const CategoryNav = () => {
-  const [fashons,setFashons]=useState()
-  const [Pets,setPets]=useState()
-  const [agricultural,setAgricultural]=useState()
-  const [electronics,setElectronics]=useState()
-  const [service,setService]=useState()
-  const [furniture,setFurniture]=useState()
-  const [computer,setComputer]=useState()
-  const [vehicles,setVehicles]=useState()
-  const [medicine,setMedicine]=useState()
-  const [sports,setSports]=useState()
-  const [mobile,setMobile]=useState()
-  const [SearchJob,setSearchJob]=useState()
-  const [SearchFor,setSearchFor]=useState()
-  const [business,setBusiness]=useState()
-  const [daily,setDaily]=useState()
-  const [property,setProperty]=useState()
+  const [fashons,setFashons]=useState(false)
+  const [Pets,setPets]=useState(false)
+  const [agricultural,setAgricultural]=useState(false)
+  const [electronics,setElectronics]=useState(false)
+  const [service,setService]=useState(false)
+  const [furniture,setFurniture]=useState(false)
+  const [computer,setComputer]=useState(false)
+  const [vehicles,setVehicles]=useState(false)
+  const [medicine,setMedicine]=useState(false)
+  const [sports,setSports]=useState(false)
+  const [mobile,setMobile]=useState(false)
+  const [SearchJob,setSearchJob]=useState(false)
+  const [SearchFor,setSearchFor]=useState(false)
+  const [business,setBusiness]=useState(false)
+  const [daily,setDaily]=useState(false)
+  const [property,setProperty]=useState(false)
+
   
 
   const handleFashons=()=>{
@@ -43,285 +44,285 @@ export const CategoryNav = () => {
     setDaily(false)
     setProperty(false)
   }
-  const handlePets=()=>{
-    setPets(true)
-    setFashons(false)
-    setAgricultural(false)
-    setElectronics(false)
-    setService(false)
-    setFurniture(false)
-    setComputer(false)
-    setVehicles(false)
-    setMedicine(false)
-    setSports(false)
-    setMobile(false)
-    setSearchJob(false)
-    setSearchFor(false)
-    setBusiness(false)
-    setDaily(false)
-    setProperty(false)
-  }
-  const handleAgricultural=()=>{
-    setAgricultural(true)
-    setFashons(false)
-    setPets(false)
-    setElectronics(false)
-    setService(false)
-    setFurniture(false)
-    setComputer(false)
-    setVehicles(false)
-    setMedicine(false)
-    setSports(false)
-    setMobile(false)
-    setSearchJob(false)
-    setSearchFor(false)
-    setBusiness(false)
-    setDaily(false)
-    setProperty(false)
-  }
-  const handleElectronics=()=>{
-    setElectronics(true)
-    setFashons(false)
-    setPets(false)
-    setAgricultural(false)
-    setService(false)
-    setFurniture(false)
-    setComputer(false)
-    setVehicles(false)
-    setMedicine(false)
-    setSports(false)
-    setMobile(false)
-    setSearchJob(false)
-    setSearchFor(false)
-    setBusiness(false)
-    setDaily(false)
-    setProperty(false)
-  }
-  const handleService=()=>{
-    setService(true)
-    setFashons(false)
-    setPets(false)
-    setAgricultural(false)
-    setElectronics(false)
-    setFurniture(false)
-    setComputer(false)
-    setVehicles(false)
-    setMedicine(false)
-    setSports(false)
-    setMobile(false)
-    setSearchJob(false)
-    setSearchFor(false)
-    setBusiness(false)
-    setDaily(false)
-    setProperty(false)
-  }
-  const handleFurniture=()=>{
-    setFurniture(true)
-    setFashons(false)
-    setPets(false)
-    setAgricultural(false)
-    setElectronics(false)
-    setService(false)
-    setComputer(false)
-    setVehicles(false)
-    setMedicine(false)
-    setSports(false)
-    setMobile(false)
-    setSearchJob(false)
-    setSearchFor(false)
-    setBusiness(false)
-    setDaily(false)
-    setProperty(false)
-  }
-  const handleComputer=()=>{
-    setComputer(true)
-    setFashons(false)
-    setPets(false)
-    setAgricultural(false)
-    setElectronics(false)
-    setService(false)
-    setFurniture(false)
-    setVehicles(false)
-    setMedicine(false)
-    setSports(false)
-    setMobile(false)
-    setSearchJob(false)
-    setSearchFor(false)
-    setBusiness(false)
-    setDaily(false)
-    setProperty(false)
-  }
-  const handleVehicles=()=>{
-    setVehicles(true)
-    setFashons(false)
-    setPets(false)
-    setAgricultural(false)
-    setElectronics(false)
-    setService(false)
-    setFurniture(false)
-    setComputer(false)
-    setMedicine(false)
-    setSports(false)
-    setMobile(false)
-    setSearchJob(false)
-    setSearchFor(false)
-    setBusiness(false)
-    setDaily(false)
-    setProperty(false)
-  }
-  const handleMedicine=()=>{
-    setMedicine(true)
-    setFashons(false)
-    setPets(false)
-    setAgricultural(false)
-    setElectronics(false)
-    setService(false)
-    setFurniture(false)
-    setComputer(false)
-    setVehicles(false)
-    setSports(false)
-    setMobile(false)
-    setSearchJob(false)
-    setSearchFor(false)
-    setBusiness(false)
-    setDaily(false)
-    setProperty(false)
-  }
-  const handleSports=()=>{
-    setSports(true)
-    setFashons(false)
-    setPets(false)
-    setAgricultural(false)
-    setElectronics(false)
-    setService(false)
-    setFurniture(false)
-    setComputer(false)
-    setVehicles(false)
-    setMedicine(false)
-    setMobile(false)
-    setSearchJob(false)
-    setSearchFor(false)
-    setBusiness(false)
-    setDaily(false)
-    setProperty(false)
-  }
-  const handleMobile=()=>{
-    setMobile(true)
-    setFashons(false)
-    setPets(false)
-    setAgricultural(false)
-    setElectronics(false)
-    setService(false)
-    setFurniture(false)
-    setComputer(false)
-    setVehicles(false)
-    setMedicine(false)
-    setSports(false)
-    setSearchJob(false)
-    setSearchFor(false)
-    setBusiness(false)
-    setDaily(false)
-    setProperty(false)
-  }
-  const handleSearchJob=()=>{
-    setSearchJob(true)
-    setFashons(false)
-    setPets(false)
-    setAgricultural(false)
-    setElectronics(false)
-    setService(false)
-    setFurniture(false)
-    setComputer(false)
-    setVehicles(false)
-    setMedicine(false)
-    setSports(false)
-    setMobile(false)
-    setSearchFor(false)
-    setBusiness(false)
-    setDaily(false)
-    setProperty(false)
-  }
-  const handleSearchFor=()=>{
-    setSearchFor(true)
-    setFashons(false)
-    setPets(false)
-    setAgricultural(false)
-    setElectronics(false)
-    setService(false)
-    setFurniture(false)
-    setComputer(false)
-    setVehicles(false)
-    setMedicine(false)
-    setSports(false)
-    setMobile(false)
-    setSearchJob(false)
-    setBusiness(false)
-    setDaily(false)
-    setProperty(false)
-  }
-  const handleBusiness=()=>{
-    setBusiness(true)
-    setFashons(false)
-    setPets(false)
-    setAgricultural(false)
-    setElectronics(false)
-    setService(false)
-    setFurniture(false)
-    setComputer(false)
-    setVehicles(false)
-    setMedicine(false)
-    setSports(false)
-    setMobile(false)
-    setSearchJob(false)
-    setSearchFor(false)
-    setDaily(false)
-    setProperty(false)
-  }
-  const handleDaily=()=>{
-    setDaily(true)
-    setBusiness(false)
-    setFashons(false)
-    setPets(false)
-    setAgricultural(false)
-    setElectronics(false)
-    setService(false)
-    setFurniture(false)
-    setComputer(false)
-    setVehicles(false)
-    setMedicine(false)
-    setSports(false)
-    setMobile(false)
-    setSearchJob(false)
-    setSearchFor(false)
-    setProperty(false)
-  }
-  const handleProperty=()=>{
-    setProperty(true)
-    setDaily(false)
-    setBusiness(false)
-    setFashons(false)
-    setPets(false)
-    setAgricultural(false)
-    setElectronics(false)
-    setService(false)
-    setFurniture(false)
-    setComputer(false)
-    setVehicles(false)
-    setMedicine(false)
-    setSports(false)
-    setMobile(false)
-    setSearchJob(false)
-    setSearchFor(false)
-  }
+  // const handlePets=()=>{
+  //   setPets(true)
+  //   setFashons(false)
+  //   setAgricultural(false)
+  //   setElectronics(false)
+  //   setService(false)
+  //   setFurniture(false)
+  //   setComputer(false)
+  //   setVehicles(false)
+  //   setMedicine(false)
+  //   setSports(false)
+  //   setMobile(false)
+  //   setSearchJob(false)
+  //   setSearchFor(false)
+  //   setBusiness(false)
+  //   setDaily(false)
+  //   setProperty(false)
+  // }
+  // const handleAgricultural=()=>{
+  //   setAgricultural(true)
+  //   setFashons(false)
+  //   setPets(false)
+  //   setElectronics(false)
+  //   setService(false)
+  //   setFurniture(false)
+  //   setComputer(false)
+  //   setVehicles(false)
+  //   setMedicine(false)
+  //   setSports(false)
+  //   setMobile(false)
+  //   setSearchJob(false)
+  //   setSearchFor(false)
+  //   setBusiness(false)
+  //   setDaily(false)
+  //   setProperty(false)
+  // }
+  // const handleElectronics=()=>{
+  //   setElectronics(true)
+  //   setFashons(false)
+  //   setPets(false)
+  //   setAgricultural(false)
+  //   setService(false)
+  //   setFurniture(false)
+  //   setComputer(false)
+  //   setVehicles(false)
+  //   setMedicine(false)
+  //   setSports(false)
+  //   setMobile(false)
+  //   setSearchJob(false)
+  //   setSearchFor(false)
+  //   setBusiness(false)
+  //   setDaily(false)
+  //   setProperty(false)
+  // }
+  // const handleService=()=>{
+  //   setService(true)
+  //   setFashons(false)
+  //   setPets(false)
+  //   setAgricultural(false)
+  //   setElectronics(false)
+  //   setFurniture(false)
+  //   setComputer(false)
+  //   setVehicles(false)
+  //   setMedicine(false)
+  //   setSports(false)
+  //   setMobile(false)
+  //   setSearchJob(false)
+  //   setSearchFor(false)
+  //   setBusiness(false)
+  //   setDaily(false)
+  //   setProperty(false)
+  // }
+  // const handleFurniture=()=>{
+  //   setFurniture(true)
+  //   setFashons(false)
+  //   setPets(false)
+  //   setAgricultural(false)
+  //   setElectronics(false)
+  //   setService(false)
+  //   setComputer(false)
+  //   setVehicles(false)
+  //   setMedicine(false)
+  //   setSports(false)
+  //   setMobile(false)
+  //   setSearchJob(false)
+  //   setSearchFor(false)
+  //   setBusiness(false)
+  //   setDaily(false)
+  //   setProperty(false)
+  // }
+  // const handleComputer=()=>{
+  //   setComputer(true)
+  //   setFashons(false)
+  //   setPets(false)
+  //   setAgricultural(false)
+  //   setElectronics(false)
+  //   setService(false)
+  //   setFurniture(false)
+  //   setVehicles(false)
+  //   setMedicine(false)
+  //   setSports(false)
+  //   setMobile(false)
+  //   setSearchJob(false)
+  //   setSearchFor(false)
+  //   setBusiness(false)
+  //   setDaily(false)
+  //   setProperty(false)
+  // }
+  // const handleVehicles=()=>{
+  //   setVehicles(true)
+  //   setFashons(false)
+  //   setPets(false)
+  //   setAgricultural(false)
+  //   setElectronics(false)
+  //   setService(false)
+  //   setFurniture(false)
+  //   setComputer(false)
+  //   setMedicine(false)
+  //   setSports(false)
+  //   setMobile(false)
+  //   setSearchJob(false)
+  //   setSearchFor(false)
+  //   setBusiness(false)
+  //   setDaily(false)
+  //   setProperty(false)
+  // }
+  // const handleMedicine=()=>{
+  //   setMedicine(true)
+  //   setFashons(false)
+  //   setPets(false)
+  //   setAgricultural(false)
+  //   setElectronics(false)
+  //   setService(false)
+  //   setFurniture(false)
+  //   setComputer(false)
+  //   setVehicles(false)
+  //   setSports(false)
+  //   setMobile(false)
+  //   setSearchJob(false)
+  //   setSearchFor(false)
+  //   setBusiness(false)
+  //   setDaily(false)
+  //   setProperty(false)
+  // }
+  // const handleSports=()=>{
+  //   setSports(true)
+  //   setFashons(false)
+  //   setPets(false)
+  //   setAgricultural(false)
+  //   setElectronics(false)
+  //   setService(false)
+  //   setFurniture(false)
+  //   setComputer(false)
+  //   setVehicles(false)
+  //   setMedicine(false)
+  //   setMobile(false)
+  //   setSearchJob(false)
+  //   setSearchFor(false)
+  //   setBusiness(false)
+  //   setDaily(false)
+  //   setProperty(false)
+  // }
+  // const handleMobile=()=>{
+  //   setMobile(true)
+  //   setFashons(false)
+  //   setPets(false)
+  //   setAgricultural(false)
+  //   setElectronics(false)
+  //   setService(false)
+  //   setFurniture(false)
+  //   setComputer(false)
+  //   setVehicles(false)
+  //   setMedicine(false)
+  //   setSports(false)
+  //   setSearchJob(false)
+  //   setSearchFor(false)
+  //   setBusiness(false)
+  //   setDaily(false)
+  //   setProperty(false)
+  // }
+  // const handleSearchJob=()=>{
+  //   setSearchJob(true)
+  //   setFashons(false)
+  //   setPets(false)
+  //   setAgricultural(false)
+  //   setElectronics(false)
+  //   setService(false)
+  //   setFurniture(false)
+  //   setComputer(false)
+  //   setVehicles(false)
+  //   setMedicine(false)
+  //   setSports(false)
+  //   setMobile(false)
+  //   setSearchFor(false)
+  //   setBusiness(false)
+  //   setDaily(false)
+  //   setProperty(false)
+  // }
+  // const handleSearchFor=()=>{
+  //   setSearchFor(true)
+  //   setFashons(false)
+  //   setPets(false)
+  //   setAgricultural(false)
+  //   setElectronics(false)
+  //   setService(false)
+  //   setFurniture(false)
+  //   setComputer(false)
+  //   setVehicles(false)
+  //   setMedicine(false)
+  //   setSports(false)
+  //   setMobile(false)
+  //   setSearchJob(false)
+  //   setBusiness(false)
+  //   setDaily(false)
+  //   setProperty(false)
+  // }
+  // const handleBusiness=()=>{
+  //   setBusiness(true)
+  //   setFashons(false)
+  //   setPets(false)
+  //   setAgricultural(false)
+  //   setElectronics(false)
+  //   setService(false)
+  //   setFurniture(false)
+  //   setComputer(false)
+  //   setVehicles(false)
+  //   setMedicine(false)
+  //   setSports(false)
+  //   setMobile(false)
+  //   setSearchJob(false)
+  //   setSearchFor(false)
+  //   setDaily(false)
+  //   setProperty(false)
+  // }
+  // const handleDaily=()=>{
+  //   setDaily(true)
+  //   setBusiness(false)
+  //   setFashons(false)
+  //   setPets(false)
+  //   setAgricultural(false)
+  //   setElectronics(false)
+  //   setService(false)
+  //   setFurniture(false)
+  //   setComputer(false)
+  //   setVehicles(false)
+  //   setMedicine(false)
+  //   setSports(false)
+  //   setMobile(false)
+  //   setSearchJob(false)
+  //   setSearchFor(false)
+  //   setProperty(false)
+  // }
+  // const handleProperty=()=>{
+  //   setProperty(true)
+  //   setDaily(false)
+  //   setBusiness(false)
+  //   setFashons(false)
+  //   setPets(false)
+  //   setAgricultural(false)
+  //   setElectronics(false)
+  //   setService(false)
+  //   setFurniture(false)
+  //   setComputer(false)
+  //   setVehicles(false)
+  //   setMedicine(false)
+  //   setSports(false)
+  //   setMobile(false)
+  //   setSearchJob(false)
+  //   setSearchFor(false)
+  // }
     return (
         <section>
           <NavBars/>
           <Container>
 
             <Row className="justify-content-center">
-              <Col lg={6}>
+              <Col lg={3}>
                <ul>
-    <li onClick={handleFashons}>{fashons?<ArrowUpward/>:<ArrowDownward/>  }Fashons, Health and Beauty
+    <li onClick={()=>setFashons(!fashons) }>{fashons?<ArrowUpward/>:<ArrowDownward/>  }Fashons, Health and Beauty
                  {fashons?
                   <ul>
                     <li><Link to="/mens">Mens Clothing and Accessories</Link></li>
@@ -336,7 +337,7 @@ export const CategoryNav = () => {
                   </ul>:null
 }
                  </li>
-                 <li onClick={handlePets}> {Pets?<ArrowUpward/>:<ArrowDownward/>}Pets and Animal
+                 <li onClick={()=>setPets(!Pets)}> {Pets?<ArrowUpward/>:<ArrowDownward/>}Pets and Animal
                  {Pets?
                   <ul>
                     <li><Link to="/pets">Pets</Link></li>
@@ -347,7 +348,7 @@ export const CategoryNav = () => {
                   </ul>:null
 }
          </li>
-                 <li onClick={handleAgricultural}>{agricultural?<ArrowUpward/>:<ArrowDownward/>}Agricultural
+                 <li onClick={()=>setAgricultural(!agricultural)}>{agricultural?<ArrowUpward/>:<ArrowDownward/>}Agricultural
                  
                  {agricultural?
                   <ul>
@@ -357,7 +358,7 @@ export const CategoryNav = () => {
                   </ul>:null
 }
                  </li>
-                 <li onClick={handleElectronics}>{electronics?<ArrowUpward/>:<ArrowDownward/>}Electronics
+                 <li onClick={()=>setElectronics(!electronics)}>{electronics?<ArrowUpward/>:<ArrowDownward/>}Electronics
 
                   {electronics?
                   <ul>
@@ -376,7 +377,7 @@ export const CategoryNav = () => {
                   </ul>:null
 }
                  </li>
-                 <li onClick={handleService}>{service?<ArrowUpward/>:<ArrowDownward/>}Service
+                 <li onClick={()=>setService(!service)}>{service?<ArrowUpward/>:<ArrowDownward/>}Service
                  {service?
                   <ul>
                     <li><Link to="/tution">Tuition</Link></li>
@@ -394,7 +395,7 @@ export const CategoryNav = () => {
                   </ul>:null
 }               
                  </li>
-                 <li onClick={handleFurniture}>{furniture?<ArrowUpward/>:<ArrowDownward/>}Furniture
+                 <li onClick={()=>setFurniture(!furniture)}>{furniture?<ArrowUpward/>:<ArrowDownward/>}Furniture
                  {furniture?
                   <ul>
                     <li><Link to="/living">Living Room Furniture</Link></li>
@@ -405,7 +406,7 @@ export const CategoryNav = () => {
                   </ul>:null
 }  
                  </li>
-                 <li onClick={handleComputer}>{computer?<ArrowUpward/>:<ArrowDownward/>}Computer and Laptops
+                 <li onClick={()=>setComputer(!computer)}>{computer?<ArrowUpward/>:<ArrowDownward/>}Computer and Laptops
                  {computer?
                   <ul>
                     <li><Link to="/laptop">Laptop</Link></li>
@@ -418,7 +419,7 @@ export const CategoryNav = () => {
 } 
                  
                  </li>
-                 <li onClick={handleVehicles}>{vehicles?<ArrowUpward/>:<ArrowDownward/>}Vehicles
+                 <li onClick={()=>setVehicles(!vehicles)}>{vehicles?<ArrowUpward/>:<ArrowDownward/>}Vehicles
                  {vehicles?
                   <ul>
                     <li><Link to="/carsjeep">Cars and Jeeps</Link></li>
@@ -437,7 +438,7 @@ export const CategoryNav = () => {
 }  
                  
                  </li>
-                 <li onClick={handleMedicine}>{medicine?<ArrowUpward/>:<ArrowDownward/>}Medicine
+                 <li onClick={()=>setMedicine(!medicine)}>{medicine?<ArrowUpward/>:<ArrowDownward/>}Medicine
                  {medicine?
                   <ul>
                     <li><Link to="/generalmedicine">General Medicnie</Link></li>
@@ -446,7 +447,7 @@ export const CategoryNav = () => {
                   </ul>:null
 }  
                  </li>
-                 <li onClick={handleSports}>{sports?<ArrowUpward/>:<ArrowDownward/>}Sports and Hobbies
+                 <li onClick={()=>setSports(!sports)}>{sports?<ArrowUpward/>:<ArrowDownward/>}Sports and Hobbies
                  {sports?
                   <ul>
                     <li><Link to="/musicalinstruments">Musical Instruments</Link></li>
@@ -457,7 +458,7 @@ export const CategoryNav = () => {
                   </ul>:null
 }  
                  </li>
-                 <li onClick={handleMobile}>{mobile?<ArrowUpward/>:<ArrowDownward/>}Mobile and Tablets
+                 <li onClick={()=>setMobile(!mobile)}>{mobile?<ArrowUpward/>:<ArrowDownward/>}Mobile and Tablets
                  {mobile?
                   <ul>
                     <li><Link to="/mobilephone">Mobile Phone</Link></li>
@@ -466,21 +467,21 @@ export const CategoryNav = () => {
                   </ul>:null
 }  
                  </li>
-                 <li onClick={handleSearchJob}>{SearchJob?<ArrowUpward/>:<ArrowDownward/>}Search Job Post
+                 <li onClick={()=>setSearchJob(!SearchJob)}>{SearchJob?<ArrowUpward/>:<ArrowDownward/>}Search Job Post
                  {SearchJob?
                   <ul>
                     <li><Link to="/jobpost">Job Post</Link></li>
                   </ul>:null
 }  
                  </li>
-                 <li onClick={handleSearchFor}>{SearchFor?<ArrowUpward/>:<ArrowDownward/>}Search for Buy something 
+                 <li onClick={()=>setSearchFor(!SearchFor)}>{SearchFor?<ArrowUpward/>:<ArrowDownward/>}Search for Buy something 
                  {SearchFor?
                   <ul>
                     <li><Link to="/buysomething">Buy Something</Link></li>
                   </ul>:null
 }  
                  </li>
-                 <li onClick={handleBusiness}>{business?<ArrowUpward/>:<ArrowDownward/>}Business and industial Products
+                 <li onClick={()=>setBusiness(!business)}>{business?<ArrowUpward/>:<ArrowDownward/>}Business and industial Products
                  
                  {business?
                   <ul>
@@ -496,7 +497,7 @@ export const CategoryNav = () => {
                   </ul>:null
 }  
                  </li>
-                 <li onClick={handleDaily}>{daily?<ArrowUpward/>:<ArrowDownward/>}Daily Needs
+                 <li onClick={()=>setDaily(!daily)}>{daily?<ArrowUpward/>:<ArrowDownward/>}Daily Needs
                  
                  {daily?
                   <ul>
@@ -512,7 +513,7 @@ export const CategoryNav = () => {
                   </ul>:null
 }  
                  </li>
-                 <li onClick={handleProperty}>{property?<ArrowUpward/>:<ArrowDownward/>}Property
+                 <li onClick={()=>setProperty(!property)}>{property?<ArrowUpward/>:<ArrowDownward/>}Property
                  
                  {property?
                   <ul>

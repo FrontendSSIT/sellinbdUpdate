@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import { NavBars } from '../../../../Home/NavBars/NavBars'
 import { AgriculturalTool } from '../../../Category/Agricultural/AgriculturalTools/AgriculturalTools'
 
-export const Joypurhat = (props) => {
+export const Dinajpur = (props) => {
     const[products,setProducts]=useState([])
     const[products1,setProducts1]=useState([])
     const[products3,setProducts3]=useState([])
@@ -12,7 +12,7 @@ export const Joypurhat = (props) => {
     
 
     useEffect(()=>{
-        fetch('https://sellinbd.com/api330088/product/searchbyPlace.php?place=Joypurhat&page_number=1&item_count=1000')
+        fetch('https://sellinbd.com/api330088/product/searchbyPlace.php?place=Dinajpur&page_number=1&item_count=1000')
         .then(res=>{
             if(res.status===200){
                 setSuccess(true)
@@ -25,7 +25,7 @@ export const Joypurhat = (props) => {
             }
         })
     },[])
-  
+    
     return (
         <section  className="category">
             <NavBars/>
@@ -45,7 +45,7 @@ export const Joypurhat = (props) => {
                 </Col>
                   </Row>
             </Container>
-          
+     
           
         </section>
     )

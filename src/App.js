@@ -136,6 +136,44 @@ import { Gazipur } from './Components/SearchProduct/LocationProduct/DhakaDivisio
 import { KishorGanj } from './Components/SearchProduct/LocationProduct/DhakaDivision/Kishorganj/KishorGanj';
 import { Madaripur } from './Components/SearchProduct/LocationProduct/DhakaDivision/Madaripur/Madaripur';
 import { Manikganj } from './Components/SearchProduct/LocationProduct/DhakaDivision/Manikganj/Manikganj';
+import { Munshiganj } from './Components/SearchProduct/LocationProduct/DhakaDivision/Munshiganj/Munshiganj';
+import { Narasingdi } from './Components/SearchProduct/LocationProduct/DhakaDivision/Narasingdi/Narasingdi';
+import { Naryanganj } from './Components/SearchProduct/LocationProduct/DhakaDivision/Naryanganj/Naryanganj';
+import { Rajbari } from './Components/SearchProduct/LocationProduct/DhakaDivision/Rajbari/Rajbari';
+import { Shariatpur } from './Components/SearchProduct/LocationProduct/DhakaDivision/Shariatpur/Shariatpur';
+import { Tangail } from './Components/SearchProduct/LocationProduct/DhakaDivision/Tangail/Tangail';
+import { Bagerhat } from './Components/SearchProduct/LocationProduct/KhulnaDivision/Bagerhat/Bagerhat';
+import { Chuadanga } from './Components/SearchProduct/LocationProduct/KhulnaDivision/Chuadanga/Chuadanga';
+import { Jessore } from './Components/SearchProduct/LocationProduct/KhulnaDivision/Jessore/Jessore';
+import { Khulna } from './Components/SearchProduct/LocationProduct/KhulnaDivision/Khulna/Khulna';
+import { Magura } from './Components/SearchProduct/LocationProduct/KhulnaDivision/Magura/Magura';
+import { Meherpur } from './Components/SearchProduct/LocationProduct/KhulnaDivision/Meherpur/Meherpur';
+import { Narail } from './Components/SearchProduct/LocationProduct/KhulnaDivision/Narail/Narail';
+import { Satkhira } from './Components/SearchProduct/LocationProduct/KhulnaDivision/Satkhira/Satkhira';
+import { Jamalpur } from './Components/SearchProduct/LocationProduct/MymensighDivision/Jamalpur/Jamalpur';
+import { Mymensingh } from './Components/SearchProduct/LocationProduct/MymensighDivision/Mymensingh/Mymensigh';
+import { Netrokona } from './Components/SearchProduct/LocationProduct/MymensighDivision/Netrokona/Netrokona';
+import { Sherpur } from './Components/SearchProduct/LocationProduct/MymensighDivision/Sherpur/Sherpur';
+import { Bogura } from './Components/SearchProduct/LocationProduct/RajshahiDivision/Bogura/Bogura';
+import { Chapainawabganj } from './Components/SearchProduct/LocationProduct/RajshahiDivision/Chapainawabganj/Chapainawabganj';
+import { Joypurhat } from './Components/SearchProduct/LocationProduct/RajshahiDivision/Joypurhat/Joypurhat';
+import { Naogaon } from './Components/SearchProduct/LocationProduct/RajshahiDivision/Naogaon/Naogaon';
+import { Natore } from './Components/SearchProduct/LocationProduct/RajshahiDivision/Natore/Natore';
+import { Pabna } from './Components/SearchProduct/LocationProduct/RajshahiDivision/Pabna/Pabna';
+import { Rajshahi } from './Components/SearchProduct/LocationProduct/RajshahiDivision/Rajshahi/Rajshahi';
+import { Sirajganj } from './Components/SearchProduct/LocationProduct/RajshahiDivision/Sirajganj/Sirajganj';
+import { Dinajpur } from './Components/SearchProduct/LocationProduct/RangpurDiviSion/Dinajpur/Dinajpur';
+import { Gaibandha } from './Components/SearchProduct/LocationProduct/RangpurDiviSion/Gaibandha/Gaibandha';
+import { Kurigram } from './Components/SearchProduct/LocationProduct/RangpurDiviSion/Kurigram/Kurigram';
+import { Lalmonirhat } from './Components/SearchProduct/LocationProduct/RangpurDiviSion/Lalmonirhat/Lalmonirhat';
+import { Nilphamari } from './Components/SearchProduct/LocationProduct/RangpurDiviSion/Nilphamari/Nilphamari';
+import { Panchagarh } from './Components/SearchProduct/LocationProduct/RangpurDiviSion/Panchagarh/Panchagarh';
+import { Rangpur } from './Components/SearchProduct/LocationProduct/RangpurDiviSion/Rangpur/Rangpur';
+import { Thakurgaon } from './Components/SearchProduct/LocationProduct/RangpurDiviSion/Thakurgaon/Thakurgaon';
+import { Habiganj } from './Components/SearchProduct/LocationProduct/SylhetDivision/Habiganj/Habiganj';
+import { MaulviBazar } from './Components/SearchProduct/LocationProduct/SylhetDivision/MaulviBazar/MaulviBazar';
+import { Sunamganj } from './Components/SearchProduct/LocationProduct/SylhetDivision/Sunamganj/Sunamganj';
+import { Sylhet } from './Components/SearchProduct/LocationProduct/SylhetDivision/Sylhet/Sylhet';
 
 
 function App() {
@@ -577,7 +615,133 @@ function App() {
                                     <Route path="/manikganj">
                                     <Manikganj/>
                                     </Route>
-                                  {/*a Division category End*/}
+                                    <Route path="/munshiganj">
+                                    <Munshiganj/>
+                                    </Route>
+                                    <Route path="/narasingdi">
+                                    <Narasingdi/>
+                                    </Route>
+                                    <Route path="/naryanganj">
+                                    <Naryanganj/>
+                                    </Route>
+                                    <Route path="/rajbari">
+                                    <Rajbari/>
+                                    </Route>
+                                    <Route path="/shariatpur">
+                                    <Shariatpur/>
+                                    </Route>
+                                    <Route path="/tangail">
+                                    <Tangail/>
+                                    </Route>
+                                  {/*Dhaka Division category End*/}
+                                     {/*Khulna Division category Start*/}
+                                        <Route path="/bagerhat">
+                                        <Bagerhat/>
+                                        </Route>
+                                        <Route path="/chuadanga">
+                                        <Chuadanga/>
+                                        </Route>
+                                        <Route path="/jessore">
+                                        <Jessore/>
+                                        </Route>
+                                        <Route path="/khulna">
+                                        <Khulna/>
+                                        </Route>
+                                        <Route path="/magura">
+                                        <Magura/>
+                                        </Route>
+                                        <Route path="/meherpur">
+                                        <Meherpur/>
+                                        </Route>
+                                        <Route path="/narail">
+                                        <Narail/>
+                                        </Route>
+                                        <Route path="/satkhira">
+                                        <Satkhira/>
+                                        </Route>
+                                      {/*Khulna Division category End*/}
+
+                                       {/*Mymensigh Division category Start*/}
+                                       <Route path="/jamalpur">
+                                       <Jamalpur/>
+                                       </Route>
+                                       <Route path="/mymensingh">
+                                       <Mymensingh/>
+                                       </Route>
+                                       <Route path="/netrokona">
+                                       <Netrokona/>
+                                       </Route>
+                                       <Route path="/sherpur">
+                                       <Sherpur/>
+                                       </Route>
+                                       <Route path="/bogura">
+                                       <Bogura/>
+                                       </Route>
+                                       <Route path="/chapainawabganj">
+                                       <Chapainawabganj/>
+                                       </Route>
+                                       <Route path="/joypurhat">
+                                       <Joypurhat/>
+                                       </Route>
+                                       <Route path="/naogaon">
+                                       <Naogaon/>
+                                       </Route>
+                                       <Route path="/natore">
+                                       <Natore/>
+                                       </Route>
+                                       <Route path="/pabna">
+                                       <Pabna/>
+                                       </Route>
+                                       <Route path="/rajshahi">
+                                       <Rajshahi/>
+                                       </Route>
+                                       <Route path="/sirajganj">
+                                       <Sirajganj/>
+                                       </Route>
+                                        {/*ramgpur Division category start*/}
+                                        <Route path="/dinajpur">
+                                        <Dinajpur/>
+                                        </Route>
+                                        <Route path="/gaibandha">
+                                        <Gaibandha/>
+                                        </Route>
+
+                                        <Route path="/kurigram">
+                                        <Kurigram/>
+                                        </Route>
+                                        <Route path="/lalmonirhat">
+                                        <Lalmonirhat/>
+                                        </Route>
+
+                                        <Route path="/nilphamari">
+                                        <Nilphamari/>
+                                        </Route>
+                                        
+                                        <Route path="/panchagarh">
+                                        <Panchagarh/>
+                                        </Route>
+                                        <Route path="/rangpur">
+                                        <Rangpur/>
+                                        </Route>
+                                        <Route path="/thakurgaon">
+                                        <Thakurgaon/>
+                                        </Route>
+                                         {/*Rangpur Division category End*/}
+                                            {/*Sylhet Division category start*/}
+                                            <Route path="/habiganj">
+                                            <Habiganj/>
+                                            </Route>
+                                            <Route path="/maulvibazar">
+                                            <MaulviBazar/>
+                                            </Route>
+                                            <Route path="/sunamganj">
+                                            <Sunamganj/>
+                                            </Route>
+                                            <Route path="/sylhet">
+                                            <Sylhet/>
+                                            </Route>
+                                               {/*Sylhet Division category End*/}
+                                          {/*Mymensigh Division category End*/}
                                   {/* Search  By Place category End*/}
         <Route path="/contact">
         <Contact/>

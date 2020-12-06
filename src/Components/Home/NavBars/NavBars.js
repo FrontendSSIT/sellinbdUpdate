@@ -10,25 +10,26 @@ import { Link } from 'react-router-dom';
 import {SearchOutlined} from '@material-ui/icons';
 import './NavBars.scss'
 
-export const NavBars = () => {
-  const[clickLoc,setClickLoc]=useState(false)
+export const NavBars = ({handleSearchBox,clickSearch,handleSearchClick}) => {
+  
   const[clickNav,setClickNav]=useState(false)
   const[search,setSearch]=useState(false)
+  console.log(clickSearch)
+
+  
 
   const handleSearch=()=>{
       setSearch(true)
       
   }
   const handleLoc=()=>{
-      setClickLoc(true)
-      setClickNav(false)
       setSearch(false)
   }
   const handleNav=()=>{
-      setClickNav(true)
-      setClickLoc(false)
       setSearch(false)
   }
+
+  
     return (
  <section>
         <Container>
@@ -36,10 +37,11 @@ export const NavBars = () => {
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
   <Form inline className="nav-search " >
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" onClick={handleSearch}/>
+      <FormControl type="text" placeholder="Search" className="mr-sm-2" onClick={handleSearch} onChange={handleSearchBox} />
+      <SearchOutlined onClick={handleSearchClick}/>
+      
       <div className="search-btn">
               <div >
-               {search? null:<SearchOutlined/>} <br/> <br/>
                 </div>
               {
                   search? <> <Link to="/LocNav" onClick={handleLoc}>Location</Link>
