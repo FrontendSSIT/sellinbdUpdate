@@ -2,7 +2,7 @@ import { ArrowDownward, ArrowUpward } from '@material-ui/icons'
 import React, { useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { NavBars } from '../NavBars/NavBars'
+import {  NavBarSub } from '../NavBars/NavBars'
 
 export const Location = () => {
     const [mymensingh,setMymensingh]=useState()
@@ -97,7 +97,7 @@ const handleChattogram=()=>{
 }
     return (
         <section>
-        <NavBars/>
+        <NavBarSub/>
         <Container>
 
           <Row className="justify-content-center">

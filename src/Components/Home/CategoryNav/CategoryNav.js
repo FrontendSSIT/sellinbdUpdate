@@ -2,7 +2,7 @@ import { ArrowDownward, ArrowUpward} from '@material-ui/icons';
 import React, { useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { NavBars } from '../NavBars/NavBars';
+import { NavBarSub } from '../NavBars/NavBars';
 import './CategoryNav.scss'
 
 
@@ -26,24 +26,24 @@ export const CategoryNav = () => {
 
   
 
-  const handleFashons=()=>{
-    setFashons(true)
-    setPets(false)
-    setAgricultural(false)
-    setElectronics(false)
-    setService(false)
-    setFurniture(false)
-    setComputer(false)
-    setVehicles(false)
-    setMedicine(false)
-    setSports(false)
-    setMobile(false)
-    setSearchJob(false)
-    setSearchFor(false)
-    setBusiness(false)
-    setDaily(false)
-    setProperty(false)
-  }
+  // const handleFashons=()=>{
+  //   setFashons(true)
+  //   setPets(false)
+  //   setAgricultural(false)
+  //   setElectronics(false)
+  //   setService(false)
+  //   setFurniture(false)
+  //   setComputer(false)
+  //   setVehicles(false)
+  //   setMedicine(false)
+  //   setSports(false)
+  //   setMobile(false)
+  //   setSearchJob(false)
+  //   setSearchFor(false)
+  //   setBusiness(false)
+  //   setDaily(false)
+  //   setProperty(false)
+  // }
   // const handlePets=()=>{
   //   setPets(true)
   //   setFashons(false)
@@ -316,7 +316,7 @@ export const CategoryNav = () => {
   // }
     return (
         <section>
-          <NavBars/>
+          <NavBarSub/>
           <Container>
 
             <Row className="justify-content-center">

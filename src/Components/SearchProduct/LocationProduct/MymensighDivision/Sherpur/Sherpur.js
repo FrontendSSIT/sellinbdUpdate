@@ -5,9 +5,6 @@ import { AgriculturalTool } from '../../../Category/Agricultural/AgriculturalToo
 
 export const Sherpur = (props) => {
     const[products,setProducts]=useState([])
-    const[products1,setProducts1]=useState([])
-    const[products3,setProducts3]=useState([])
-    const[products4,setProducts4]=useState([])
     const[success,setSuccess]=useState(false)
     
 

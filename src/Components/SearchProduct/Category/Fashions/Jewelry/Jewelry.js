@@ -11,7 +11,7 @@ export const Jewelrys = (props) => {
     
 
     useEffect(()=>{
-        fetch('http://sellinbd.com/api330088/product/searchbyItem.php?item=Jewelry&page_number=1&item_count=10')
+        fetch('https://sellinbd.com/api330088/product/searchbyItem.php?item=Jewelry&page_number=1&item_count=10')
         .then(res=>{
             if(res.status===200){
                 setSuccess(true)
@@ -26,7 +26,7 @@ export const Jewelrys = (props) => {
         
     },[])
     useEffect(()=>{
-        fetch('http://sellinbd.com/api330088/product/searchbyItem.php?item=Jewelry&page_number=2&item_count=10')
+        fetch('https://sellinbd.com/api330088/product/searchbyItem.php?item=Jewelry&page_number=2&item_count=10')
         .then(res=>{
             if(res.status===200){
                 setSuccess(true)
@@ -41,7 +41,7 @@ export const Jewelrys = (props) => {
         
     },[])
     useEffect(()=>{
-        fetch('http://sellinbd.com/api330088/product/searchbyItem.php?item=Jewelry&page_number=3&item_count=10')
+        fetch('https://sellinbd.com/api330088/product/searchbyItem.php?item=Jewelry&page_number=3&item_count=10')
         .then(res=>{
             if(res.status===200){
                 setSuccess(true)
@@ -56,7 +56,7 @@ export const Jewelrys = (props) => {
         
     },[])
     useEffect(()=>{
-        fetch('http://sellinbd.com/api330088/product/searchbyItem.php?item=Jewelry&page_number=4&item_count=10')
+        fetch('https://sellinbd.com/api330088/product/searchbyItem.php?item=Jewelry&page_number=4&item_count=10')
         .then(res=>{
             if(res.status===200){
                 setSuccess(true)

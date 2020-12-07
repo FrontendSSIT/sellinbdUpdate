@@ -6,13 +6,14 @@ import { CategoryNav } from './Components/Home/CategoryNav/CategoryNav';
 import { PostYourAdd } from './Components/PostYourAdd/PostYourAdd';
 import {  SignleCategorys } from './Components/AllCategory/SignleProductCategory/SignleCategory/SignleCategory';
 import { Contact } from './Components/Contact/Contact';
-import { AllChat } from './Components/Authentication/ForgatePassWord/AllChat/AllChat';
+
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 import { MensClothing } from './Components/SearchProduct/Category/Fashions/MensClothing/MensClothing';
 import {  WomensClothings } from './Components/SearchProduct/Category/Fashions/WomensClothing/WomensClothing';
@@ -174,6 +175,10 @@ import { Habiganj } from './Components/SearchProduct/LocationProduct/SylhetDivis
 import { MaulviBazar } from './Components/SearchProduct/LocationProduct/SylhetDivision/MaulviBazar/MaulviBazar';
 import { Sunamganj } from './Components/SearchProduct/LocationProduct/SylhetDivision/Sunamganj/Sunamganj';
 import { Sylhet } from './Components/SearchProduct/LocationProduct/SylhetDivision/Sylhet/Sylhet';
+import { AllChat } from './Components/AllChat/AllChat';
+import { BuyPost, PostJob, SellAgricultural, SellDaily, SellMedicine, SellPets, SellProduct, SellService } from './Components/PostYourAdd/PostCategory/SelectCategory/SelectCategory';
+
+
 
 
 function App() {
@@ -181,6 +186,9 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
+        <Home/>
+        </Route>
+        <Route  path="/home">
         <Home/>
         </Route>
         <Route  path="/login">
@@ -740,16 +748,48 @@ function App() {
                                             <Route path="/sylhet">
                                             <Sylhet/>
                                             </Route>
+                                           
                                                {/*Sylhet Division category End*/}
                                           {/*Mymensigh Division category End*/}
                                   {/* Search  By Place category End*/}
+                                  {/* Post  category Start*/}
+                                  <Route path="/sellProductPost">
+                                  <SellProduct/>
+                                  </Route>
+                                  <Route path="/sellPetsPost">
+                                  <SellPets/>
+                                  </Route>
+                                  <Route path="/sellAgriculturalPost">
+                                  <SellAgricultural/>
+                                  </Route>
+                                  <Route path="/sellDailyPost">
+                                  <SellDaily/>
+                                  </Route>
+                                  <Route path="/sellMedicinePost">
+                                  <SellMedicine/>
+                                  </Route>
+                                  <Route path="/sellServicePost">
+                                  <SellService/>
+                                  </Route>
+                                  <Route path="/PostAJob">
+                                  <PostJob/>
+                                  </Route>
+                                  <Route path="/buyPost">
+                                  <BuyPost/>
+                                  </Route>
+                                  
+
+
+                                  {/*Post category End*/}
         <Route path="/contact">
         <Contact/>
         </Route>
         <Route path="/chat">
         <AllChat/>
         </Route>  
+        <Redirect  to="/"/>
       </Switch>
+      
     </Router>
   );
 }

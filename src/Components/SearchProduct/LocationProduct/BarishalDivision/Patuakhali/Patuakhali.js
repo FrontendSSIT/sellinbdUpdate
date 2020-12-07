@@ -5,9 +5,6 @@ import { AgriculturalTool } from '../../../Category/Agricultural/AgriculturalToo
 
 export const Patuakhali = (props) => {
     const[products,setProducts]=useState([])
-    const[products1,setProducts1]=useState([])
-    const[products3,setProducts3]=useState([])
-    const[products4,setProducts4]=useState([])
     const[success,setSuccess]=useState(false)
     
 
@@ -82,21 +79,6 @@ export const Patuakhali = (props) => {
                
                 {
                     products.map(product=><AgriculturalTool product={product} success={success}/>)
-                }
-                </Row>
-                </Col>
-                  </Row>
-            </Container>
-            <Container >
-            <Row className="justify-content-center">
-            <Col lg={7} ><h1>{props.name}</h1></Col>
-            </Row>
-            <Row className="justify-content-center" >
-                <Col lg={8} xs={12}>
-                <Row className="justify-content-center" >
-               
-                {
-                    products1.map(product=><AgriculturalTool product={product} success={success}/>)
                 }
                 </Row>
                 </Col>

@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {Grid, Container, TextField, Button } from '@material-ui/core';
 import { useForm } from "react-hook-form";
-import firebase from 'firebase/app';
-import firebaseConfig from '../FireBase/firebase.config'
+// import firebase from 'firebase/app';
+// import firebaseConfig from '../FireBase/firebase.config'
 import './Login.scss'
 import { SignUp } from '../SignUp/SignUp';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
-import { NavBars } from '../../Home/NavBars/NavBars';
+import {  NavBarSub } from '../../Home/NavBars/NavBars';
 import Modal from 'react-modal';
 import { ForgatePassword } from '../ForgatePassWord/ForgatePassword';
 import { useHistory } from 'react-router-dom';
@@ -84,7 +84,7 @@ const  openModal=()=>    {
 
  return (
         <div>
-        <NavBars/>
+        <NavBarSub/>
  {signUp===false? 
  
    <Container className="login">  

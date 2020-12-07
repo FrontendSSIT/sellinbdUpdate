@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {Categorys } from '../../AllCategory/Category/Category'
 import { AdPost } from '../AdPost/AdPost'
-import { BannerSlid, Sliderss } from '../BannerSlid/BannerSlid'
+import {  Sliderss } from '../BannerSlid/BannerSlid'
 import { Footer } from '../Footer/Footer'
 import { Header } from '../Header/Header'
 import { NavBars } from '../NavBars/NavBars'
@@ -12,13 +12,9 @@ export const Home = () => {
     const[clickSearch,setClickSearch]=useState('')
     const[searchValue,setSearchValue]=useState([])
     const[success,setSuccess]=useState(false)
- console.log(searchValue)
     const handleSearchBox=(e)=>{
         const data=e.target.value;
-        setClickSearch(data)
-        
-          
-        
+        setClickSearch(data)    
         
       }
       const handleSearchClick=()=>{
@@ -40,13 +36,13 @@ export const Home = () => {
         <div >
 
         {
-            searchValue.length>10 ? <SearchBox searchValue={searchValue} success={success}/>:
+            searchValue.length>10 ? <SearchBox searchValue={searchValue} success={success}  handleSearchBox={handleSearchBox} handleSearchClick={handleSearchClick}  setSearchValue={setSearchValue}/>:
           <>
           <div className="headress">
          
           <Header/>
           </div>
-           <NavBars handleSearchBox={handleSearchBox} clickSearch={clickSearch} handleSearchClick={handleSearchClick}/>
+           <NavBars handleSearchBox={handleSearchBox} clickSearch={clickSearch} handleSearchClick={handleSearchClick} setSearchValue={setSearchValue} />
            <Sliderss/>
            <Categorys />
            <AdPost/>

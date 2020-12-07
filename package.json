@@ -23,14 +23,16 @@
     "react-slick": "^0.27.13",
     "slick-carousel": "^1.8.1",
     "video-react": "^0.14.1",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4"    
   },
+ 
   "scripts": {
     "start": "set HTTPS=true&&react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+ 
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -53,5 +55,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+ 
+  "devDependencies": {
+    "babel-plugin-transform-remove-console": "^6.9.4"
   }
+  
+ 
+  
 }

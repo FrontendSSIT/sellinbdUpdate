@@ -1,13 +1,13 @@
 import React from 'react'
 import './Contact.scss';
 import { CallEndOutlined, Email,LocationCity,} from '@material-ui/icons';
-import { NavBars } from '../Home/NavBars/NavBars';
+import {  NavBarSub } from '../Home/NavBars/NavBars';
 
 export const Contact = () => {
     return (
         
       <section>
-      <NavBars/>
+      <NavBarSub/>
         <main id="main" style={{ backgroundColor: "aliceblue" }}>
 
 
@@ -19,7 +19,7 @@ export const Contact = () => {
 
           <section id="contact" class="contact">
             <div data-aos="fade-up">
-              <iframe style={{ border: "0", width: "100%", height: "350px" }} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1151.2639436571578!2d90.36158663934343!3d23.789609539672792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c17f1e5095c9%3A0x2486088ecd2510d8!2sSS%20IT%20House!5e0!3m2!1sen!2sbd!4v1605426528434!5m2!1sen!2sbd" frameborder="0" allowfullscreen></iframe>
+              <iframe style={{ border: "0", width: "100%", height: "350px" }} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1151.2639436571578!2d90.36158663934343!3d23.789609539672792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c17f1e5095c9%3A0x2486088ecd2510d8!2sSS%20IT%20House!5e0!3m2!1sen!2sbd!4v1605426528434!5m2!1sen!2sbd" frameborder="0" allowfullscreen title="video"></iframe>
             </div>
 
             <div class="container" data-aos="fade-up">

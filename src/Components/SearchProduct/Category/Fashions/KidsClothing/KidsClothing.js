@@ -11,7 +11,7 @@ export const KindsClothings = (props) => {
     
 
     useEffect(()=>{
-        fetch('http://sellinbd.com/api330088/product/searchbyItem.php?item=Kinds Clothing and Accesspries&page_number=1&item_count=10')
+        fetch('https://sellinbd.com/api330088/product/searchbyItem.php?item=Kinds Clothing and Accesspries&page_number=1&item_count=10')
         .then(res=>{
             if(res.status===200){
                 setSuccess(true)
@@ -25,7 +25,7 @@ export const KindsClothings = (props) => {
         })
     },[])
     useEffect(()=>{
-        fetch('http://sellinbd.com/api330088/product/searchbyItem.php?item=Kinds Clothing and Accessories&page_number=2&item_count=10')
+        fetch('https://sellinbd.com/api330088/product/searchbyItem.php?item=Kinds Clothing and Accessories&page_number=2&item_count=10')
         .then(res=>{
             if(res.status===200){
                 setSuccess(true)
@@ -39,7 +39,7 @@ export const KindsClothings = (props) => {
         })
     },[])
     useEffect(()=>{
-        fetch('http://sellinbd.com/api330088/product/searchbyItem.php?item=Kinds Clothing and Accessories=3&item_count=10')
+        fetch('https://sellinbd.com/api330088/product/searchbyItem.php?item=Kinds Clothing and Accessories=3&item_count=10')
         .then(res=>{
             if(res.status===200){
                 setSuccess(true)
@@ -53,7 +53,7 @@ export const KindsClothings = (props) => {
         })
     },[])
     useEffect(()=>{
-        fetch('http://sellinbd.com/api330088/product/searchbyItem.php?item=Kinds Clothing and Accessories=4&item_count=10')
+        fetch('https://sellinbd.com/api330088/product/searchbyItem.php?item=Kinds Clothing and Accessories=4&item_count=10')
         .then(res=>{
             if(res.status===200){
                 setSuccess(true)

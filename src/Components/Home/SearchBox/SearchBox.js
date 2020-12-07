@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { AgriculturalTool } from '../../SearchProduct/Category/Agricultural/AgriculturalTools/AgriculturalTools'
 import { NavBars } from '../NavBars/NavBars'
 
-export const SearchBox = ({searchValue,success}) => {
+export const SearchBox = ({searchValue,success,handleSearchBox,handleSearchClick,setSearchValue}) => {
  
     return (
         <section  className="category">
-        <NavBars/>
+        <NavBars handleSearchBox={handleSearchBox} handleSearchClick={handleSearchClick} setSearchValue={setSearchValue} />
             <Container >
                {/* <div className="primimum"> <img src={primimum } alt=""/> </div> */}
             <Row className="justify-content-center">

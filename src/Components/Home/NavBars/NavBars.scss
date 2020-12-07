@@ -7,18 +7,19 @@
     // .nav-search{
     //     display: none;
     // }
-    .search-btn{
-        top:80px;
-        z-index: 1;
-        width: 100px;
-        height: 100px;
+    .nav-search{
+        position: relative;
         .MuiSvgIcon-root{
             position: absolute;
-            bottom:90%;
-            right: -80px;
-            color: #3F9DFF;
-            font-size: 25px;
+            top:50%;
+            right: 0;
+            transform: translate(-50%,-50%);
+          
         }
+    }
+    .search-btn{
+       margin-bottom: -30px;
+       padding: 10px;
         :focus{
             outline: none;
         }
@@ -45,7 +46,10 @@
     .form-control{
         margin-top: 20px;
     }
-    
+
+     .nav-Bar .search-btn{
+         margin-top:  30px;
+     }
     .nav-Bar .search-btn .MuiSvgIcon-root{
             position: absolute;
             bottom:0;
@@ -54,6 +58,17 @@
         }
         .navbar-nav{
         
+        }
+        .nav-Bar .nav-search{
+            position: relative;
+            .MuiSvgIcon-root{
+                position: absolute;
+                  top: 40px;
+                  right: 20px;
+        
+               
+              
+            }
         }
     
 }

@@ -5,53 +5,9 @@ import { AgriculturalTool } from '../../../Category/Agricultural/AgriculturalToo
 
 export const Manikganj = (props) => {
     const[products,setProducts]=useState([])
-    const[products1,setProducts1]=useState([])
-    const[products3,setProducts3]=useState([])
-    const[products4,setProducts4]=useState([])
     const[success,setSuccess]=useState(false)
     
 
-    // useEffect(()=>{
-    //     fetch('https://sellinbd.com/api330088/product/searchbyPlace.php?place=Manikganj&page_number=1&item_count=1000')
-    //         if(res.status===200){
-    //             setSuccess(true)
-    //             res.json()
-    //             .then(result=>{
-    //                 if(result){
-    //                     setProducts(result.records)
-    //                 }
-    //         })
-    //         }
-    //     })
-    // },[])
-    // useEffect(()=>{
-    //     fetch('https://sellinbd.com/api330088/product/searchbyItem.php?item=Agricultural Tools and Machinery&page_number=2&item_count=10')
-    //     .then(res=>{
-    //         if(res.status===200){
-    //             setSuccess(true)
-    //             res.json()
-    //             .then(result=>{
-    //                 if(result){
-    //                     setProducts1(result.records)
-    //                 }
-    //         })
-    //         }
-    //     })
-    // },[])
-    // useEffect(()=>{
-    //     fetch('https://sellinbd.com/api330088/product/searchbyItem.php?item=Agricultural Tools and Machinery&page_number=3&item_count=10')
-    //     .then(res=>{
-    //         if(res.status===200){
-    //             setSuccess(true)
-    //             res.json()
-    //             .then(result=>{
-    //                 if(result){
-    //                     setProducts3(result.records)
-    //                 }
-    //         })
-    //         }
-    //     })
-    // },[])
     useEffect(()=>{
         fetch('https://sellinbd.com/api330088/product/searchbyPlace.php?place=Manikganj&page_number=1&item_count=1000')
         .then(res=>{

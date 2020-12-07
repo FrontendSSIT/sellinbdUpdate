@@ -10,11 +10,8 @@ import { Link } from 'react-router-dom';
 import {SearchOutlined} from '@material-ui/icons';
 import './NavBars.scss'
 
-export const NavBars = ({handleSearchBox,clickSearch,handleSearchClick}) => {
-  
-  const[clickNav,setClickNav]=useState(false)
+export const NavBars = ({handleSearchBox,clickSearch,handleSearchClick,setSearchValue}) => {
   const[search,setSearch]=useState(false)
-  console.log(clickSearch)
 
   
 
@@ -27,8 +24,8 @@ export const NavBars = ({handleSearchBox,clickSearch,handleSearchClick}) => {
   }
   const handleNav=()=>{
       setSearch(false)
-  }
 
+  }
   
     return (
  <section>
@@ -36,23 +33,23 @@ export const NavBars = ({handleSearchBox,clickSearch,handleSearchClick}) => {
           <Navbar  expand="lg" className="nav-Bar">
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
-  <Form inline className="nav-search " >
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" onClick={handleSearch} onChange={handleSearchBox} />
-      <SearchOutlined onClick={handleSearchClick}/>
-      
+  <Form inline className="nav-search ">
+      <FormControl type="text" placeholder="Search" className="mr-sm-2" onClick={handleSearch} onChange={handleSearchBox} value={clickSearch} />
+      <SearchOutlined  onClick={handleSearchClick}/>
+      </Form>
       <div className="search-btn">
-              <div >
-                </div>
-              {
-                  search? <> <Link to="/LocNav" onClick={handleLoc}>Location</Link>
-                  <Link to="/catNav" onClick={handleNav}>Category</Link> <br/> <br/></>:null
-              }
+      {
+       
+        search? <> <Link to="/LocNav" onClick={handleLoc}>Location</Link>
+        <Link to="/catNav" onClick={handleNav}>Category</Link> <br/> <br/></>:null
+       
+    }
     
-              </div>
-    </Form>
+    </div>
+            
     <Nav className="ml-auto">
       <Nav.Link >
-        <Link to="/">Home</Link>
+        <Link to="/home" onClick={()=>setSearchValue([])}>Home</Link>
       </Nav.Link>
 
       <Nav.Link >
@@ -75,4 +72,41 @@ export const NavBars = ({handleSearchBox,clickSearch,handleSearchClick}) => {
      </Container>
  </section>
     )
+}
+
+
+
+export const NavBarSub = () => {
+  return (
+    <section>
+    <Container>
+      <Navbar  expand="lg" className="nav-Bar">
+<Navbar.Toggle aria-controls="basic-navbar-nav" />
+<Navbar.Collapse id="basic-navbar-nav">
+       
+<Nav className="ml-auto">
+  <Nav.Link >
+    <Link to="/home">Home</Link>
+  </Nav.Link>
+
+  <Nav.Link >
+    <Link to="/contact">Contact Us</Link>
+  </Nav.Link>
+  <Nav.Link>
+    <Link to="/login">Login</Link>
+  </Nav.Link>
+  <Nav.Link >
+    <Link to="/postAdd">Add Post </Link>
+    </Nav.Link>
+  <Nav.Link >
+    <Link to="/chat">Chat</Link>
+  </Nav.Link>
+
+</Nav>
+
+</Navbar.Collapse>
+</Navbar>
+ </Container>
+</section>
+  )
 }

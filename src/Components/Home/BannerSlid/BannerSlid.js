@@ -9,11 +9,10 @@ import "slick-carousel/slick/slick-theme.css";
 
 import Carousel from 'react-bootstrap/Carousel'
 
-import { Col, Row,Container, Nav} from 'react-bootstrap';
+import { Col, Row,Container} from 'react-bootstrap';
 import './BannerSlid.scss'
 import ads from '../../../images/sliderAd.png'
 
-import { NavBars } from '../NavBars/NavBars';
 
 export const BannerSlid = () => {
     
