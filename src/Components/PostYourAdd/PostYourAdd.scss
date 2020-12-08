@@ -34,3 +34,71 @@ a{
         
     }
 }
+ul{
+    p{
+      color: #66B1FF;
+      img{
+          width: 30px;height: 30px;
+          margin-right: 5px;
+      }
+    }
+    li a{
+        img{
+            width: 30px;height: 30px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+    }
+}
+.postForm{
+    form{
+        margin-top: 40px;
+        input{
+            width: 100%;height: 40px;
+            margin-bottom: 10px;
+            border: none;
+            border-bottom: 1px solid #707070;
+            outline: none;
+           
+
+        }
+        input[type="submit"]{
+            background:#66B1FF;
+            border: none;
+            border-radius: 10px;
+            width: 80%;
+            color: #fff;
+        }
+       textarea{
+           width: 100%;
+           height: 300px;
+           border-radius: 20px;
+           outline: none;
+       }
+    }
+ 
+    
+    .radioBox{
+        input{
+            width:100px;
+        }
+        input[type="radio"]{
+           height: 20px;
+        
+        }
+    }
+    
+    select{
+        margin-bottom: 30px;
+        width: 100%;
+        height: 40px;
+        border-radius: 10px;
+        border:  2px solid rgba(112, 112, 112, 0.514);
+        outline: none;
+
+    }
+    .postLogo{
+        text-align: left;
+        color: #fff;
+    }
+}

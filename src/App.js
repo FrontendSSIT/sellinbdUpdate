@@ -177,6 +177,8 @@ import { Sunamganj } from './Components/SearchProduct/LocationProduct/SylhetDivi
 import { Sylhet } from './Components/SearchProduct/LocationProduct/SylhetDivision/Sylhet/Sylhet';
 import { AllChat } from './Components/AllChat/AllChat';
 import { BuyPost, PostJob, SellAgricultural, SellDaily, SellMedicine, SellPets, SellProduct, SellService } from './Components/PostYourAdd/PostCategory/SelectCategory/SelectCategory';
+import { BusinessIndustrialPost, MobileTabletsPost, SportsHobbiesPost,FashionsPost, FurniturePost, VehiclesPost, ElectronicsPost,ComputerLaptopsPost } from './Components/PostYourAdd/SellProduct/ItemSelect/ItemSelect';
+import { PostForm } from './Components/PostYourAdd/PostCategory/PostForm/PostForm';
 
 
 
@@ -777,10 +779,41 @@ function App() {
                                   <Route path="/buyPost">
                                   <BuyPost/>
                                   </Route>
-                                  
-
-
+                                  <Route path="/mobilePost">
+                                  <MobileTabletsPost/>
+                                  </Route>\
+                                  <Route path="/computerLaptopsPost">
+                                  <ComputerLaptopsPost/>
+                                  </Route>
+                                  <Route path="/electronicsPost">
+                                  <ElectronicsPost/>
+                                  </Route>
+                                  <Route path="/vehiclesPost">
+                                  <VehiclesPost/>
+                                  </Route>
+                                  <Route path="/propertyPost">
+                                  <VehiclesPost/>
+                                  </Route>
+                                  <Route path="/furniturePost">
+                                  <FurniturePost/>
+                                  </Route>
+                                  <Route path="/fashionsPost">
+                                  <FashionsPost/>
+                                  </Route>
+                                  <Route path="/sportsHobbiesPost">
+                                  <SportsHobbiesPost/>
+                                  </Route>
+                                  <Route path="/businessIndustrialPost">
+                                  <BusinessIndustrialPost/>
+                                  </Route>
+                                  <Route path="/posForm">
+                                  <PostForm/>
+                                  </Route>
+      
                                   {/*Post category End*/}
+
+                              
+                                
         <Route path="/contact">
         <Contact/>
         </Route>
