@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import { Home } from './Components/Home/Home/Home';
 import { Login } from './Components/Authentication/Login/Login';
 import { ProductDetails } from './Components/AllCategory/ProductDetails/ProductDetails';
@@ -179,651 +179,663 @@ import { AllChat } from './Components/AllChat/AllChat';
 import { BuyPost, PostJob, SellAgricultural, SellDaily, SellMedicine, SellPets, SellProduct, SellService } from './Components/PostYourAdd/PostCategory/SelectCategory/SelectCategory';
 import { BusinessIndustrialPost, MobileTabletsPost, SportsHobbiesPost,FashionsPost, FurniturePost, VehiclesPost, ElectronicsPost,ComputerLaptopsPost } from './Components/PostYourAdd/SellProduct/ItemSelect/ItemSelect';
 import { PostForm } from './Components/PostYourAdd/PostCategory/PostForm/PostForm';
+import { UserProfile } from './Components/UserProfile/UserProfile';
 
 
 
-
+export const userContext=createContext()
 function App() {
+  const [loginUser,setLoginUser]=useState()
+  const [userName,setUserName]=useState({})
+  const [productD,setProductD]=useState()
+  console.log(loginUser,userName)
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-        <Home/>
-        </Route>
-        <Route  path="/home">
-        <Home/>
-        </Route>
-        <Route  path="/login">
-        <Login/>
-        </Route>
-        <Route path="/produtcDetails">
-        <ProductDetails/>
-        </Route>
-        {/* categoryNavbar &  */}
-        <Route path="/LocNav">
-        <Location/>
-        </Route>
-        <Route path="/catNav">
-        <CategoryNav/>
-        </Route>
-        <Route path="/postAdd">
-        <PostYourAdd/>
-        </Route>
-        <Route  path="/signleCategory">
-        <SignleCategorys/>
-        </Route>
-        {/* Fashions,Health and Beauty category Start &  */}
-        <Route  path="/mens">
-        <MensClothing/>
-        </Route>
-        <Route  path="/womens">
-        <WomensClothings/>
-        </Route>
-        <Route  path="/kinds">
-        <KindsClothing/>
-        </Route>
-        <Route  path="/jewelry">
-        <Jewelrys/>
-        </Route>
-        <Route  path="/optical">
-        <Opticals/>
-        </Route>
-        <Route  path="/watches">
-        <Watchess/>
-        </Route>
-        <Route  path="/bags">
-        <Bags/>
-        </Route>
-        <Route  path="/wholesale">
-        <Wholesales/>
-        </Route>
-        <Route  path="/cosmetics">
-        <Cosmertics/>
-        </Route>
-        <Route  path="/other">
-        <OtherFashions/>
-        </Route>
-        {/* Agricultural category start &  */}
-        <Route  path="/agriculturalTools">
-        <AgriculturalTools/>
-        </Route>
-        <Route  path="/crops">
-        <Crops/>
-        </Route>
-        <Route  path="/othersAgricultural">
-        <OtherAgriculturals/>
-        </Route>
-         {/* Agricultural category End &  */}
+  <userContext.Provider value={[productD,setProductD,userName,setUserName,loginUser,setLoginUser]}>
+  <Router>
+  <Switch>
+    <Route exact path="/">
+    <Home/>
+    </Route>
+    <Route  path="/home">
+    <Home/>
+    </Route>
+    <Route  path="/login">
+    <Login/>
+    </Route>
+    <Route path="/produtcDetails">
+    <ProductDetails/>
+    </Route>
+    {/* categoryNavbar &  */}
+    <Route path="/LocNav">
+    <Location/>
+    </Route>
+    <Route path="/catNav">
+    <CategoryNav/>
+    </Route>
+    <Route path="/postAdd">
+    <PostYourAdd/>
+    </Route>
+    <Route  path="/signleCategory">
+    <SignleCategorys/>
+    </Route>
+    {/* Fashions,Health and Beauty category Start &  */}
+    <Route  path="/mens">
+    <MensClothing/>
+    </Route>
+    <Route  path="/womens">
+    <WomensClothings/>
+    </Route>
+    <Route  path="/kinds">
+    <KindsClothing/>
+    </Route>
+    <Route  path="/jewelry">
+    <Jewelrys/>
+    </Route>
+    <Route  path="/optical">
+    <Opticals/>
+    </Route>
+    <Route  path="/watches">
+    <Watchess/>
+    </Route>
+    <Route  path="/bags">
+    <Bags/>
+    </Route>
+    <Route  path="/wholesale">
+    <Wholesales/>
+    </Route>
+    <Route  path="/cosmetics">
+    <Cosmertics/>
+    </Route>
+    <Route  path="/other">
+    <OtherFashions/>
+    </Route>
+    {/* Agricultural category start &  */}
+    <Route  path="/agriculturalTools">
+    <AgriculturalTools/>
+    </Route>
+    <Route  path="/crops">
+    <Crops/>
+    </Route>
+    <Route  path="/othersAgricultural">
+    <OtherAgriculturals/>
+    </Route>
+     {/* Agricultural category End &  */}
 
-          {/* Business category start &  */}
-          <Route path="/brics">
-          <Brics/>
-          </Route>
-          <Route path="/industrial">
-          <Industrials/>
-          </Route>
-          
-          <Route path="/industry">
-          <IndustryMachinerys/>
-          </Route>
-          <Route path="/licenses">
-          <Licenses/>
-          </Route>
-          <Route path="/otherBusiness">
-          <OtherBusiness/>
-          </Route>
-          <Route path="/safety">
-          <Safetys/>
-          </Route>
-          <Route path="/Sanitary">
-          <Sanitarys/>
-          </Route>
-          <Route path="/stationary">
-          <Stationarys/>
-          </Route>
-           {/* Business category End &  */}
-
-            {/* Computer category Start &  */}
-            <Route path="/desktop">
-              <Desktops/>
-            </Route>
-            <Route path="/l&da">
-              <LaptopDesktopAccessories/>
-            </Route>
-            <Route path="/laptop">
-              <Laptops/>
-            </Route>
-            <Route path="/networkingA">
-              <NetWorkingAccessories/>
-            </Route>
-            <Route path="/pp">
-          <PhotocopiersPrinters/>
-            </Route>
-             {/* Computer category End &  */}
-             {/* Daily category Start &  */}
-             <Route path="/babyproduct">
-          <BabyProducts/>
-            </Route>
-            <Route path="/f&v">
-          <FrutisAndVegetables/>
-            </Route>
-            <Route path="/grocery">
-          <Grocerys/>
-            </Route>
-            <Route path="/healthcare">
-          <HealthAndCares/>
-            </Route>
-            <Route path="/household">
-          <HouseHolds/>
-            </Route>
-            <Route path="/kitchenaccessories">
-          <KitchenAccessories/>
-            </Route>
-            <Route path="/readyFood">
-          <ReadyFoods/>
-            </Route>
-            <Route path="/m&f">
-          <MeatSeaFoods/>
-            </Route>
-             {/* Daily category End &  */}
-             {/* Electronics category Start &  */}
-             <Route path="/ac">
-               <ACs/>
-             </Route>
-             <Route path="/audio">
-               <AudioSoundSytems/>
-             </Route>
-             <Route path="/camerasAccessories">
-               <CameraAccessories/>
-             </Route>
-             <Route path="/cameras">
-               <Cameras/>
-             </Route>
-             <Route path="/fan">
-               <FanAndHeaters/>
-             </Route>
-             <Route path="/ackitchen">
-               <KitchenElectronics/>
-             </Route>
-             <Route path="/otherElectronics">
-               <OtherElectronics/>
-             </Route>
-             <Route path="/refeigerators">
-               <Refrigerators/>
-             </Route>
-             <Route path="/televisions">
-               <Televisions/>
-             </Route>
-             <Route path="/toys">
-               <Toys/>
-             </Route>
-             <Route path="/toysAccessories">
-               <ToysAccessories/>
-             </Route>
-             <Route path="/water">
-               <WaterPurifierAndAccessories/>
-             </Route>
-             {/* Electronics category End &  */}
-                  {/* Furniture category Start &  */}
-                  <Route path="/childrens">
-                  <ChildrensFurnitures/>
-                  </Route>
-                  <Route path="/kitchenRoom">
-                  <KitchenAndDinigRooms/>
-                  </Route>
-                  <Route path="/living">
-                  <LivingRoomFunitures/>
-                  </Route>
-                  <Route path="/officeShop">
-                  <OfficeAndShops/>
-                  </Route>
-                  <Route path="/othersFurniture">
-                  <OthersFurnitures/>
-                  </Route>
-                  
-                       {/* Furniture category End &  */}
-                       {/* Medicine category start &  */}
-                       <Route path="/generalmedicine">
-                       <GeneralMedicines/>
-                       </Route>
-                       <Route path="/homeiomedicine">
-                       <HomeioMedicines/>
-                       </Route>
-                       <Route path="/harbealmedicine">
-                       <HerbalMedicines/>
-                       </Route>
-                       {/* Medicine category End &  */}
-                       {/* Mobile Tablates category start &  */}
-                       <Route path="/mobilephone">
-                       <MobilePhones/>
-                       </Route>
-                       <Route path="/tablets">
-                       <Tablets/>
-                       </Route>
-                       <Route path="/mobiletablets">
-                       <MobileAndTabletsAccessories/>
-                       </Route>
-                       
-                       {/* Mobile Tablates category End &  */}
-                        {/* Pets and aminal Tablates category start &  */}
-                        <Route path="/farmanimal">
-                        <FarmAnimals/>
-                        </Route>
-                        <Route path="/otherpetAnimal">
-                        <OtherPetAnimals/>
-                        </Route>
-                        <Route path="/petsandanimalaccessories">
-                        <PetAndAnimals/>
-                        </Route>
-                        <Route path="/pets">
-                        <Pets/>
-                        </Route>
-                        <Route path="/petanimalfood">
-                        <PetAnimalFoods/>
-                        </Route>
-                         {/* Pets and aminal Tablates category End &  */}
-                          {/* Property   category Start &  */}
-
-                          <Route path="/apartmentflats">
-                          <ApartmnetAndFlats/>
-                          </Route>
-                          <Route path="/commercialproperty">
-                          <CommercialPropertys/>
-                          </Route>
-                          <Route path="/houses">
-                          <Houses/>
-                          </Route>
-                          <Route path="/othersproperty">
-                          <OthersPropertys/>
-                          </Route>
-                          <Route path="/plotsland">
-                          <PlotsAndLands/>
-                          </Route>
-                          <Route path="/tolet">
-                          <ToLets/>
-                          </Route>
-                           {/* Peoperty  category End &  */}
-                             {/* BuySomething category Start &  */}
-                             <Route path="/buysomething">
-                             <BuySomethings/>
-                             </Route>
-                               {/* BuySomething  category End &  */}
-                                  {/* Job Post category Start &  */}
-                             <Route path="/jobpost">
-                             <JobPosts/>
-                             </Route>
-                               {/* Job Post  category End &  */}
-                                {/* Service Post category Start &  */}
-                             <Route path="/businesstechnical">
-                             <BusinessAndTechnicals/>
-                             </Route>
-                             <Route path="/carbusrent">
-                             <CarBusAndTrucks/>
-                             </Route>
-                             <Route path="/coursechoacing">
-                             <CoursesAndCoachingCenters/>
-                             </Route>
-                             <Route path="/eventshospitality">
-                             <EventsandHospitallys/>
-                             </Route>
-                             <Route path="/householdservice">
-                             <HouseHoldServices/>
-                             </Route>
-                             <Route path="/interiordesign">
-                             <InteriorDesigns/>
-                             </Route>
-                             <Route path="/laptopdesktopservicing">
-                             <LaptopsAndDesktopServicings/>
-                             </Route>
-                             <Route path="/mobilephoneservicing">
-                             <MobilePhoneServiceings/>
-                             </Route>
-                             <Route path="/readyfoodsupllie">
-                             <ReadyFoodSupplies/>
-                             </Route>
-                             <Route path="/tution">
-                             <Tuitions/>
-                             </Route>
-                             <Route path="/vehiclesservicing">
-                             <VehiclesServicings/>
-                             </Route>
-                             <Route path="/visatravel">
-                             <VisaTravels/>
-                             </Route>
-                               {/* Service Post  category End &  */}
-
-                               {/*  Sport  category End &  */}
-                               <Route path="/fitnessgym">
-                               <FitnessAndGyms/>
-                               </Route>
-                               <Route path="/musicalinstruments">
-                               <MusicalInstruments/>
-                               </Route>
-                               <Route path="/musicbookmovies">
-                               <MusicBookAndMovies/>
-                               </Route>
-                               <Route path="/othersporthobbies">
-                               <OthersSportsAndHobbies/>
-                               </Route>
-                               <Route path="/sports">
-                               <Sport/>
-                               </Route>
-                               {/* Sport Post  category End &  */}
-
-                               {/* Vehicles  category End &  */}
-                               <Route path="/autooilsfuilds">
-                               <AutoOilsAndFluids/>
-                               </Route>
-                               <Route path="/autoparts">
-                               <AutoParts/>
-                               </Route>
-                               <Route path="/bicycles">
-                               <Bicycles/>
-                               </Route>
-                               <Route path="/bustruckpickup">
-                               <BusTruckAndPickup/>
-                               </Route>
-                               <Route path="/carjeepaccessories">
-                               <CarAndJeepAccessories/>
-                               </Route>
-                               <Route path="/carsjeep">
-                               <CarAndJepps/>
-                               </Route>
-                               <Route path="/motorbikesaccessories">
-                               <MotorbikesAndScooterAccessories/>
-                               </Route>
-                               <Route path="/motorbikescoter">
-                               <MotorBikesAndScoters/>
-                               </Route>
-                               <Route path="/othervehicles">
-                               <OhersVehicles/>
-                               </Route>
-                               <Route path="/threewheelers">
-                               <ThreeWheelers/>
-                               </Route>
-                               <Route path="/tracktorheavyduty">
-                               <TractorsAndHeavyDuty/>
-                               </Route>
-                               <Route path="/watertransports">
-                               <WaterTransports/>
-                               </Route>
-                               {/* Vehicles   category End &  */}
-
-                               {/* Search  By Place category start*/}
-
-                               {/*  Barishale Division category start*/}
-
-                               <Route path="/barishal">
-                               <Barishal/>
-                               </Route>
-                               <Route path="/bhola">
-                               <Bhola/>
-                               </Route>
-                               <Route path="/barguna">
-                               <Burguna/>
-                               </Route>
-                               <Route path="/Jhalokati">
-                               <Jhalokati/>
-                               </Route>
-                               <Route path="/patuakhali">
-                               <Patuakhali/>
-                               </Route>
-                               <Route path="/pirojpur">
-                               <Pirojpur/>
-                               </Route>
-                                {/*  Barishale Division category End*/}
-
-                                {/*  Chattogram Division category Start*/}
-
-                                <Route path="/bandarban">
-                               <Bandarban/>
-                               </Route>
-                               <Route path="/brahmanbaria">
-                               <Brahmanbaria/>
-                               </Route>
-                               <Route path="/chandpur">
-                               <Chandpur/>
-                               </Route>
-                               <Route path="/chattogram">
-                               <Chattogram/>
-                               </Route>
-                               <Route path="/coxbazar">
-                               <CoxBazar/>
-                               </Route>
-                               <Route path="/cumilla">
-                               <Cumilla/>
-                               </Route>
-                               <Route path="/feni">
-                               <Feni/>
-                               </Route>
-                               <Route path="/khangrachari">
-                               <Khangrachari/>
-                               </Route>
-                               <Route path="/lakshmipur">
-                               <Lakshmipur/>
-                               </Route>
-                               <Route path="/rangamati">
-                               <Rangamati/>
-                               </Route>
-                                {/*  Chattogram Division category End*/}
-                                  {/*  Dhaka Division category Start*/}
-                                    <Route path="/dhaka">
-                                    <Dhaka/>
-                                    </Route>
-                                    <Route path="/faridpur">
-                                    <Faridpur/>
-                                    </Route>
-                                    <Route path="/gazipur">
-                                    <Gazipur/>
-                                    </Route>
-                                    <Route path="/kishorgang">
-                                    <KishorGanj/>
-                                    </Route>
-                                    <Route path="/madaripur">
-                                    <Madaripur/>
-                                    </Route>
-                                    <Route path="/manikganj">
-                                    <Manikganj/>
-                                    </Route>
-                                    <Route path="/munshiganj">
-                                    <Munshiganj/>
-                                    </Route>
-                                    <Route path="/narasingdi">
-                                    <Narasingdi/>
-                                    </Route>
-                                    <Route path="/naryanganj">
-                                    <Naryanganj/>
-                                    </Route>
-                                    <Route path="/rajbari">
-                                    <Rajbari/>
-                                    </Route>
-                                    <Route path="/shariatpur">
-                                    <Shariatpur/>
-                                    </Route>
-                                    <Route path="/tangail">
-                                    <Tangail/>
-                                    </Route>
-                                  {/*Dhaka Division category End*/}
-                                     {/*Khulna Division category Start*/}
-                                        <Route path="/bagerhat">
-                                        <Bagerhat/>
-                                        </Route>
-                                        <Route path="/chuadanga">
-                                        <Chuadanga/>
-                                        </Route>
-                                        <Route path="/jessore">
-                                        <Jessore/>
-                                        </Route>
-                                        <Route path="/khulna">
-                                        <Khulna/>
-                                        </Route>
-                                        <Route path="/magura">
-                                        <Magura/>
-                                        </Route>
-                                        <Route path="/meherpur">
-                                        <Meherpur/>
-                                        </Route>
-                                        <Route path="/narail">
-                                        <Narail/>
-                                        </Route>
-                                        <Route path="/satkhira">
-                                        <Satkhira/>
-                                        </Route>
-                                      {/*Khulna Division category End*/}
-
-                                       {/*Mymensigh Division category Start*/}
-                                       <Route path="/jamalpur">
-                                       <Jamalpur/>
-                                       </Route>
-                                       <Route path="/mymensingh">
-                                       <Mymensingh/>
-                                       </Route>
-                                       <Route path="/netrokona">
-                                       <Netrokona/>
-                                       </Route>
-                                       <Route path="/sherpur">
-                                       <Sherpur/>
-                                       </Route>
-                                       <Route path="/bogura">
-                                       <Bogura/>
-                                       </Route>
-                                       <Route path="/chapainawabganj">
-                                       <Chapainawabganj/>
-                                       </Route>
-                                       <Route path="/joypurhat">
-                                       <Joypurhat/>
-                                       </Route>
-                                       <Route path="/naogaon">
-                                       <Naogaon/>
-                                       </Route>
-                                       <Route path="/natore">
-                                       <Natore/>
-                                       </Route>
-                                       <Route path="/pabna">
-                                       <Pabna/>
-                                       </Route>
-                                       <Route path="/rajshahi">
-                                       <Rajshahi/>
-                                       </Route>
-                                       <Route path="/sirajganj">
-                                       <Sirajganj/>
-                                       </Route>
-                                        {/*ramgpur Division category start*/}
-                                        <Route path="/dinajpur">
-                                        <Dinajpur/>
-                                        </Route>
-                                        <Route path="/gaibandha">
-                                        <Gaibandha/>
-                                        </Route>
-
-                                        <Route path="/kurigram">
-                                        <Kurigram/>
-                                        </Route>
-                                        <Route path="/lalmonirhat">
-                                        <Lalmonirhat/>
-                                        </Route>
-
-                                        <Route path="/nilphamari">
-                                        <Nilphamari/>
-                                        </Route>
-                                        
-                                        <Route path="/panchagarh">
-                                        <Panchagarh/>
-                                        </Route>
-                                        <Route path="/rangpur">
-                                        <Rangpur/>
-                                        </Route>
-                                        <Route path="/thakurgaon">
-                                        <Thakurgaon/>
-                                        </Route>
-                                         {/*Rangpur Division category End*/}
-                                            {/*Sylhet Division category start*/}
-                                            <Route path="/habiganj">
-                                            <Habiganj/>
-                                            </Route>
-                                            <Route path="/maulvibazar">
-                                            <MaulviBazar/>
-                                            </Route>
-                                            <Route path="/sunamganj">
-                                            <Sunamganj/>
-                                            </Route>
-                                            <Route path="/sylhet">
-                                            <Sylhet/>
-                                            </Route>
-                                           
-                                               {/*Sylhet Division category End*/}
-                                          {/*Mymensigh Division category End*/}
-                                  {/* Search  By Place category End*/}
-                                  {/* Post  category Start*/}
-                                  <Route path="/sellProductPost">
-                                  <SellProduct/>
-                                  </Route>
-                                  <Route path="/sellPetsPost">
-                                  <SellPets/>
-                                  </Route>
-                                  <Route path="/sellAgriculturalPost">
-                                  <SellAgricultural/>
-                                  </Route>
-                                  <Route path="/sellDailyPost">
-                                  <SellDaily/>
-                                  </Route>
-                                  <Route path="/sellMedicinePost">
-                                  <SellMedicine/>
-                                  </Route>
-                                  <Route path="/sellServicePost">
-                                  <SellService/>
-                                  </Route>
-                                  <Route path="/PostAJob">
-                                  <PostJob/>
-                                  </Route>
-                                  <Route path="/buyPost">
-                                  <BuyPost/>
-                                  </Route>
-                                  <Route path="/mobilePost">
-                                  <MobileTabletsPost/>
-                                  </Route>\
-                                  <Route path="/computerLaptopsPost">
-                                  <ComputerLaptopsPost/>
-                                  </Route>
-                                  <Route path="/electronicsPost">
-                                  <ElectronicsPost/>
-                                  </Route>
-                                  <Route path="/vehiclesPost">
-                                  <VehiclesPost/>
-                                  </Route>
-                                  <Route path="/propertyPost">
-                                  <VehiclesPost/>
-                                  </Route>
-                                  <Route path="/furniturePost">
-                                  <FurniturePost/>
-                                  </Route>
-                                  <Route path="/fashionsPost">
-                                  <FashionsPost/>
-                                  </Route>
-                                  <Route path="/sportsHobbiesPost">
-                                  <SportsHobbiesPost/>
-                                  </Route>
-                                  <Route path="/businessIndustrialPost">
-                                  <BusinessIndustrialPost/>
-                                  </Route>
-                                  <Route path="/posForm">
-                                  <PostForm/>
-                                  </Route>
+      {/* Business category start &  */}
+      <Route path="/brics">
+      <Brics/>
+      </Route>
+      <Route path="/industrial">
+      <Industrials/>
+      </Route>
       
-                                  {/*Post category End*/}
+      <Route path="/industry">
+      <IndustryMachinerys/>
+      </Route>
+      <Route path="/licenses">
+      <Licenses/>
+      </Route>
+      <Route path="/otherBusiness">
+      <OtherBusiness/>
+      </Route>
+      <Route path="/safety">
+      <Safetys/>
+      </Route>
+      <Route path="/Sanitary">
+      <Sanitarys/>
+      </Route>
+      <Route path="/stationary">
+      <Stationarys/>
+      </Route>
+       {/* Business category End &  */}
 
+        {/* Computer category Start &  */}
+        <Route path="/desktop">
+          <Desktops/>
+        </Route>
+        <Route path="/l&da">
+          <LaptopDesktopAccessories/>
+        </Route>
+        <Route path="/laptop">
+          <Laptops/>
+        </Route>
+        <Route path="/networkingA">
+          <NetWorkingAccessories/>
+        </Route>
+        <Route path="/pp">
+      <PhotocopiersPrinters/>
+        </Route>
+         {/* Computer category End &  */}
+         {/* Daily category Start &  */}
+         <Route path="/babyproduct">
+      <BabyProducts/>
+        </Route>
+        <Route path="/f&v">
+      <FrutisAndVegetables/>
+        </Route>
+        <Route path="/grocery">
+      <Grocerys/>
+        </Route>
+        <Route path="/healthcare">
+      <HealthAndCares/>
+        </Route>
+        <Route path="/household">
+      <HouseHolds/>
+        </Route>
+        <Route path="/kitchenaccessories">
+      <KitchenAccessories/>
+        </Route>
+        <Route path="/readyFood">
+      <ReadyFoods/>
+        </Route>
+        <Route path="/m&f">
+      <MeatSeaFoods/>
+        </Route>
+         {/* Daily category End &  */}
+         {/* Electronics category Start &  */}
+         <Route path="/ac">
+           <ACs/>
+         </Route>
+         <Route path="/audio">
+           <AudioSoundSytems/>
+         </Route>
+         <Route path="/camerasAccessories">
+           <CameraAccessories/>
+         </Route>
+         <Route path="/cameras">
+           <Cameras/>
+         </Route>
+         <Route path="/fan">
+           <FanAndHeaters/>
+         </Route>
+         <Route path="/ackitchen">
+           <KitchenElectronics/>
+         </Route>
+         <Route path="/otherElectronics">
+           <OtherElectronics/>
+         </Route>
+         <Route path="/refeigerators">
+           <Refrigerators/>
+         </Route>
+         <Route path="/televisions">
+           <Televisions/>
+         </Route>
+         <Route path="/toys">
+           <Toys/>
+         </Route>
+         <Route path="/toysAccessories">
+           <ToysAccessories/>
+         </Route>
+         <Route path="/water">
+           <WaterPurifierAndAccessories/>
+         </Route>
+         {/* Electronics category End &  */}
+              {/* Furniture category Start &  */}
+              <Route path="/childrens">
+              <ChildrensFurnitures/>
+              </Route>
+              <Route path="/kitchenRoom">
+              <KitchenAndDinigRooms/>
+              </Route>
+              <Route path="/living">
+              <LivingRoomFunitures/>
+              </Route>
+              <Route path="/officeShop">
+              <OfficeAndShops/>
+              </Route>
+              <Route path="/othersFurniture">
+              <OthersFurnitures/>
+              </Route>
+              
+                   {/* Furniture category End &  */}
+                   {/* Medicine category start &  */}
+                   <Route path="/generalmedicine">
+                   <GeneralMedicines/>
+                   </Route>
+                   <Route path="/homeiomedicine">
+                   <HomeioMedicines/>
+                   </Route>
+                   <Route path="/harbealmedicine">
+                   <HerbalMedicines/>
+                   </Route>
+                   {/* Medicine category End &  */}
+                   {/* Mobile Tablates category start &  */}
+                   <Route path="/mobilephone">
+                   <MobilePhones/>
+                   </Route>
+                   <Route path="/tablets">
+                   <Tablets/>
+                   </Route>
+                   <Route path="/mobiletablets">
+                   <MobileAndTabletsAccessories/>
+                   </Route>
+                   
+                   {/* Mobile Tablates category End &  */}
+                    {/* Pets and aminal Tablates category start &  */}
+                    <Route path="/farmanimal">
+                    <FarmAnimals/>
+                    </Route>
+                    <Route path="/otherpetAnimal">
+                    <OtherPetAnimals/>
+                    </Route>
+                    <Route path="/petsandanimalaccessories">
+                    <PetAndAnimals/>
+                    </Route>
+                    <Route path="/pets">
+                    <Pets/>
+                    </Route>
+                    <Route path="/petanimalfood">
+                    <PetAnimalFoods/>
+                    </Route>
+                     {/* Pets and aminal Tablates category End &  */}
+                      {/* Property   category Start &  */}
+
+                      <Route path="/apartmentflats">
+                      <ApartmnetAndFlats/>
+                      </Route>
+                      <Route path="/commercialproperty">
+                      <CommercialPropertys/>
+                      </Route>
+                      <Route path="/houses">
+                      <Houses/>
+                      </Route>
+                      <Route path="/othersproperty">
+                      <OthersPropertys/>
+                      </Route>
+                      <Route path="/plotsland">
+                      <PlotsAndLands/>
+                      </Route>
+                      <Route path="/tolet">
+                      <ToLets/>
+                      </Route>
+                       {/* Peoperty  category End &  */}
+                         {/* BuySomething category Start &  */}
+                         <Route path="/buysomething">
+                         <BuySomethings/>
+                         </Route>
+                           {/* BuySomething  category End &  */}
+                              {/* Job Post category Start &  */}
+                         <Route path="/jobpost">
+                         <JobPosts/>
+                         </Route>
+                           {/* Job Post  category End &  */}
+                            {/* Service Post category Start &  */}
+                         <Route path="/businesstechnical">
+                         <BusinessAndTechnicals/>
+                         </Route>
+                         <Route path="/carbusrent">
+                         <CarBusAndTrucks/>
+                         </Route>
+                         <Route path="/coursechoacing">
+                         <CoursesAndCoachingCenters/>
+                         </Route>
+                         <Route path="/eventshospitality">
+                         <EventsandHospitallys/>
+                         </Route>
+                         <Route path="/householdservice">
+                         <HouseHoldServices/>
+                         </Route>
+                         <Route path="/interiordesign">
+                         <InteriorDesigns/>
+                         </Route>
+                         <Route path="/laptopdesktopservicing">
+                         <LaptopsAndDesktopServicings/>
+                         </Route>
+                         <Route path="/mobilephoneservicing">
+                         <MobilePhoneServiceings/>
+                         </Route>
+                         <Route path="/readyfoodsupllie">
+                         <ReadyFoodSupplies/>
+                         </Route>
+                         <Route path="/tution">
+                         <Tuitions/>
+                         </Route>
+                         <Route path="/vehiclesservicing">
+                         <VehiclesServicings/>
+                         </Route>
+                         <Route path="/visatravel">
+                         <VisaTravels/>
+                         </Route>
+                           {/* Service Post  category End &  */}
+
+                           {/*  Sport  category End &  */}
+                           <Route path="/fitnessgym">
+                           <FitnessAndGyms/>
+                           </Route>
+                           <Route path="/musicalinstruments">
+                           <MusicalInstruments/>
+                           </Route>
+                           <Route path="/musicbookmovies">
+                           <MusicBookAndMovies/>
+                           </Route>
+                           <Route path="/othersporthobbies">
+                           <OthersSportsAndHobbies/>
+                           </Route>
+                           <Route path="/sports">
+                           <Sport/>
+                           </Route>
+                           {/* Sport Post  category End &  */}
+
+                           {/* Vehicles  category End &  */}
+                           <Route path="/autooilsfuilds">
+                           <AutoOilsAndFluids/>
+                           </Route>
+                           <Route path="/autoparts">
+                           <AutoParts/>
+                           </Route>
+                           <Route path="/bicycles">
+                           <Bicycles/>
+                           </Route>
+                           <Route path="/bustruckpickup">
+                           <BusTruckAndPickup/>
+                           </Route>
+                           <Route path="/carjeepaccessories">
+                           <CarAndJeepAccessories/>
+                           </Route>
+                           <Route path="/carsjeep">
+                           <CarAndJepps/>
+                           </Route>
+                           <Route path="/motorbikesaccessories">
+                           <MotorbikesAndScooterAccessories/>
+                           </Route>
+                           <Route path="/motorbikescoter">
+                           <MotorBikesAndScoters/>
+                           </Route>
+                           <Route path="/othervehicles">
+                           <OhersVehicles/>
+                           </Route>
+                           <Route path="/threewheelers">
+                           <ThreeWheelers/>
+                           </Route>
+                           <Route path="/tracktorheavyduty">
+                           <TractorsAndHeavyDuty/>
+                           </Route>
+                           <Route path="/watertransports">
+                           <WaterTransports/>
+                           </Route>
+                           {/* Vehicles   category End &  */}
+
+                           {/* Search  By Place category start*/}
+
+                           {/*  Barishale Division category start*/}
+
+                           <Route path="/barishal">
+                           <Barishal/>
+                           </Route>
+                           <Route path="/bhola">
+                           <Bhola/>
+                           </Route>
+                           <Route path="/barguna">
+                           <Burguna/>
+                           </Route>
+                           <Route path="/Jhalokati">
+                           <Jhalokati/>
+                           </Route>
+                           <Route path="/patuakhali">
+                           <Patuakhali/>
+                           </Route>
+                           <Route path="/pirojpur">
+                           <Pirojpur/>
+                           </Route>
+                            {/*  Barishale Division category End*/}
+
+                            {/*  Chattogram Division category Start*/}
+
+                            <Route path="/bandarban">
+                           <Bandarban/>
+                           </Route>
+                           <Route path="/brahmanbaria">
+                           <Brahmanbaria/>
+                           </Route>
+                           <Route path="/chandpur">
+                           <Chandpur/>
+                           </Route>
+                           <Route path="/chattogram">
+                           <Chattogram/>
+                           </Route>
+                           <Route path="/coxbazar">
+                           <CoxBazar/>
+                           </Route>
+                           <Route path="/cumilla">
+                           <Cumilla/>
+                           </Route>
+                           <Route path="/feni">
+                           <Feni/>
+                           </Route>
+                           <Route path="/khangrachari">
+                           <Khangrachari/>
+                           </Route>
+                           <Route path="/lakshmipur">
+                           <Lakshmipur/>
+                           </Route>
+                           <Route path="/rangamati">
+                           <Rangamati/>
+                           </Route>
+                            {/*  Chattogram Division category End*/}
+                              {/*  Dhaka Division category Start*/}
+                                <Route path="/dhaka">
+                                <Dhaka/>
+                                </Route>
+                                <Route path="/faridpur">
+                                <Faridpur/>
+                                </Route>
+                                <Route path="/gazipur">
+                                <Gazipur/>
+                                </Route>
+                                <Route path="/kishorgang">
+                                <KishorGanj/>
+                                </Route>
+                                <Route path="/madaripur">
+                                <Madaripur/>
+                                </Route>
+                                <Route path="/manikganj">
+                                <Manikganj/>
+                                </Route>
+                                <Route path="/munshiganj">
+                                <Munshiganj/>
+                                </Route>
+                                <Route path="/narasingdi">
+                                <Narasingdi/>
+                                </Route>
+                                <Route path="/naryanganj">
+                                <Naryanganj/>
+                                </Route>
+                                <Route path="/rajbari">
+                                <Rajbari/>
+                                </Route>
+                                <Route path="/shariatpur">
+                                <Shariatpur/>
+                                </Route>
+                                <Route path="/tangail">
+                                <Tangail/>
+                                </Route>
+                              {/*Dhaka Division category End*/}
+                                 {/*Khulna Division category Start*/}
+                                    <Route path="/bagerhat">
+                                    <Bagerhat/>
+                                    </Route>
+                                    <Route path="/chuadanga">
+                                    <Chuadanga/>
+                                    </Route>
+                                    <Route path="/jessore">
+                                    <Jessore/>
+                                    </Route>
+                                    <Route path="/khulna">
+                                    <Khulna/>
+                                    </Route>
+                                    <Route path="/magura">
+                                    <Magura/>
+                                    </Route>
+                                    <Route path="/meherpur">
+                                    <Meherpur/>
+                                    </Route>
+                                    <Route path="/narail">
+                                    <Narail/>
+                                    </Route>
+                                    <Route path="/satkhira">
+                                    <Satkhira/>
+                                    </Route>
+                                  {/*Khulna Division category End*/}
+
+                                   {/*Mymensigh Division category Start*/}
+                                   <Route path="/jamalpur">
+                                   <Jamalpur/>
+                                   </Route>
+                                   <Route path="/mymensingh">
+                                   <Mymensingh/>
+                                   </Route>
+                                   <Route path="/netrokona">
+                                   <Netrokona/>
+                                   </Route>
+                                   <Route path="/sherpur">
+                                   <Sherpur/>
+                                   </Route>
+                                   <Route path="/bogura">
+                                   <Bogura/>
+                                   </Route>
+                                   <Route path="/chapainawabganj">
+                                   <Chapainawabganj/>
+                                   </Route>
+                                   <Route path="/joypurhat">
+                                   <Joypurhat/>
+                                   </Route>
+                                   <Route path="/naogaon">
+                                   <Naogaon/>
+                                   </Route>
+                                   <Route path="/natore">
+                                   <Natore/>
+                                   </Route>
+                                   <Route path="/pabna">
+                                   <Pabna/>
+                                   </Route>
+                                   <Route path="/rajshahi">
+                                   <Rajshahi/>
+                                   </Route>
+                                   <Route path="/sirajganj">
+                                   <Sirajganj/>
+                                   </Route>
+                                    {/*ramgpur Division category start*/}
+                                    <Route path="/dinajpur">
+                                    <Dinajpur/>
+                                    </Route>
+                                    <Route path="/gaibandha">
+                                    <Gaibandha/>
+                                    </Route>
+
+                                    <Route path="/kurigram">
+                                    <Kurigram/>
+                                    </Route>
+                                    <Route path="/lalmonirhat">
+                                    <Lalmonirhat/>
+                                    </Route>
+
+                                    <Route path="/nilphamari">
+                                    <Nilphamari/>
+                                    </Route>
+                                    
+                                    <Route path="/panchagarh">
+                                    <Panchagarh/>
+                                    </Route>
+                                    <Route path="/rangpur">
+                                    <Rangpur/>
+                                    </Route>
+                                    <Route path="/thakurgaon">
+                                    <Thakurgaon/>
+                                    </Route>
+                                     {/*Rangpur Division category End*/}
+                                        {/*Sylhet Division category start*/}
+                                        <Route path="/habiganj">
+                                        <Habiganj/>
+                                        </Route>
+                                        <Route path="/maulvibazar">
+                                        <MaulviBazar/>
+                                        </Route>
+                                        <Route path="/sunamganj">
+                                        <Sunamganj/>
+                                        </Route>
+                                        <Route path="/sylhet">
+                                        <Sylhet/>
+                                        </Route>
+                                       
+                                           {/*Sylhet Division category End*/}
+                                      {/*Mymensigh Division category End*/}
+                              {/* Search  By Place category End*/}
+                              {/* Post  category Start*/}
+                              <Route path="/sellProductPost">
+                              <SellProduct/>
+                              </Route>
+                              <Route path="/sellPetsPost">
+                              <SellPets/>
+                              </Route>
+                              <Route path="/sellAgriculturalPost">
+                              <SellAgricultural/>
+                              </Route>
+                              <Route path="/sellDailyPost">
+                              <SellDaily/>
+                              </Route>
+                              <Route path="/sellMedicinePost">
+                              <SellMedicine/>
+                              </Route>
+                              <Route path="/sellServicePost">
+                              <SellService/>
+                              </Route>
+                              <Route path="/PostAJob">
+                              <PostJob/>
+                              </Route>
+                              <Route path="/buyPost">
+                              <BuyPost/>
+                              </Route>
+                              <Route path="/mobilePost">
+                              <MobileTabletsPost/>
+                              </Route>\
+                              <Route path="/computerLaptopsPost">
+                              <ComputerLaptopsPost/>
+                              </Route>
+                              <Route path="/electronicsPost">
+                              <ElectronicsPost/>
+                              </Route>
+                              <Route path="/vehiclesPost">
+                              <VehiclesPost/>
+                              </Route>
+                              <Route path="/propertyPost">
+                              <VehiclesPost/>
+                              </Route>
+                              <Route path="/furniturePost">
+                              <FurniturePost/>
+                              </Route>
+                              <Route path="/fashionsPost">
+                              <FashionsPost/>
+                              </Route>
+                              <Route path="/sportsHobbiesPost">
+                              <SportsHobbiesPost/>
+                              </Route>
+                              <Route path="/businessIndustrialPost">
+                              <BusinessIndustrialPost/>
+                              </Route>
+                              <Route path="/posForm">
+                              <PostForm/>
+                              </Route>
+  
+                              {/*Post category End*/}
+                               {/*user PRofile  start*/}
+                               <Route path="/user">
+                               <UserProfile/>
+                               </Route>
+                                {/*user Profile End*/}
                               
-                                
-        <Route path="/contact">
-        <Contact/>
-        </Route>
-        <Route path="/chat">
-        <AllChat/>
-        </Route>  
-        <Redirect  to="/"/>
-      </Switch>
-      
-    </Router>
+                          
+                            
+    <Route path="/contact">
+    <Contact/>
+    </Route>
+    <Route path="/chat">
+    <AllChat/>
+    </Route>  
+    <Redirect  to="/"/>
+  </Switch>
+  
+</Router>
+  </userContext.Provider>
   );
 }
 

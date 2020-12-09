@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import {Grid, Container, TextField, Button } from '@material-ui/core';
 import { useForm } from "react-hook-form";
 // import firebase from 'firebase/app';
@@ -11,6 +11,7 @@ import {  NavBarSub } from '../../Home/NavBars/NavBars';
 import Modal from 'react-modal';
 import { ForgatePassword } from '../ForgatePassWord/ForgatePassword';
 import { useHistory } from 'react-router-dom';
+import { userContext } from '../../../App';
 
 
 
@@ -18,36 +19,48 @@ import { useHistory } from 'react-router-dom';
 
 
 export const Login = () => {
-    const { register, handleSubmit,errors } = useForm();
+    const { register, handleSubmit,errors} = useForm();
     const [signUp,setSignUp]=useState(false)
     const [visiableIcon,setVisiableIcon]=useState(false);
     const [forgate,setForgate]=useState(false)
     const [modalIsOpen,setIsOpen] = useState(false);
     const [otp,setOtp] = useState(false);
     const[user,setUser]=useState({});
-    console.log(user)
     const history=useHistory()
+    const [loginUser,setLoginUser,userName,setUserName]=useContext(userContext)
 
-    
+console.log(user)
+    // console.log( "Hello",loginUser )
 
 const onSubmit = data =>{
-    fetch('https://cors-anywhere.herokuapp.com/https://sellinbd.com/api330088/registration/loginwithNewPassword.php?number='+data.number +'&password='+data.password,{
-      
-    headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        }
+    const formData = new FormData();
+    formData.append('usernumber', data.usernumber);
+    formData.append('password',data.password);
+    fetch('https://cors-anywhere.herokuapp.com/http://sellinbd.com/api330088/registration/loginNew.php',{
+    method: 'POST',
+    body:formData
     })
-        .then(response => response.json())
-        .then(dataUser => {
-          setUser(dataUser)
-          if(dataUser.message=="i"){
+    .then(res=>{
+        if(res.status===200){
+            res.json()
+            .then(dataUser=>{
+          if(dataUser.message==="i"){
               console.log("invailed")
           }
-          else(
-              console.log("ok")
-          )
+          if(dataUser.message==="f"){
+            history.replace("/login")
+        }
+        else{
+            history.push('/')
+        }
+        setUser(dataUser)
+        setUserName(dataUser)
+       
         })
+        }
+        setLoginUser(data)
+    })
+     
             
 }
 
@@ -93,13 +106,13 @@ const  openModal=()=>    {
         <form onSubmit={handleSubmit(onSubmit)}>
             <Grid container spacing={1}>
             <Grid  item xs={6}>
-            <TextField type="text" name="number" inputRef={register} required label="Phone Number"></TextField>
+            <TextField type="text" name="usernumber" inputRef={register({required: true, maxLength: 11,minLength: 11})} required  label="Phone Number"></TextField>
             </Grid> 
             </Grid>
 
             <Grid container spacing={1}>
             <Grid  item xs={6} className="pass">
-                 <TextField type={visiableIcon? "text" : "password"} name="password" inputRef={register} required label="Password" > </TextField>
+                 <TextField type={visiableIcon? "text" : "password"} name="password" inputRef={register({required: true,minLength: 6})} required label="Password" > </TextField>
                <div className="icon-eye">
                {visiableIcon?
                 <VisibilityIcon onClick={IconShow}/>:<VisibilityOffIcon onClick={ShowPassword}/>

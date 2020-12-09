@@ -1,9 +1,14 @@
 import { Container } from '@material-ui/core';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import './category.scss';
 import { Link } from 'react-router-dom';
 import primimum from '../../../images/premiumAddBanner.png'
+import { LocationCity, LocationCityTwoTone, LocationDisabled, LocationOn } from '@material-ui/icons';
+import { userContext } from '../../../App';
+import TimeAgo from 'react-timeago'
+import frenchStrings from 'react-timeago/lib/language-strings/en'
+import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
 
 
 
@@ -124,16 +129,21 @@ export const Categorys = (props) => {
 
 
 export const Category = ({product}) => {
+    const [productD,setProducD,userName,setUserName,loginUser,setLoginUser]=useContext(userContext)
+    const formatter = buildFormatter(frenchStrings)
+
     return (
               
                <Col lg={5} xs={6} m-auto>
                      <Link to="/produtcDetails">
-                       <div className="category-items ">
+                       <div className="category-items " id={product.status==="PREMIUM"?"bgColor":null}>
                            <img src={product.image1} alt=""/>
-                            <p>{product.category}</p>
-                            <p>{product.item}</p>
-                            <p>{product.productprice}</p>
-                            <p>{product.place}</p>
+                            <p style={{color:'#3F9DFF'}}><strong>{product.productname}</strong></p>
+                            <p><strong> BDT. {product.productprice}</strong></p>
+                            <p><LocationOn/>{product.place}</p>
+                            {
+                                product.status==="PREMIUM"?null: <p><TimeAgo date={product.date} formatter={formatter} /></p>
+                            }
                            <div className="premium"> 
                                {
                                 product.status==="PREMIUM"? <img src={primimum} alt=""/>:null
