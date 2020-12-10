@@ -103,15 +103,17 @@ const  openModal=()=>    {
    <Container className="login">  
    
         <h2>Log in to manage your account</h2>
+        <Grid container spacing={1}>
+        <Grid  item xs={12} md={6} className="m-auto">
         <form onSubmit={handleSubmit(onSubmit)}>
             <Grid container spacing={1}>
-            <Grid  item xs={6}>
+            <Grid  item xs={12}>
             <TextField type="text" name="usernumber" inputRef={register({required: true, maxLength: 11,minLength: 11})} required  label="Phone Number"></TextField>
             </Grid> 
             </Grid>
 
             <Grid container spacing={1}>
-            <Grid  item xs={6} className="pass">
+            <Grid  item xs={12} className="pass">
                  <TextField type={visiableIcon? "text" : "password"} name="password" inputRef={register({required: true,minLength: 6})} required label="Password" > </TextField>
                <div className="icon-eye">
                {visiableIcon?
@@ -121,15 +123,17 @@ const  openModal=()=>    {
             </Grid>
             </Grid>
             <Grid container spacing={1}>
-            <Grid item xs={4}>
-            <TextField type="submit" value="Login" className="submit-btn"/>
+            <Grid item xs={12} md={6} className="m-auto">
+            <input type="submit" value="Login" className="submit-btn"/>
              
             </Grid>
             
         </Grid>
        
         </form>
-            <p onClick={openModal}>Forgate Password?</p>
+        </Grid>
+        </Grid>
+            <p onClick={openModal} className="fogatetext">Forgate Password?</p>
             
             <Modal
                 isOpen={modalIsOpen}
@@ -151,7 +155,7 @@ const  openModal=()=>    {
         
       
                 <Grid container spacing={1}>
-            <Grid item xs={4} className="reg">
+            <Grid item xs={12} className="reg">
             <p className="noAccount">Don't have an account?</p>
             <Button type="submit" value="Reregistration" className="btn" onClick={handleSignUp}> Reregistration</Button>
          </Grid>

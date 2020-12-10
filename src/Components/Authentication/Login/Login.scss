@@ -4,30 +4,32 @@
     text-align: center;
     h2{
         margin-top: 50px;
-        margin-bottom: 100px;
+        margin-bottom: 80px;
+        color: #3F9DFF ;
     
     }
     
     form{
-        margin-left: 400px;
+        
+     
         .MuiFormControl-root{
             width:100% ;
             
         }
 
         .submit-btn {
-            .MuiInput-underline:before {
-                border-bottom:0;
-            }
-            input{
-            background:#fff;
-            color:#707070;
+           
+            background:#3F9DFF;
+            color:#fff;
             margin-top: 10px;
             margin-left: 60px;
             border-radius:15px;
+            outline: none;
+            border: none;
+            padding: 5px 90px;
         }
         
-    }
+    
     .pass{
         position: relative;
     }
@@ -36,23 +38,37 @@
         right: 20px;
         top:20px;
     }
-    p{
+  
      
+   
+    
+  
+}
+}
+.reg{
     .noAccount{
-        border-top: 1px solid rgba(128, 128, 128, 0.452);
-        margin-left: 0;
-       padding: 10px;
-    }
+       
+       text-align: center;
+       color:#707070;
+       margin-left: 40px;
     }
     .btn{
         
-           margin-top: 10px;
-            margin-left: 60px;
-            border-radius:15px;
-          
+        margin-top: 10px;
+        padding: 5px 40px;
+         border-radius:15px;
+         background: #3F9DFF;
+         border: 1px solid #3F9DFF;
+         color: #fff;
+         margin-left: 40px;
+         &:hover{
+             background:transparent;
+           
+             color: #3F9DFF;
+         }
+       
+   }
         }
-    }
-}
 .ReactModal__Content--after-open{
     width: 500px !important;
     margin-left: 50% !important; 
@@ -84,5 +100,24 @@
         position: absolute;
         bottom: 50%;
         right: 40px;
+ 
     }
+    
+}
+.fogatetext{
+    color: #3F9DFF ;
+    margin-top: 20px;
+}
+
+@media (max-width: 468px){
+
+        .reg .noAccount{  
+           margin-left: 0px;
+           margin-right: 0px;
+        }
+        .reg .btn{
+            
+             margin-left: 0px;
+             margin-right: 0px;
+            }
 }

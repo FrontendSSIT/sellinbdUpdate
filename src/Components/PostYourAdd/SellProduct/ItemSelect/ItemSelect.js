@@ -33,7 +33,6 @@ export const MobileTabletsPost = () => {
 export const ComputerLaptopsPost = () => {
     return (
         <section>
-     
         <Container>
         <NavBarSub/>
         <div className="postLogo"><img src={logo} alt="" /></div>

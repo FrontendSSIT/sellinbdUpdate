@@ -4,11 +4,12 @@ import { Col, Row } from 'react-bootstrap';
 import './category.scss';
 import { Link } from 'react-router-dom';
 import primimum from '../../../images/premiumAddBanner.png'
-import { LocationCity, LocationCityTwoTone, LocationDisabled, LocationOn } from '@material-ui/icons';
+import {  LocationOn, } from '@material-ui/icons';
 import { userContext } from '../../../App';
 import TimeAgo from 'react-timeago'
 import frenchStrings from 'react-timeago/lib/language-strings/en'
 import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
+
 
 
 
@@ -144,7 +145,7 @@ export const Category = ({product}) => {
                             {
                                 product.status==="PREMIUM"?null: <p><TimeAgo date={product.date} formatter={formatter} /></p>
                             }
-                           <div className="premium"> 
+                           <div className={product.status==="PREMIUM"?"premium":null}> 
                                {
                                 product.status==="PREMIUM"? <img src={primimum} alt=""/>:null
                             }

@@ -5,7 +5,7 @@ import FormControl from 'react-bootstrap/FormControl';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container } from '@material-ui/core';
+import { Avatar, Container } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import {SearchOutlined} from '@material-ui/icons';
 import './NavBars.scss'
@@ -63,6 +63,10 @@ export const NavBars = ({handleSearchBox,clickSearch,handleSearchClick,setSearch
         </Nav.Link>
       <Nav.Link >
         <Link to="/chat">Chat</Link>
+      </Nav.Link>
+      <Avatar/>
+      <Nav.Link >
+      <Link to="/user"> Account</Link>
       </Nav.Link>
     
     </Nav>

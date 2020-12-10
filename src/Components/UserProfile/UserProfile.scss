@@ -1,3 +1,73 @@
 .userSection{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .profileBoder{
+        border: 1px solid  #707070;
+        padding: 20px;
+        border-radius:10px;
+        .profilePicture{
+             border: 1px solid #707070;
+             border-radius: 50%;
+             text-align:center; 
+             align-items: center;
+             width: 200px;
+             height: 200px;
+     
+            img{
+                border-radius: 50%;
+                width:150px;
+                height: 150px;
+                margin-top: 50%;
+                transform: translate(-50%,-50%);
+                margin-left: 50%;
+            }
+        }
+       
+    }
+    input[type="submit"]{
+        background: #3F9DFF;
+        color: #fff;
+        border: none;outline: none;
+        margin-top: 20px;
+        border-radius:10px;
+        padding: 5px 10px;
+        margin-bottom: 20px;
+    }
+    .fqaProfile{
+        border: 1px solid  #707070;
+        border-radius:10px;
+        margin-top: 10px;
+        h4{
+            padding: 10px;
+            border-bottom: 1px solid #707070;
+            color: #707070;
+            .MuiSvgIcon-root{
+                margin-right: 5px;
+                font-size: 30px;
+            }
+        }
+        h4:last-child{
+            border: none;
+        }
+        h2{
+            padding: 10px;
+        }
+    }
+}
+
+@media (max-width: 468px) {
+    .profilePicture {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    .profilePicture img{
+   width: 50px !important;
+   height:50px !important;
+   margin-top: 50% !important;
+   transform: translate(-50%,-50%) !important;
+   margin-left: 50% !important;
+   border-radius: 50% !important;
+    }
+    
     
 }

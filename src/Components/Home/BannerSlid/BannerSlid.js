@@ -12,6 +12,7 @@ import Carousel from 'react-bootstrap/Carousel'
 import { Col, Row,Container} from 'react-bootstrap';
 import './BannerSlid.scss'
 import ads from '../../../images/sliderAd.png'
+import { Link } from 'react-router-dom';
 
 
 export const BannerSlid = () => {
@@ -120,9 +121,9 @@ export const Sliderss=()=>{
     return(
     
      
-        <Slider {...settings}>
-        <BannerSlid/>
-        </Slider>
+      <Link to='/hi'>  <Slider {...settings}>
+      <BannerSlid/>
+        </Slider></Link>
        
     )
 }

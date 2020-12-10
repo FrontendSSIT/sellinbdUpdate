@@ -180,6 +180,7 @@ import { BuyPost, PostJob, SellAgricultural, SellDaily, SellMedicine, SellPets, 
 import { BusinessIndustrialPost, MobileTabletsPost, SportsHobbiesPost,FashionsPost, FurniturePost, VehiclesPost, ElectronicsPost,ComputerLaptopsPost } from './Components/PostYourAdd/SellProduct/ItemSelect/ItemSelect';
 import { PostForm } from './Components/PostYourAdd/PostCategory/PostForm/PostForm';
 import { UserProfile } from './Components/UserProfile/UserProfile';
+import { PrivateRoute } from './Components/Authentication/PrivateRoute/PrivateRoute';
 
 
 
@@ -212,9 +213,9 @@ function App() {
     <Route path="/catNav">
     <CategoryNav/>
     </Route>
-    <Route path="/postAdd">
+    <PrivateRoute path="/postAdd">
     <PostYourAdd/>
-    </Route>
+    </PrivateRoute>
     <Route  path="/signleCategory">
     <SignleCategorys/>
     </Route>
@@ -815,7 +816,6 @@ function App() {
                               <Route path="/posForm">
                               <PostForm/>
                               </Route>
-  
                               {/*Post category End*/}
                                {/*user PRofile  start*/}
                                <Route path="/user">
