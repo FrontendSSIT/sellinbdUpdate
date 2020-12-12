@@ -5,96 +5,22 @@ import { Link } from 'react-router-dom'
 import {  NavBarSub } from '../NavBars/NavBars'
 
 export const Location = () => {
-    const [mymensingh,setMymensingh]=useState()
-  const [rangpur,setRangpur]=useState()
-  const [khulna,setKhulna]=useState()
-  const [dhaka,setDhaka]=useState()
-  const [barishal,setBarishal]=useState()
-  const [rajshahi,setRajshahi]=useState()
-  const [sylhet,setSylhet]=useState()
-  const [chattogram,setChattogram]=useState()
+    const [mymensingh,setMymensingh]=useState(false)
+  const [rangpur,setRangpur]=useState(false)
+  const [khulna,setKhulna]=useState(false)
+  const [dhaka,setDhaka]=useState(false)
+  const [barishal,setBarishal]=useState(false)
+  const [rajshahi,setRajshahi]=useState(false)
+  const [sylhet,setSylhet]=useState(false)
+  const [chattogram,setChattogram]=useState(false)
 
-
-  const handleMymensingh=()=>{
-      setMymensingh(true)
-      setBarishal(false)
-      setChattogram(false)
-      setKhulna(false)
-      setDhaka(false)
-      setRangpur(false)
-      setRajshahi(false)
-      setSylhet(false)
-  }
-  const handleRangpur=()=>{
-    setMymensingh(false)
-    setBarishal(false)
-    setChattogram(false)
-    setKhulna(false)
-    setDhaka(false)
-    setRangpur(true)
-    setRajshahi(false)
-    setSylhet(false)
-} 
-const handleKhulna=()=>{
-    setMymensingh(false)
-    setBarishal(false)
-    setChattogram(false)
-    setKhulna(true)
-    setDhaka(false)
-    setRangpur(false)
-    setRajshahi(false)
-    setSylhet(false)
-}
-const handleDhaka=()=>{
-    setMymensingh(false)
-    setBarishal(false)
-    setChattogram(false)
-    setKhulna(false)
-    setDhaka(true)
-    setRangpur(false)
-    setRajshahi(false)
-    setSylhet(false)
-}
-const handleBarishal=()=>{
-    setMymensingh(false)
-    setBarishal(true)
-    setChattogram(false)
-    setKhulna(false)
-    setDhaka(false)
-    setRangpur(false)
-    setRajshahi(false)
-    setSylhet(false)
-}
-const handleRajshahi=()=>{
-    setMymensingh(false)
-    setBarishal(false)
-    setChattogram(false)
-    setKhulna(false)
-    setDhaka(false)
-    setRangpur(false)
-    setRajshahi(true)
-    setSylhet(false)
-}
-const handleSylhet=()=>{
-    setMymensingh(false)
-    setBarishal(false)
-    setChattogram(false)
-    setKhulna(false)
-    setDhaka(false)
-    setRangpur(false)
-    setRajshahi(false)
-    setSylhet(true)
-}
-const handleChattogram=()=>{
-    setMymensingh(false)
-    setBarishal(false)
-    setChattogram(true)
-    setKhulna(false)
-    setDhaka(false)
-    setRangpur(false)
-    setRajshahi(false)
-    setSylhet(false)
-}
+  const [locationValue,setLocationValue]=useState('')
+  const handleCategoryLoc=(e)=>{
+    const data=e.target.innerText;
+    setLocationValue(data)
+    localStorage.setItem('Location',data)
+  } 
+  
     return (
         <section>
         <NavBarSub/>
@@ -103,118 +29,118 @@ const handleChattogram=()=>{
           <Row className="justify-content-center">
             <Col lg={6}>
              <ul>
-  <li onClick={handleMymensingh}>{mymensingh?<ArrowUpward/>:<ArrowDownward/>  } Mymensingh Division
+  <li onClick={()=>setMymensingh(!mymensingh)}>{mymensingh?<ArrowUpward/>:<ArrowDownward/>  } Mymensingh Division
                {mymensingh?
                 <ul>
-                  <li><Link to="/mymensingh">Mymensingh</Link></li>
-                  <li><Link to="/jamalpur">jamalpur</Link></li>
-                  <li><Link to="/sherpur">Sherpur</Link></li>
-                  <li><Link to="/netrokona">Netrokona</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Mymensingh</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>jamalpur</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Sherpur</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Netrokona</Link></li>
                 </ul>:null
 }
                </li>
-               <li onClick={handleRangpur}> {rangpur?<ArrowUpward/>:<ArrowDownward/>}Rangpur  Division
+               <li onClick={()=>setRangpur(!rangpur)}> {rangpur?<ArrowUpward/>:<ArrowDownward/>}Rangpur  Division
                {rangpur?
                 <ul>
-                  <li><Link to="/rangpur">Rangpur</Link></li>
-                  <li><Link to="/dinajpur">dibajpur</Link></li>
-                  <li><Link to="/kurigram"> Kurigram</Link></li>
-                  <li><Link to="/nilphamari">Nilphamari</Link></li>
-                  <li><Link to="/lalmonirhat">Lalmonirhat</Link></li>
-                  <li><Link to="/gaibandha"> Gaibandha</Link></li>
-                  <li><Link to="/thakurgaon">Thakurgaon</Link></li>
-                  <li><Link to="/panchagarh">Panchagarh</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Rangpur</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>dibajpur</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}> Kurigram</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Nilphamari</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Lalmonirhat</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}> Gaibandha</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Thakurgaon</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Panchagarh</Link></li>
                 </ul>:null
 }
        </li>
-               <li onClick={handleKhulna}>{khulna?<ArrowUpward/>:<ArrowDownward/>}Khulna Division
+               <li onClick={()=>setKhulna(!khulna)}>{khulna?<ArrowUpward/>:<ArrowDownward/>}Khulna Division
                
                {khulna?
                 <ul>
-                  <li><Link to="/khulna">Khulna</Link></li>
-                  <li><Link to="/jessore">Jessore</Link></li>
-                  <li><Link to="/khustia">Khustia</Link></li>
-                  <li><Link to="/jhenaidha">jhenaidha</Link></li>
-                  <li><Link to="/satkhira">Satkhira</Link></li>
-                  <li><Link to="/bagerhat">Bagerhat</Link></li>
-                  <li><Link to="/chuadanga">Chuadanga</Link></li>
-                  <li><Link to="/magura">Magura</Link></li>
-                  <li><Link to="/narail">Narail</Link></li>
-                  <li><Link to="/meherpur">Meherpur</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Khulna</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Jessore</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Khustia</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>jhenaidha</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Satkhira</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Bagerhat</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Chuadanga</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Magura</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Narail</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Meherpur</Link></li>
                 </ul>:null
 }
                </li>
-               <li onClick={handleDhaka}>{dhaka?<ArrowUpward/>:<ArrowDownward/>}Dhaka Division
+               <li onClick={()=>setDhaka(!dhaka)}>{dhaka?<ArrowUpward/>:<ArrowDownward/>}Dhaka Division
 
                 {dhaka?
                 <ul>
-                  <li><Link to="/dhaka">Dhaka</Link></li>
-                  <li><Link to="/naryanganj">Naryangaj</Link></li>
-                  <li><Link to="/gazipur">Gazipur</Link></li>
-                  <li><Link to="/tangail">Tangail</Link></li>
-                  <li><Link to="/narasingdi">Narasingdi</Link></li>
-                  <li><Link to="/faridpur">Faridpur</Link></li>
-                  <li><Link to="/kishorgang">Kishorganj</Link></li>
-                  <li><Link to="/manikganj">Manikganj</Link></li>
-                  <li><Link to="/madaripur">madaripur</Link></li>
-                  <li><Link to="/munshiganj">Munshiuuganj</Link></li>
-                  <li><Link to="/rajbari">Rajbari</Link></li>
-                  <li><Link to="/shariatpur">Shariatpur</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Dhaka</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Naryangaj</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Gazipur</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Tangail</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Narasingdi</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Faridpur</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Kishorganj</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Manikganj</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>madaripur</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Munshiuuganj</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Rajbari</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Shariatpur</Link></li>
                 </ul>:null
 }
                </li>
-               <li onClick={handleBarishal}>{barishal?<ArrowUpward/>:<ArrowDownward/>}Barishal Division
+               <li onClick={()=>setBarishal(!barishal)}>{barishal?<ArrowUpward/>:<ArrowDownward/>}Barishal Division
                {barishal?
                 <ul>
-                  <li><Link to="/barishal">Barishal</Link></li>
-                  <li><Link to="/patuakhali">Patuakhali</Link></li> 
-                  <li><Link to="/bhola">Bhola</Link></li>
-                  <li><Link to="/jhalokati">Jhalokati</Link></li>
-                  <li><Link to="/pirojpur">Pirojpur</Link></li>
-                  <li><Link to="/barguna">Burguna</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Barishal</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Patuakhali</Link></li> 
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Bhola</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Jhalokati</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Pirojpur</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Burguna</Link></li>
                 </ul>:null
 }               
                </li>
-               <li onClick={handleRajshahi}>{rajshahi?<ArrowUpward/>:<ArrowDownward/>}Rajshahi Division
+               <li onClick={()=>setRajshahi(!rajshahi)}>{rajshahi?<ArrowUpward/>:<ArrowDownward/>}Rajshahi Division
                {rajshahi?
                 <ul>
-                  <li><Link to="/rajshahi">Rajshahi</Link></li>
-                  <li><Link to="/bogura">Bogura</Link></li>
-                  <li><Link to="/pabna">Pabna</Link></li>
-                  <li><Link to="/natore">Natore</Link></li>
-                  <li><Link to="/sirajganj">Sirajganj</Link></li>
-                  <li><Link to="/naogaon">Naogaon</Link></li>
-                  <li><Link to="/chapainawabganj">Chapainawabganj</Link></li>
-                  <li><Link to="/joypurhat">Joypurhat</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Rajshahi</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Bogura</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Pabna</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Natore</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Sirajganj</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Naogaon</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Chapainawabganj</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Joypurhat</Link></li>
                  
                 </ul>:null
 }  
                </li>
-               <li onClick={handleSylhet}> {sylhet?<ArrowUpward/>:<ArrowDownward/>}Sylhet Sylhet
+               <li onClick={()=>setSylhet(!sylhet)}> {sylhet?<ArrowUpward/>:<ArrowDownward/>}Sylhet Sylhet
                {sylhet?
                 <ul>
-                  <li><Link to="/sylhet">Sylhet</Link></li>
-                  <li><Link to="/maulvibazar">Maulvi Bazar</Link></li>
-                  <li><Link to="/habiganj">Habiganj</Link></li>
-                  <li><Link to="/sunamganj">Sunamganj</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Sylhet</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Maulvi Bazar</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Habiganj</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Sunamganj</Link></li>
                 </ul>:null
 } 
                
                </li>
-               <li onClick={handleChattogram}>{chattogram?<ArrowUpward/>:<ArrowDownward/>}Chattogram Division
+               <li onClick={()=>setChattogram(!chattogram)}>{chattogram?<ArrowUpward/>:<ArrowDownward/>}Chattogram Division
                {chattogram?
                 <ul>
-                  <li><Link to="/chattogram">Chattogram</Link></li>
-                  <li><Link to="/cumilla">Cumilla</Link></li>
-                  <li><Link to="/brahmanbaria">Brahmanbaria</Link></li>
-                  <li><Link to="/feni">Feni</Link></li>
-                  <li><Link to="/noakhali">Noakhali</Link></li>
-                  <li><Link to="/chandpur">Chandpur</Link></li>
-                  <li><Link to="/coxbazar">Cox's Bazar</Link></li>
-                  <li><Link to="/lakshmipur">Lakshmipur</Link></li>
-                  <li><Link to="/bandarban">Bandarban</Link></li>
-                  <li><Link to="/autooilsfuilds">Khangrachari</Link></li>
-                  <li><Link to="/rangamati">Rangamati</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Chattogram</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Cumilla</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Brahmanbaria</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Feni</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Noakhali</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Chandpur</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Cox's Bazar</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Lakshmipur</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>BandonFocus={handleCategoryLoc}arban</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Khangrachari</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Rangamati</Link></li>
                 </ul>:null
 }  
                

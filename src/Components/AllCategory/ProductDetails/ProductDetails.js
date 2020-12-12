@@ -7,14 +7,14 @@ import carsole2 from '../../../images/blackCar.png';
 import carsole3 from '../../../images/BlueCar.png';
 import './ProductDetails.scss'
 import { Categorys } from '../Category/Category';
-import { NavBars } from '../../Home/NavBars/NavBars';
+import { NavBarSub } from '../../Home/NavBars/NavBars';
 import { Footer } from '../../Home/Footer/Footer';
 
 export const ProductDetails = () => {
     return (
         <section>
             <Container className="text-center pt-3">
-                <NavBars/>
+               <NavBarSub/>
                 <Row className="justify-content-center">
                     <Col lg={8} xs={12}>
                     <Carousel className="CarouselSlider">

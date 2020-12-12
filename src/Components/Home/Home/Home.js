@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {Categorys } from '../../AllCategory/Category/Category'
+import { Loaders } from '../../Loader/Loaders'
 import { AdPost } from '../AdPost/AdPost'
 import {  Sliderss } from '../BannerSlid/BannerSlid'
 import { Footer } from '../Footer/Footer'
@@ -12,6 +13,7 @@ export const Home = () => {
     const[clickSearch,setClickSearch]=useState('')
     const[searchValue,setSearchValue]=useState([])
     const[success,setSuccess]=useState(false)
+    const [loader,setLoader]=useState(false)
     const handleSearchBox=(e)=>{
         const data=e.target.value;
         setClickSearch(data)    
@@ -32,10 +34,15 @@ export const Home = () => {
             
         })
       }
+      useEffect(()=>{
+      setLoader(true)
+      },[])
     return (
-        <div >
+        <section>
 
-        {
+       {
+           loader?<div>
+           {
             searchValue.length>10 ? <SearchBox searchValue={searchValue} success={success}  handleSearchBox={handleSearchBox} handleSearchClick={handleSearchClick}  setSearchValue={setSearchValue}/>:
           <>
           <div className="headress">
@@ -49,6 +56,8 @@ export const Home = () => {
            <Footer/>
            </>
         }
-        </div>
+           </div>:<Loaders/>
+       }
+        </section>
     )
 }
