@@ -1,7 +1,8 @@
 import { ArrowDownward, ArrowUpward} from '@material-ui/icons';
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { userContext } from '../../../App';
 import { NavBarSub } from '../NavBars/NavBars';
 import './CategoryNav.scss'
 
@@ -24,7 +25,15 @@ export const CategoryNav = () => {
   const [daily,setDaily]=useState(false)
   const [property,setProperty]=useState(false)
 
-  
+  const [loginUser,setLoginUser,userName,setUserName,productD,setProductD]=useContext(userContext)
+   const [navValue,setNavValue]=useState('')
+ console.log(navValue)
+console.log(productD)
+  const handleCategoryNav=(e)=>{
+    const data=e.target.innerText;
+    setNavValue(data)
+    setProductD(data)
+  }
 
   // const handleFashons=()=>{
   //   setFashons(true)
@@ -325,15 +334,15 @@ export const CategoryNav = () => {
     <li onClick={()=>setFashons(!fashons) }>{fashons?<ArrowUpward/>:<ArrowDownward/>  }Fashons, Health and Beauty
                  {fashons?
                   <ul>
-                    <li><Link to="/mens">Mens Clothing and Accessories</Link></li>
-                    <li><Link to="/womens">Womens Clothing and Accessories</Link></li>
-                    <li><Link to="/jewelry">Jewelry</Link></li>
-                    <li><Link to="/optical">Optical</Link></li>
-                    <li><Link to="/watches">watches</Link></li>
-                    <li><Link to="/bags">Bags</Link></li>
-                    <li><Link to="/wholesale">Wholesale</Link></li>
-                    <li><Link to="/cosmetics">Cosmetics and Beauty</Link></li>
-                    <li><Link to="/other">Other Fashions and Beauty</Link></li>
+                    <li><Link to="/mens" onFocus={handleCategoryNav}>Mens Clothing and Accessories</Link></li>
+                    <li><Link to="/mens" onFocus={handleCategoryNav}>Womens Clothing and Accessories</Link></li>
+                    <li><Link to="/mens" onFocus={handleCategoryNav}>Jewelry</Link></li>
+                    <li><Link to="/mens" onFocus={handleCategoryNav}>Optical</Link></li>
+                    <li><Link to="/mens" onFocus={handleCategoryNav}>watches</Link></li>
+                    <li><Link to="/mens" onFocus={handleCategoryNav}>Bags</Link></li>
+                    <li><Link to="/mens" onFocus={handleCategoryNav}>Wholesale</Link></li>
+                    <li><Link to="/mens" onFocus={handleCategoryNav}>Cosmetics and Beauty</Link></li>
+                    <li><Link to="/mens" onFocus={handleCategoryNav}>Others Fashions and Beauty</Link></li>
                   </ul>:null
 }
                  </li>

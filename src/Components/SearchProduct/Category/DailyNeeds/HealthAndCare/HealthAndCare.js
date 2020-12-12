@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { NavBars } from '../../../../Home/NavBars/NavBars'
+import { AgriculturalTool } from '../../Agricultural/AgriculturalTools/AgriculturalTools'
 
 export const HealthAndCares = (props) => {
     const[products,setProducts]=useState([])
@@ -80,7 +81,7 @@ export const HealthAndCares = (props) => {
                 <Row className="justify-content-center" >
                
                 {
-                    products.map(product=><HealthAndCare product={product} success={success}/>)
+                    products.map(product=><AgriculturalTool product={product} success={success}/>)
                 }
                 </Row>
                 </Col>

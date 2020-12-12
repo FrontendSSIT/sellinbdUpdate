@@ -16,8 +16,6 @@ import {
   Redirect
 } from "react-router-dom";
 import { MensClothing } from './Components/SearchProduct/Category/Fashions/MensClothing/MensClothing';
-import {  WomensClothings } from './Components/SearchProduct/Category/Fashions/WomensClothing/WomensClothing';
-import { KindsClothing } from './Components/SearchProduct/Category/Fashions/KidsClothing/KidsClothing';
 import { Jewelrys } from './Components/SearchProduct/Category/Fashions/Jewelry/Jewelry';
 import { Opticals } from './Components/SearchProduct/Category/Fashions/Optical/Optical';
 import { OtherFashions } from './Components/SearchProduct/Category/Fashions/OthersFashions/OtherFashions';
@@ -181,6 +179,8 @@ import { BusinessIndustrialPost, MobileTabletsPost, SportsHobbiesPost,FashionsPo
 import { PostForm } from './Components/PostYourAdd/PostCategory/PostForm/PostForm';
 import { UserProfile } from './Components/UserProfile/UserProfile';
 import { PrivateRoute } from './Components/Authentication/PrivateRoute/PrivateRoute';
+import { KindsClothings } from './Components/SearchProduct/Category/Fashions/KidsClothing/KidsClothing';
+import { WomensClothings } from './Components/SearchProduct/Category/Fashions/WomensClothing/WomensClothing';
 
 
 
@@ -227,7 +227,7 @@ function App() {
     <WomensClothings/>
     </Route>
     <Route  path="/kinds">
-    <KindsClothing/>
+    <KindsClothings/>
     </Route>
     <Route  path="/jewelry">
     <Jewelrys/>

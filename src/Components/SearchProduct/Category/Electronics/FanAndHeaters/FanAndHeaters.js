@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { NavBars } from '../../../../Home/NavBars/NavBars'
+import { AgriculturalTool } from '../../Agricultural/AgriculturalTools/AgriculturalTools'
 
 export const FanAndHeaters = (props) => {
     const[products,setProducts]=useState([])
@@ -80,7 +81,7 @@ export const FanAndHeaters = (props) => {
                 <Row className="justify-content-center" >
                
                 {
-                    products.map(product=><FanAndHeater product={product} success={success}/>)
+                    products.map(product=><AgriculturalTool product={product} success={success}/>)
                 }
                 </Row>
                 </Col>
@@ -95,7 +96,7 @@ export const FanAndHeaters = (props) => {
                 <Row className="justify-content-center" >
                
                 {
-                    products1.map(product=><FanAndHeater product={product} success={success}/>)
+                    products1.map(product=><AgriculturalTool product={product} success={success}/>)
                 }
                 </Row>
                 </Col>
@@ -110,7 +111,7 @@ export const FanAndHeaters = (props) => {
                 <Row className="justify-content-center" >
                
                 {
-                    products3.map(product=><FanAndHeater product={product} success={success}/>)
+                    products3.map(product=><AgriculturalTool product={product} success={success}/>)
                 }
                 </Row>
                 </Col>
@@ -126,7 +127,7 @@ export const FanAndHeaters = (props) => {
                 <Row className="justify-content-center" >
                
                 {
-                    products4.map(product=><FanAndHeater product={product} success={success}/>)
+                    products4.map(product=><AgriculturalTool product={product} success={success}/>)
                 }
                 </Row>
                 </Col>
@@ -137,26 +138,3 @@ export const FanAndHeaters = (props) => {
     )
 }
 
-
-export const FanAndHeater = ({product,success}) => {
-    return (
-              
-                  <Col lg={5} xs={6} md={3} m-auto>
-                      {success? 
-                       <div className="category-items ">
-                           <img src={product.image1} alt=""/>
-                            <p>{product.category}</p>
-                            <p>{product.item}</p>
-                            <p>{product.productprice}</p>
-                            <p>{product.place}</p>
-                           <div className="premium"> 
-                               {
-                                product.status==="PREMIUM"? <h1>Hi</h1>:null
-                            }
-                            </div>
-                       </div>:<h1 style={{color:'red',marginLeft:'100px'}}>Product Not Found</h1>
-}
-                   </Col>
-                 
-    )
-}

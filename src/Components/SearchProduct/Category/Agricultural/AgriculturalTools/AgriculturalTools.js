@@ -149,11 +149,13 @@ export const AgriculturalTool = ({product,success}) => {
                             <p>{product.item}</p>
                             <p>{product.productprice}</p>
                             <p>{product.place}</p>
-                           <div className="premium"> 
-                               {
-                                product.status==="PREMIUM"? <h1>Hi</h1>:null
-                            }
-                            </div>
+                           {product.status==="PREMIUM"?
+                            <div className="premium"> 
+                            {
+                             product.status==="PREMIUM"? <h1>Hi</h1>:null
+                         }
+                         </div>:null
+                           }
                        </div>:<h1 style={{color:'red',marginLeft:'100px'}}>Product Not Found</h1>
 }
                    </Col>

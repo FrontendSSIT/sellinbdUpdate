@@ -145,11 +145,13 @@ export const Category = ({product}) => {
                             {
                                 product.status==="PREMIUM"?null: <p><TimeAgo date={product.date} formatter={formatter} /></p>
                             }
-                           <div className={product.status==="PREMIUM"?"premium":null}> 
-                               {
-                                product.status==="PREMIUM"? <img src={primimum} alt=""/>:null
-                            }
-                            </div>
+                         {product.status==="PREMIUM"? 
+                            <div className={product.status==="PREMIUM"?"premium":null}> 
+                            {
+                             product.status==="PREMIUM"? <img src={primimum} alt=""/>:null
+                         }
+                         </div>:null
+                         }
                        </div>
                        </Link>
                    </Col>
