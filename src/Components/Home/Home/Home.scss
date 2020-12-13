@@ -1,6 +1,18 @@
 .home-border{
     border:2px solid gray;
+    
 }
-@media (max-width: 768px){
+.home-section{
+    position: relative;
+    .positionset{
+        position: absolute;
+        top:8%;
+    }
+}
+@media (max-width: 468px){
     .headress{display: none;}
+    .home-section  .positionset{
+        top: 0;
+        text-align: center;
+    }
 }

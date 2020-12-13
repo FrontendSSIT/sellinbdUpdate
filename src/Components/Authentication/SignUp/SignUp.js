@@ -127,21 +127,21 @@ export const SignUp = ({handleLogin,visiableIcon,IconShow,ShowPassword}) => {
         <h2>Log in to manage your account</h2>
         <div id="recaptcha-container"></div>
         <Grid container spacing={1}>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} className="m-auto">
         <form onSubmit={handleSubmit(onSubmit)}>
         <Grid container spacing={1}>
-            <Grid  item xs={12} md={6}>
+            <Grid  item xs={12} >
             <TextField name="name" inputRef={register} required label="Name"></TextField>
             </Grid> 
             </Grid>
             <Grid container spacing={1}>
-            <Grid  item xs={12} md={6}>
+            <Grid  item xs={12} >
             <TextField type="text" name="number" inputRef={register} required label="Phone Number"></TextField>
             </Grid> 
             </Grid>
 
             <Grid container spacing={1}>
-            <Grid  item xs={12} md={6}className="pass">
+            <Grid  item xs={12} className="pass">
             <TextField type={visiableIcon?"text":"password"} name="password" inputRef={register} required label="Password" > </TextField>
                <div className="icon-eye">
                {visiableIcon?
@@ -151,17 +151,17 @@ export const SignUp = ({handleLogin,visiableIcon,IconShow,ShowPassword}) => {
             </Grid>
             </Grid>
             <Grid container spacing={1}>
-            <Grid  item xs={12} md={6}>
+            <Grid  item xs={12} >
             <TextField type="text" name="code" inputRef={register}  label="Enter Your Code"></TextField>
             </Grid> 
             </Grid>
             <Grid container spacing={1}>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12}>
             <input type="submit" value="SignUp" className="submit-btn" onClick={submitPhoneNumberAuth}/>
          </Grid>
         </Grid>
         <Grid container spacing={1}>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12}>
             <p className="noAccount">Don't have an account?</p>
             <Button type="submit" className="btn" onClick={handleLogin}>Login</Button>
          </Grid>

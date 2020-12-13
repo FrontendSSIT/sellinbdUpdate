@@ -7,6 +7,8 @@ import { Footer } from '../Footer/Footer'
 import { Header } from '../Header/Header'
 import { NavBars } from '../NavBars/NavBars'
 import { SearchBox } from '../SearchBox/SearchBox'
+import { ToastContainer, toast,Flip } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Home.scss'
 
 export const Home = () => {
@@ -19,10 +21,20 @@ export const Home = () => {
         setClickSearch(data)    
         
       }
+      const notify = () => {
+        toast.error(" Sorry This Product Not Found !!!!", { delay: 50 });
+    }
+    const productNotify = () => {
+        toast.success(" Product  Available !!!!", { delay: 50 });
+    }
       const handleSearchClick=()=>{
         fetch(`https://sellinbd.com/api330088/product/searchBox.php?k1=${clickSearch}&page number=1&item_count=100`)
         .then(res=>{
+            if(res.status===404){
+                notify()
+            }
             if(res.status===200){
+                productNotify()
                 setSuccess(true)
                 res.json()
                 .then(result=>{
@@ -38,7 +50,7 @@ export const Home = () => {
       setLoader(true)
       },[])
     return (
-        <section>
+        <section className="home-section">
 
        {
            loader?<div>
@@ -58,6 +70,15 @@ export const Home = () => {
         }
            </div>:<Loaders/>
        }
+       <ToastContainer 
+       autoClose={5000}
+  position="top-left"
+  limit={1}
+  transition={Flip}
+  draggable={false}
+  role="alert"
+  className="positionset"
+  />
         </section>
     )
 }

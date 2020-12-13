@@ -64,7 +64,6 @@ export const NavBars = ({handleSearchBox,clickSearch,handleSearchClick,setSearch
       <Nav.Link >
         <Link to="/chat">Chat</Link>
       </Nav.Link>
-      <Avatar/>
       <Nav.Link >
       <Link to="/user"> Account</Link>
       </Nav.Link>
