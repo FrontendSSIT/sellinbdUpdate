@@ -65,7 +65,9 @@ const onSubmit = data =>{
         })
         }
         setLoginUser(data)
-    })         
+        localStorage.setItem('userNumber',data.usernumber) 
+    })   
+        
 }
 
 const  openModal=()=>    {

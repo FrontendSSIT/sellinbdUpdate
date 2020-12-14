@@ -132,11 +132,12 @@ export const Categorys = (props) => {
 export const Category = ({product}) => {
     const [productD,setProducD,userName,setUserName,loginUser,setLoginUser]=useContext(userContext)
     const formatter = buildFormatter(frenchStrings)
-
+    const postId=product.post_id
+    const category=product.category
     return (
               
                <Col lg={5} xs={6} m-auto>
-                     <Link to="/produtcDetails">
+                     <Link to={`/produtcDetails/${category}/${postId}`}>
                        <div className="category-items " id={product.status==="PREMIUM"?"bgColor":null}>
                            <img src={product.image1} alt=""/>
                             <p style={{color:'#3F9DFF'}}><strong>{product.productname}</strong></p>

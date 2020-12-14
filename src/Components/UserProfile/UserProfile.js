@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import profile from '../../images/userProfile.png'
 import { NavBarSub } from '../Home/NavBars/NavBars'
@@ -10,6 +10,25 @@ import ShareIcon from '@material-ui/icons/Share';
 import ReportProblemIcon from '@material-ui/icons/ReportProblem';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 export const UserProfile = () => {
+    const [userData,setUserData] =useState([])
+    console.log(userData)
+    const usernumber =localStorage.getItem('userNumber')
+    useEffect(()=>{
+        const formData = new FormData()
+        formData.append('usernumber',usernumber)
+       
+  fetch('https://sellinbd.com/api330088/user/readProfile.php',{
+    method: 'POST',
+    body: formData
+  })
+  .then(res=>res.json())
+  .then(result=>{
+          if(result[0]){
+            setUserData(result[0])
+          }
+  })
+
+    },[])
     return (
        <section className="userSection">
        <Container fuild>

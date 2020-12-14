@@ -52,7 +52,7 @@ function App() {
         <Route  path="/login">
         <Login/>
         </Route>
-        <Route path="/produtcDetails">
+        <Route path="/produtcDetails/:category/:postId">
         <ProductDetails/>
         </Route>
         {/* categoryNavbar &  */}
@@ -62,9 +62,9 @@ function App() {
         <Route path="/catNav">
         <CategoryNav/>
         </Route>
-        <PrivateRoute path="/postAdd">
+        <Route path="/postAdd">
         <PostYourAdd/>
-        </PrivateRoute>
+        </Route>
         <Route  path="/signleCategory">
         <SignleCategorys/>
         </Route>
