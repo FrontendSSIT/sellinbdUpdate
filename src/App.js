@@ -6,7 +6,7 @@ import { CategoryNav } from './Components/Home/CategoryNav/CategoryNav';
 import { PostYourAdd } from './Components/PostYourAdd/PostYourAdd';
 import {  SignleCategorys } from './Components/AllCategory/SignleProductCategory/SignleCategory/SignleCategory';
 import { Contact } from './Components/Contact/Contact';
-
+import './App.css'
 
 import {
   BrowserRouter as Router,
@@ -51,6 +51,9 @@ function App() {
         </Route>
         <Route  path="/login">
         <Login/>
+        </Route>
+        <Route path="/produtcDetails/:category/:postId">
+        <ProductDetails/>
         </Route>
         <Route path="/produtcDetails/:category/:postId">
         <ProductDetails/>

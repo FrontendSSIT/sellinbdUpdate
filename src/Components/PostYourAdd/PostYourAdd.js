@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 
 export const PostYourAdd = () => {
-   
+  
     return (
         <section className="post-add-cotainer">
             <NavBarSub/>

@@ -9,9 +9,12 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import ShareIcon from '@material-ui/icons/Share';
 import ReportProblemIcon from '@material-ui/icons/ReportProblem';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
+import { Link } from 'react-router-dom'
 export const UserProfile = () => {
     const [userData,setUserData] =useState([])
     console.log(userData)
+    const [userPost,setUserPost] =useState([])
+    console.log(userPost)
     const usernumber =localStorage.getItem('userNumber')
     useEffect(()=>{
         const formData = new FormData()
@@ -27,8 +30,24 @@ export const UserProfile = () => {
             setUserData(result[0])
           }
   })
+  fetch('https://sellinbd.com/api330088/product/readOwnPosts.php',{
+    method: 'POST',
+    body: formData
+  })
+  .then(res=>{
+    if(res.status===200){
+        res.json()
+        .then(result=>{
+            if(result){
+              setUserPost(result.records)
+            }
+    })
+    }
+})
+  
 
     },[])
+    const number=localStorage.getItem('userNumber')
     return (
        <section className="userSection">
        <Container fuild>
@@ -39,11 +58,11 @@ export const UserProfile = () => {
       <div className="userProfile">
       <Row>
       <Col lg={5} xs={4}>
-      <div className="profilePicture"><img src={profile} alt=""/></div>
+      <div className="profilePicture"><img src={userData.profilepicture} alt=""/></div>
       </Col>
       <Col lg={7} xs={8}>
-       <h2>  User Name </h2>
-       <h2>  User Number</h2>
+       <h2> WelCome TO {userData.username} </h2>
+       <h2> {number} </h2>
       </Col>
       </Row>
       </div>
@@ -51,39 +70,47 @@ export const UserProfile = () => {
       <div className="text-center" ><input type="submit" value="Upload Your Profile Image"/></div>
        </Col>
        </Row>
-       <Row className="justify-content-center">
-       <Col lg={8}>
-       <div className="fqaProfile">
-       <h4><HelpOutlineIcon/>FAQ</h4>
-       <h4> <ShoppingCartIcon/> How to sell fast</h4>
-       <h4><StarBorderIcon/>  Rate us</h4>
-       <h4><ShareIcon/> Share</h4>
-       <h4><ReportProblemIcon/> Report problem/Contact with developer</h4>
-       <h4><PowerSettingsNewIcon/> Log Out</h4>
-       </div>
-       </Col>
-       <Col lg={8} >
+       <Row className="justify-content-center"> <Col lg={8} >
        <div className="fqaProfile">
        <h2>MY Ads</h2>
        </div>
-       </Col>
-       <Col lg={8} xs={12}>
-       <div className="fqaProfile">
-        <Row className="justify-content-center">
-        <Col lg={4} xs={4}> <div><img src="" alt=''/></div> </Col>
-        <Col lg={8} xs={8}> 
-        <div>      
-        <h3>Ready flat for sell</h3> 
-        <h3>BDT. 1000000</h3>
-        <h3>Mirpur, Dhaka</h3>
-         </div>  
-        </Col>
-        </Row>
-        <div  className="text-center">  <input type="submit" value="Click for Edit, Delete & Promote"/></div>
-       </div>
-       </Col>
-       </Row>
+       </Col></Row>
+       {
+         userPost.map(userPost=><UserPost userPost={userPost}/>)
+       }
        </Container>
        </section>
     )
+}
+
+
+const UserPost=({userPost})=>{
+  const postId=userPost.post_id
+    const category=userPost.category
+  return (
+ 
+       <Row  className="justify-content-center">
+       
+      
+       <Col lg={8} xs={12}>
+        <Link to={`/produtcDetails/${category}/${postId}`}>
+        <div className="fqaProfile">
+        <Row className="justify-content-center">
+        <Col lg={4} xs={4}> <div className="userpostImg"><img src={userPost?.image1} alt=''/></div> </Col>
+        <Col lg={8} xs={8}> 
+        <div>      
+        <h3>{userPost?.item}</h3> 
+        <h3>BDT. {userPost?.productprice}</h3>
+        <h3>{userPost?.place} {userPost?.district}</h3>
+         </div>  
+        </Col>
+        </Row>
+       
+       </div>
+        </Link>
+       <div  className="text-center">  <input type="submit" value="Click for Edit, Delete & Promote"/></div>
+       </Col>
+      
+       </Row>
+  )
 }

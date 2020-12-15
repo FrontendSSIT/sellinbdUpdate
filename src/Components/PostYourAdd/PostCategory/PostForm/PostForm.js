@@ -6,12 +6,14 @@ import { NavBarSub } from '../../../Home/NavBars/NavBars';
 import selectIcon from '../../../../images/selectIcon.png'
 import { userContext } from '../../../../App';
 import ImageUploading from "react-images-uploading";
+import './PostForm.scss'
+import { Close, CloudUpload } from '@material-ui/icons';
 
 export const PostForm = () => {
+    const postcat=localStorage.getItem('postcat')
     const { register, handleSubmit, errors } = useForm();
     const [loginUser,setLoginUser,userName,setUserName]=useContext(userContext);
     const [images, setImages] = useState([]);
-  console.log(images[0]?.file)
     const maxNumber = 69;
     const uploadImage= (imageList, addUpdateIndex) => {
         // data for submit
@@ -74,18 +76,20 @@ export const PostForm = () => {
      <input name="priceStatus" type="radio" value="Negotiable" ref={register({ required: true })}/>
      <label>Negotiable</label>
      </div>
-    <div>
+    {
+        postcat=="Pets"?null: <div>
    
-    <input name="productStatus" type="radio"  ref={register({ required: true })}/>
-    <label>New</label>
-   
-     <input name="productStatus" type="radio"  ref={register({ required: true })}/>
-     <label>Used</label>
-     </div>
+        <input name="productStatus" type="radio"  ref={register({ required: true })}/>
+        <label>New</label>
+       
+         <input name="productStatus" type="radio"  ref={register({ required: true })}/>
+         <label>Used</label>
+         </div>
+    }
      </div>
      <div>  <textarea type="text" placeholder="Description" name="description" ref={register({required: true, minLength: 6, maxLength: 12})} /></div>
 
-    <div className="text-center">  <input type="submit" value="Post A Ad"/></div>
+    <div className="text-center btn-frm" >  <input type="submit" value="Post A Ad"/></div>
     <p>User Name: {userName?.message}</p> 
     <p>User Number: {loginUser?.usernumber} </p>
     </form>
@@ -108,16 +112,18 @@ export const PostForm = () => {
          dragProps
      }) => (
              // write your building UI
-             <div className="upload__image-wrapper">
-                 <button
+             <div className={images[0]?"upload__image":"upload__image-wrapper"}>
+                 <button className="uploadbtn"
                      style={isDragging ? { color: "red" } : null}
-                     onClick={onImageUpload}
+                     onClick={ onImageUpload}
                      {...dragProps}
                  >
-                     Click or Drop here
+                 <CloudUpload/> Upload Your Image
  </button>
  &nbsp;
-                 <button onClick={onImageRemoveAll}>Remove all images</button>
+               {
+                images[0]?<button onClick={onImageRemove} className="closebtn"><Close/> </button>:null
+               }
                  {imageList.map((image, index) => (
                      <div key={index} className="image-item">
                          <img src={image.data_url} alt="" width="100" />
@@ -131,6 +137,7 @@ export const PostForm = () => {
         </Col>
         </Row>
         </Container>
+      
         </section>
     )
 }

@@ -1,0 +1,55 @@
+.postForm{
+    .btn-frm{
+        margin-top: 100px;
+    }
+    .image-item{
+        display: inline-block !important;
+        margin-right: 5px;
+        
+      img{
+          width: 80px;height: 60px;
+      }
+    }
+    form{
+        position: relative;
+    }
+    .upload__image-wrapper{
+       
+        margin-left: 180px;
+        position: absolute;
+       bottom: 160px;
+       .uploadbtn{
+           padding: 5px 40px;
+           color: aliceblue;
+           background: #3F9DFF;
+           border: none;
+           border-radius: 10px;
+           outline: none;
+       }
+       
+    }
+
+    .closebtn{
+        background: #3F9DFF;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        color: aliceblue;
+       }
+    .upload__image{
+        position: absolute;
+           bottom: 150px;
+           margin-left: 80px;
+        .uploadbtn{
+
+            display: none;
+        }
+    }
+}
+// @media (max-width: 468px){
+
+//     .uploadbtn{
+//         padding: 5px 80px;
+//         margin-left: -100px;
+//     }
+// }

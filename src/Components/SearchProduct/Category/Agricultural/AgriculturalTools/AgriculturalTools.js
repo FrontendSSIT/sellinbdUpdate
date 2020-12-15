@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-import { NavBars, NavBarSub } from '../../../../Home/NavBars/NavBars'
+import {  NavBarSub } from '../../../../Home/NavBars/NavBars'
 import { Loaders } from '../../../../Loader/Loaders'
+import primimum from '../../../../../images/premiumAddBanner.png'
+import { Link } from 'react-router-dom'
 
 export const AgriculturalTools = (props) => {
     const[products,setProducts]=useState([])
@@ -55,9 +57,12 @@ export const AgriculturalTools = (props) => {
 
 
 export const AgriculturalTool = ({product,success}) => {
+    const postId=product.post_id
+    const category=product.category
     return (
               
                   <Col lg={5} xs={6} md={3} m-auto>
+                  <Link to={`/produtcDetails/${category}/${postId}`}>
                       {success? 
                        <div className="category-items ">
                            <img src={product.image1} alt=""/>
@@ -68,12 +73,12 @@ export const AgriculturalTool = ({product,success}) => {
                            {product.status==="PREMIUM"?
                             <div className="premium"> 
                             {
-                             product.status==="PREMIUM"? <h1>Hi</h1>:null
+                             product.status==="PREMIUM"? <img src={primimum} alt=""/>:null
                          }
                          </div>:null
                            }
                        </div>:<h1 style={{color:'red',marginLeft:'100px'}}>Product Not Found</h1>
-}
+}  </Link>
                    </Col>
                  
     )
