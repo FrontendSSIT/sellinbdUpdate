@@ -4,7 +4,7 @@ import { Col, Row } from 'react-bootstrap'
 import Carousel from 'react-bootstrap/Carousel';
 import { NavBarSub } from '../../Home/NavBars/NavBars';
 import { Footer } from '../../Home/Footer/Footer';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import './ProductDetails.scss'
 import { Loaders } from '../../Loader/Loaders';
 import { SignleCategorys } from '../SignleProductCategory/SignleCategory/SignleCategory';
@@ -12,6 +12,7 @@ import { SignleCategorys } from '../SignleProductCategory/SignleCategory/SignleC
 
 export const ProductDetails = () => {
     const [productDetail,setProductDetail] =useState([])
+    const [call,setCall] = useState(false)
   const {postId}=useParams()
   localStorage.setItem('postId',postId)
  const id= localStorage.getItem('postId')
@@ -42,7 +43,7 @@ export const ProductDetails = () => {
     <Col lg={12}>
     {
         productDetail.image1? <div className="productDetails">
-        <Container className="text-center pt-3">
+        <Container className="text-center pt-3" fuild>
           
             <Row className="justify-content-center">
                 <Col lg={8} xs={12}>
@@ -96,12 +97,12 @@ export const ProductDetails = () => {
     </Carousel>
                 </Col>
             </Row>
-            <Container className="product-summary-container">
+            <Container className="product-summary-container" fuild>
             <Row className="justify-content-center " >
-               <Col lg={8}>
+               <Col lg={8} xs={12}>
                <div class="product-summary">
                <Row>
-               <Col lg={12} className="text-left">
+               <Col lg={12} xs={12} className="text-left">
                    <div>
                   <h2>Title: {productDetail.productname}</h2>
                   <h2>BTD: {productDetail.productprice} ({productDetail.priceStatus})</h2>
@@ -113,7 +114,7 @@ export const ProductDetails = () => {
                </Row>
 
                     <Row>
-                    <Col lg={12} className="text-left" >
+                    <Col lg={12} xs={12} className="text-left" >
                    <div >
                   <h3>Model:{productDetail.model}</h3>
                   <h3>Category: {productDetail.category}</h3>
@@ -125,7 +126,7 @@ export const ProductDetails = () => {
                     </Row>
 
                    <Row>
-                   <Col lg={12} className="text-left">
+                   <Col lg={12} xs={12} className="text-left">
                    <div >
                    <h1>{productDetail.productdescription}</h1>
                   <h3> {productDetail.item}</h3>
@@ -133,8 +134,10 @@ export const ProductDetails = () => {
                    
                     </Col>
                    </Row>
-                    <button className="call"> Call</button>
-                    <button className="chat"> Chat</button>
+                    <button className="call" onClick={()=>setCall(!call)}> Call  { call?<p>{productDetail.usernumber1}</p>:null}
+                    { call?<p>{productDetail?.usernumber2}</p>:null}</button>
+                   
+                    <Link className="chat" to="/chat"> Chat</Link>
                     </div>
                </Col>
                     

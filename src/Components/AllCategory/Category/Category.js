@@ -9,53 +9,31 @@ import { userContext } from '../../../App';
 import TimeAgo from 'react-timeago'
 import frenchStrings from 'react-timeago/lib/language-strings/en'
 import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
+import InfiniteScroll from 'react-infinite-scroll-component';
+import { Loaders } from '../../Loader/Loaders';
+import Loader from 'react-loader-spinner';
 
 
 
 
 export const Categorys = (props) => {
     const[products,setProducts]=useState([])
-    const[products1,setProducts1]=useState([])
-    const[products3,setProducts3]=useState([])
-    const[products4,setProducts4]=useState([])
-    
-
+    const[aa,setAA]=useState(1)
     useEffect(()=>{
-        fetch('https://sellinbd.com/api330088/product/readProductWeb.php?page_number=1&item_count=10')
+        fetchData()
+    },[])
+    const fetchData=()=>{
+        let plus=aa+1
+        setAA(plus)
+        fetch(`https://sellinbd.com/api330088/product/readProductWeb.php?page_number=${aa}&item_count=7`)
         .then(res=>res.json())
         .then(result=>{
                 if(result){
-                    setProducts(result.records)
+                    setProducts([...products,...result.records])
                 }
         })
-    },[])
-    useEffect(()=>{
-        fetch('https://sellinbd.com/api330088/product/readProductWeb.php?page_number=2&item_count=10')
-        .then(res=>res.json())
-        .then(result=>{
-                if(result){
-                    setProducts1(result.records)
-                }
-        })
-    },[])
-    useEffect(()=>{
-        fetch('https://sellinbd.com/api330088/product/readProductWeb.php?page_number=3&item_count=10')
-        .then(res=>res.json())
-        .then(result=>{
-                if(result){
-                    setProducts3(result.records)
-                }
-        })
-    },[])
-    useEffect(()=>{
-        fetch('https://sellinbd.com/api330088/product/readProductWeb.php?page_number=4&item_count=10')
-        .then(res=>res.json())
-        .then(result=>{
-                if(result){
-                    setProducts4(result.records)
-                }
-        })
-    },[])
+       
+    }
 
     return (
           
@@ -67,61 +45,23 @@ export const Categorys = (props) => {
             </Row>
             <Row className="justify-content-center" >
                 <Col lg={8} xs={12}>
+                <InfiniteScroll
+                dataLength={products.length}
+                next={fetchData}
+                hasMore={true}
+                loader={<Loader/>}
+                >
                 <Row className="justify-content-center" >
                
                 {
                     products.map(product=><Category product={product}/>)
                 }
                 </Row>
+                </InfiniteScroll>
                 </Col>
                   </Row>
             </Container>
-            <Container fluid="md">
-            <Row className="justify-content-center">
-            <Col lg={7} sm={6}><h1>{props.name}</h1></Col>
-            </Row>
-            <Row className="justify-content-center" >
-                <Col lg={8} xs={12}>
-                <Row className="justify-content-center" >
-               
-                {
-                    products1.map(product=><Category product={product}/>)
-                }
-                </Row>
-                </Col>
-                  </Row>
-            </Container>
-            <Container fluid="md">
-            <Row className="justify-content-center">
-            <Col lg={7} ><h1>{props.name}</h1></Col>
-            </Row>
-            <Row className="justify-content-center" >
-                <Col lg={8} xs={12}>
-                <Row className="justify-content-center" >
-               
-                {
-                    products3.map(product=><Category product={product}/>)
-                }
-                </Row>
-                </Col>
-                  </Row>
-            </Container>
-
-            <Container >
-            <Row className="justify-content-center">
-            <Col lg={7} ><h1>{props.name}</h1></Col>
-            </Row>
-            <Row className="justify-content-center" >
-                <Col lg={8} xs={12}>
-                <Row className="justify-content-center" >
-               
-                {
-                    products4.map(product=><Category product={product}/>)
-                }
-                </Row>
-                </Col>
-                  </Row>
-            </Container>
+           
           
         </section>
 
@@ -130,7 +70,6 @@ export const Categorys = (props) => {
 
 
 export const Category = ({product}) => {
-    const [productD,setProducD,userName,setUserName,loginUser,setLoginUser]=useContext(userContext)
     const formatter = buildFormatter(frenchStrings)
     const postId=product.post_id
     const category=product.category

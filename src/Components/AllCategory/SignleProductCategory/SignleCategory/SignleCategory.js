@@ -17,7 +17,6 @@ import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
 export const SignleCategorys = (props) => {
     const [signleProduct,setSignleProduct]=useState([])
     const[success,setSuccess]=useState(false)
-    console.log(signleProduct)
     const category=localStorage.getItem('category')
     useEffect(()=>{
         fetch(`http://sellinbd.com/api330088/product/searchbyCategory.php?category=${category}&page_number=1&item_count=1000`)

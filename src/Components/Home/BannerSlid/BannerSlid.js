@@ -53,7 +53,10 @@ export const BannerSlid = () => {
 
 
 export const BannerAd=({slid})=>{
-    
+    localStorage.setItem('postId',slid.post_id)
+    localStorage.setItem('category',slid.category)
+    console.log(slid.post_id)
+    console.log(slid.category)
     return(
         
           <Col lg={8} xs={12}>
@@ -118,10 +121,13 @@ export const Sliderss=()=>{
         slidesToShow: 1,
         slidesToScroll: 1
       };
+     
+       const postId=localStorage.getItem('postId')
+    const category=localStorage.getItem('category')
     return(
     
      
-      <Link to='/hi'>  <Slider {...settings}>
+      <Link to={`/produtcDetails/${category}/${postId}`}>  <Slider {...settings}>
       <BannerSlid/>
         </Slider></Link>
        

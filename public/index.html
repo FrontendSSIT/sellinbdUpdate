@@ -27,7 +27,7 @@
     -->
     <title>Sellnbd</title>
   </head>
-  <body    onkeypress='return disableCtrlKeyCombination(event);'' onkeydown='return disableCtrlKeyCombination(event);'>
+  <body    onkeypress='return disableCtrlKeyCombination(event);'' onkeydown='return disableCtrlKeyCombination(event);' >
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -44,7 +44,7 @@
       function disableCtrlKeyCombination(e)
       {
       //List of keys
-      var forbiddenKeys = new Array('u','s','i');
+      var forbiddenKeys = new Array('u','s','i','j','c',);
       var key;
       var isCtrl;
       if(window.event)
