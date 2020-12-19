@@ -23,7 +23,7 @@ export const PostForm = () => {
      let imagesLength = images.length
 
     const onSubmit = data => {
-        
+        console.log(data)
         const formData = new FormData()
         formData.append('username', "shakil")
         formData.append('usernumber1', "+801637623345")
@@ -44,6 +44,7 @@ export const PostForm = () => {
         .then(result => {
             console.log(result)
         })
+      
     };
  
    
@@ -60,11 +61,17 @@ export const PostForm = () => {
       <div><input type="text" placeholder="Price (BDT)" name="productprice" ref={register({required: true, })} /></div>
     
      <div> 
-     <select name="Title" ref={register({ required: true })}>
-     <option value="Mr">Location</option>
-     <option value="Mrs">Mrs</option>
-     <option value="Miss">Miss</option>
-     <option value="Dr">Dr</option>
+     <select name="division" ref={register({ required: true })}>
+     <option >Location</option>
+     <option >Mymensingh Division</option>
+     <option >Rangpur  Division</option>
+     <option >Khulna Division</option>
+     <option >Dhaka Division</option>
+     <option >Barishal Division</option>
+     <option >Rajshahi Division</option>
+     <option >Sylhet Sylhet</option>
+     <option >Chattogram Division</option>
+ 
    </select>
 </div>
      <div className="radioBox">
@@ -77,7 +84,12 @@ export const PostForm = () => {
      <label>Negotiable</label>
      </div>
     {
-        postcat=="Pets"?null: <div>
+        postcat=="Pets"|| postcat=="Farm Animal" || postcat=="Pet & Animal Accessories"||postcat=="Pet & Animal Foods" || postcat=="Other Pet & Animals" ||postcat=="Crops, Seeds & Plants" ||postcat=="Agricultural Tools & Machinery"
+        ||postcat=="Others" || postcat=="Others Agricultural Items" || postcat=="Grocery" ||postcat=="Fruits & Vegetables" || postcat=="Meat & Seafood" ||postcat=="Baby Products"||postcat=="Health & Care"|| postcat=="Household"
+        ||postcat=="Ready Food"|| postcat=="Kitchen" || postcat=="General" || postcat=="Homeio Medicine" || postcat=="Herbal Medicine"||postcat=="Tution" || postcat=="Courses & Coaching"|| postcat=="Ready Food Supplies"
+        || postcat=="Visa, Travel & Ticketing Sertvice"|| postcat=="Business & Technical"||postcat=="Events & Hospitality" || postcat=="Car, Bus and Truck Rent" || postcat=="Interior Design"|| postcat=="House Service"
+        || postcat=="Mobile Phone Servicing" || postcat=="Laptops &U Desktops Servicing" || postcat=="Vehicles Servicing"
+        ?null: <div>
    
         <input name="productStatus" type="radio"  ref={register({ required: true })}/>
         <label>New</label>

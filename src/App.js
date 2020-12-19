@@ -25,6 +25,7 @@ import { PrivateRoute } from './Components/Authentication/PrivateRoute/PrivateRo
 import { Dhaka } from './Components/SearchProduct/LocationProduct/DhakaDivision/Dhaka/Dhaka';
 import { AllChat } from './Components/AllChat/AllChat';
 import { Loaders } from './Components/Loader/Loaders';
+import { PostEdit } from './Components/PostEdit/PostEdit';
 
 
 
@@ -67,6 +68,9 @@ function App() {
         </Route>
         <Route path="/postAdd">
         <PostYourAdd/>
+        </Route>
+        <Route path="/PostEdit/:postId">
+         <PostEdit/>
         </Route>
         <Route  path="/signleCategory">
         <SignleCategorys/>

@@ -119,7 +119,7 @@ export const SellDaily = (props) => {
         <Col lg={6}>
         <ul>
         <p> <img img src={selectIcon} alt=""/>Select Item</p>
-        <li><Link to="/posForm" onFocus={handlepostNav}> <img  src={arrow} alt=""/>Grocery</Link></li>
+        <li><Link  to="/posForm" onFocus={handlepostNav}> <img  src={arrow} alt=""/>Grocery</Link></li>
         <li><Link  to="/posForm" onFocus={handlepostNav}><img  src={arrow} alt=""/>Fruits & Vegetables</Link></li>
         <li><Link  to="/posForm" onFocus={handlepostNav}><img  src={arrow} alt=""/>Meat & Seafood</Link></li>
         <li><Link  to="/posForm" onFocus={handlepostNav}><img  src={arrow} alt=""/>Baby Products </Link></li>
@@ -196,7 +196,6 @@ export const SellService = (props) => {
         <li><Link to="/posForm" onFocus={handlepostNav}><img  src={arrow} alt=""/>Laptops &U Desktops Servicing </Link></li>
         <li><Link  to="/posForm" onFocus={handlepostNav}><img  src={arrow} alt=""/>Vehicles Servicing</Link></li>
         </ul>
-         to="/posForm"
         </Col>
         </Row>
         </Container>
@@ -205,7 +204,6 @@ export const SellService = (props) => {
 }
 export const PostJob = (props) => {
     const [postNav,setPostNav]=useState()
-  console.log(postNav)
     const handlepostNav=(e)=>{
         const data =e.target.innerText;
          setPostNav(data)
@@ -239,7 +237,7 @@ export const PostJob = (props) => {
 }
 export const BuyPost = (props) => {
     const [postNav,setPostNav]=useState()
-  console.log(postNav)
+ 
     const handlepostNav=(e)=>{
         const data =e.target.innerText;
          setPostNav(data)

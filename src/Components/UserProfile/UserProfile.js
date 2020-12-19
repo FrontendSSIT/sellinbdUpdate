@@ -108,7 +108,7 @@ const UserPost=({userPost})=>{
        
        </div>
         </Link>
-       <div  className="text-center">  <input type="submit" value="Click for Edit, Delete & Promote"/></div>
+       <div  className="text-center"> <Link to={`/PostEdit/${postId}`}>Click for Edit, Delete & Promote</Link>  </div>
        </Col>
       
        </Row>

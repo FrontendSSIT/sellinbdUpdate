@@ -9,6 +9,13 @@ import '../../PostYourAdd.scss'
 
 
 export const MobileTabletsPost = () => {
+    const [postNav,setPostNav]=useState()
+    console.log(postNav)
+      const handlepostNav=(e)=>{
+          const data =e.target.innerText;
+           setPostNav(data)
+           localStorage.setItem('postcat',data)
+      }
     return (
         <section>
      
@@ -19,9 +26,9 @@ export const MobileTabletsPost = () => {
         <Col lg={6}>
         <ul>
         <p> <img img src={selectIcon} alt=""/>Select Item</p>
-        <li><Link  to="/posForm"><img img src={arrow} alt=""/>Mobile Phone</Link></li>
-        <li><Link to="/posForm"><img img src={arrow} alt=""/>Tablets </Link></li>
-        <li><Link to="/posForm"><img img src={arrow} alt=""/>Mobile & Tablets Accessories </Link></li>     
+        <li><Link  to="/posForm" onFocus={handlepostNav}><img img src={arrow} alt=""/>Mobile Phone</Link></li>
+        <li><Link to="/posForm" onFocus={handlepostNav}><img img src={arrow} alt=""/>Tablets </Link></li>
+        <li><Link to="/posForm" onFocus={handlepostNav}><img img src={arrow} alt=""/>Mobile & Tablets Accessories </Link></li>     
         </ul> 
         </Col>
         </Row>
