@@ -29,6 +29,23 @@ export const PostEdit = () => {
 
 
 
+    } 
+    const [Delete,setDelete]=useState()
+    const usernumber=localStorage.getItem('userNumber')
+    const handleDelete=()=>{
+        const formData = new FormData()
+        formData.append('post_id',id)
+        formData.append('usernumber',usernumber)
+        fetch('http://sellinbd.com/api330088/product/deletePosting.php',{
+            method: 'POST',
+        body: formData 
+        })
+        .then(res=>res.json())
+        .then(result=>{
+                if(result[0]){
+                    setDelete(result[0])
+                }
+        })
     }
     const [productDetail,setProductDetail] =useState([])
     console.log(productDetail)
@@ -58,7 +75,11 @@ export const PostEdit = () => {
        <form onSubmit={handleSubmit(onSubmit)}>
        <div> <textarea type="text" placeholder="product description" name="productdescription" ref={register({required: true})}  defaultValue={productDetail.productdescription}/></div>
        <div> <input type="text" placeholder="productpric" name="productprice" ref={register({required: true})}   defaultValue={productDetail.productprice}/></div>
-        <div><input type="submit" /></div>
+         <Row>
+         <Col lg={4}> <input type="submit"  value="Edit"/>  </Col>
+         <Col lg={4}><input type="submit" value="Delete" onClick={handleDelete}/></Col>
+         <Col lg={4}><input type="submit" value="Promote" onClick={handleDelete}/></Col>
+         </Row>
         </form>
        </Col>
        </Row>

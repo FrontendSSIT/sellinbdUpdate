@@ -9,6 +9,7 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import ShareIcon from '@material-ui/icons/Share';
 import ReportProblemIcon from '@material-ui/icons/ReportProblem';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
+import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom'
 export const UserProfile = () => {
     const [userData,setUserData] =useState([])
@@ -19,7 +20,6 @@ export const UserProfile = () => {
     useEffect(()=>{
         const formData = new FormData()
         formData.append('usernumber',usernumber)
-       
   fetch('https://sellinbd.com/api330088/user/readProfile.php',{
     method: 'POST',
     body: formData
@@ -44,10 +44,46 @@ export const UserProfile = () => {
     })
     }
 })
-  
+},[])
+  const number=localStorage.getItem('userNumber')
+  const { register, handleSubmit, errors } = useForm();
+  const[pic,setPic]=useState(null)
+  console.log(pic)
+  const onSubmit = async data => { 
+    const file=data.file[0]
+    const base64= await convertbase(file)
+    
+    }
+    const handlePic=()=>{
+      const formData = new FormData()
+      formData.append('usernumber1',usernumber)
+      formData.append('profilepicture',pic)
+        fetch('https://sellinbd.com/api330088/registration/updatepp.php',{
+          method:'POST',
+          body: formData
+        })
+        .then(response =>response.json())
+        .then(resData=>{
+          console.log(resData)
+        })
+        
+    }
 
-    },[])
-    const number=localStorage.getItem('userNumber')
+const convertbase=(file)=>{
+  return  new Promise((resolve, reject) =>{
+ const fileReader = new FileReader()
+ fileReader.readAsDataURL(file)
+ fileReader.onload = () =>{
+   resolve(fileReader.result)
+ }
+ fileReader.onerror = (error) =>{
+  reject(error)
+}
+  });
+ 
+  
+}
+
     return (
        <section className="userSection">
        <Container fuild>
@@ -67,7 +103,15 @@ export const UserProfile = () => {
       </Row>
       </div>
       </div>
-      <div className="text-center" ><input type="submit" value="Upload Your Profile Image"/></div>
+      <form onSubmit={handleSubmit(onSubmit)}>
+     <Row className="justify-content-center">
+     <Col lg={4}> 
+    
+     <div className="text-center" >
+     <input type="file" name="file" ref={register({required: true})}/></div> </Col>
+     <Col lg={2}> <div className="text-center" ><input type="submit" value="Confirm" /></div></Col>
+     </Row>
+     </form>
        </Col>
        </Row>
        <Row className="justify-content-center"> <Col lg={8} >
