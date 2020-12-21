@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
@@ -12,8 +12,6 @@ import './NavBars.scss'
 
 export const NavBars = ({handleSearchBox,clickSearch,handleSearchClick,setSearchValue}) => {
   const[search,setSearch]=useState(false)
-
-  
 
   const handleSearch=()=>{
       setSearch(true)
@@ -61,7 +59,7 @@ export const NavBars = ({handleSearchBox,clickSearch,handleSearchClick,setSearch
       <Nav.Link >
         <Link to="/postAdd">Add Post </Link>
         </Nav.Link>
-      <Nav.Link >
+        <Nav.Link >
         <Link to="/chat">Chat</Link>
       </Nav.Link>
       <Nav.Link >
@@ -96,15 +94,17 @@ export const NavBarSub = () => {
     <Link to="/contact">Contact Us</Link>
   </Nav.Link>
   <Nav.Link>
+  
     <Link to="/login">Login</Link>
   </Nav.Link>
   <Nav.Link >
+
     <Link to="/postAdd">Add Post </Link>
     </Nav.Link>
-  <Nav.Link >
+
+    <Nav.Link >
     <Link to="/chat">Chat</Link>
   </Nav.Link>
-
 </Nav>
 
 </Navbar.Collapse>
@@ -113,3 +113,10 @@ export const NavBarSub = () => {
 </section>
   )
 }
+
+
+/*
+  <Nav.Link >
+    <Link to="/chat">Chat</Link>
+  </Nav.Link>
+*/

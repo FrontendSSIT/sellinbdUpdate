@@ -1,0 +1,28 @@
+.promotepage{
+    text-align: center;
+h4,h4{
+    color: #3F9DFF;
+}
+img{
+    width: 40px;height: 40px;
+}
+
+}
+
+.ReactModal__Content--after-open{
+    height: 700px !important;
+    width: 350px !important;
+    border-radius: 50px !important;
+   img{
+       width: 300px;
+       height: 625px;
+       margin-left: -30px !important;
+       margin-top: -20px;
+   }
+}
+
+@media (max-width: 468px){
+    .ReactModal__Content--after-open{
+        margin-top: 370px !important;
+    }
+}

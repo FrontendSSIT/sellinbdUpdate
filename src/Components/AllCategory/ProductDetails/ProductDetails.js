@@ -13,6 +13,7 @@ import { SignleCategorys } from '../SignleProductCategory/SignleCategory/SignleC
 export const ProductDetails = () => {
     const [productDetail,setProductDetail] =useState([])
     const [call,setCall] = useState(false)
+    localStorage.setItem('productuser',productDetail.usernumber1)
   const {postId}=useParams()
   localStorage.setItem('postId',postId)
  const id= localStorage.getItem('postId')

@@ -1,7 +1,10 @@
 .chat-container{
-    background: rgba(63, 156, 255, 0.753);
-    color: #fff;
+  .chat-list{
+      background:#fff;
+      padding: 10px;
+  }
     padding: 30px;
+    
     h3{
         color: #3F9DFF;
         padding: 3px;
@@ -13,7 +16,7 @@
     }
     .chatView{
         background-color: #fff;
-        height: 580px;
+        height: auto;
     }
     
 }

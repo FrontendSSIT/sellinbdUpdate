@@ -60,6 +60,17 @@
             height: 150px;
         }
     }
+    #imgBtn{
+        position: absolute;
+        top: -55px;
+        left: 110px;
+        border: none;
+        border-radius:10px;
+        background-color:#3F9DFF;
+        color: #fff;
+        padding: 5px 10px;
+    }
+    
 }
 
 @media (max-width: 468px) {

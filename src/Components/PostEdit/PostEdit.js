@@ -78,7 +78,7 @@ export const PostEdit = () => {
          <Row>
          <Col lg={4}> <input type="submit"  value="Edit"/>  </Col>
          <Col lg={4}><input type="submit" value="Delete" onClick={handleDelete}/></Col>
-         <Col lg={4}><input type="submit" value="Promote" onClick={handleDelete}/></Col>
+         <Col lg={4}><input type="submit" value="Promote" /></Col>
          </Row>
         </form>
        </Col>

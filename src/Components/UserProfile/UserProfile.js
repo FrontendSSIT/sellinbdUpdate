@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-import profile from '../../images/userProfile.png'
 import { NavBarSub } from '../Home/NavBars/NavBars'
 import './UserProfile.scss'
-import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import StarBorderIcon from '@material-ui/icons/StarBorder';
-import ShareIcon from '@material-ui/icons/Share';
-import ReportProblemIcon from '@material-ui/icons/ReportProblem';
-import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom'
+import { Close, CloudUpload } from '@material-ui/icons'
+import ImageUploading from "react-images-uploading";
+
+
+
 export const UserProfile = () => {
     const [userData,setUserData] =useState([])
     console.log(userData)
@@ -47,42 +45,60 @@ export const UserProfile = () => {
 },[])
   const number=localStorage.getItem('userNumber')
   const { register, handleSubmit, errors } = useForm();
-  const[pic,setPic]=useState(null)
-  console.log(pic)
-  const onSubmit = async data => { 
-    const file=data.file[0]
-    const base64= await convertbase(file)
+  const [images, setImages] = useState([]);
+  console.log(images[0]?.data_url.data)
+  const maxNumber = 69;
+  const uploadImage= (imageList, addUpdateIndex) => {
+      // data for submit
+      console.log(imageList);
+      setImages(imageList);
+  };
+  const onSubmit =  data => { 
+    const formData = new FormData()
+    formData.append('usernumber1', number)
+    formData.append('profilepicture',images[0]?.data_url)
+    fetch('https://sellinbd.com/api330088/registration/updatepp.php',{
+              method:'POST',
+              body: formData
+            })
+            
+      }
+  // const[pic,setPic]=useState(null)
+  // console.log(pic)
+  // const onSubmit = async data => { 
+  //   const file=data.file[0]
+  //   const base64= await convertbase(file)
     
-    }
-    const handlePic=()=>{
-      const formData = new FormData()
-      formData.append('usernumber1',usernumber)
-      formData.append('profilepicture',pic)
-        fetch('https://sellinbd.com/api330088/registration/updatepp.php',{
-          method:'POST',
-          body: formData
-        })
-        .then(response =>response.json())
-        .then(resData=>{
-          console.log(resData)
-        })
+  //   }
+  // //   const handlePic=()=>{
+  //     const formData = new FormData()
+  //     formData.append('usernumber1',usernumber)
+  //     formData.append('profilepicture',pic)
+  //       fetch('https://sellinbd.com/api330088/registration/updatepp.php',{
+  //         method:'POST',
+  //         body: formData
+  //       })
+  //       .then(response =>response.json())
+  //       .then(resData=>{
+  //         console.log(resData)
+  //       })
         
-    }
+  //   }
 
-const convertbase=(file)=>{
-  return  new Promise((resolve, reject) =>{
- const fileReader = new FileReader()
- fileReader.readAsDataURL(file)
- fileReader.onload = () =>{
-   resolve(fileReader.result)
- }
- fileReader.onerror = (error) =>{
-  reject(error)
-}
-  });
+// const convertbase=(file)=>{
+//   return  new Promise((resolve, reject) =>{
+//  const fileReader = new FileReader()
+//  fileReader.readAsDataURL(file)
+//  fileReader.onload = () =>{
+//    resolve(fileReader.result)
+//  }
+//  fileReader.onerror = (error) =>{
+//   reject(error)
+// }
+//   });
  
   
-}
+
 
     return (
        <section className="userSection">
@@ -105,13 +121,48 @@ const convertbase=(file)=>{
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
      <Row className="justify-content-center">
-     <Col lg={4}> 
-    
-     <div className="text-center" >
-     <input type="file" name="file" ref={register({required: true})}/></div> </Col>
      <Col lg={2}> <div className="text-center" ><input type="submit" value="Confirm" /></div></Col>
      </Row>
      </form>
+      <Col lg={4}> <ImageUploading
+      multiple
+      value={images}
+      onChange={uploadImage}
+      maxNumber={1}
+      dataURLKey="data_url"
+  >
+      {({
+          imageList,
+          onImageUpload,
+          onImageRemoveAll,
+          onImageUpdate,
+          onImageRemove,
+          isDragging,
+ 
+          dragProps
+      }) => (
+              // write your building UI
+              <div className={images[0]?"upload__image":"upload__image-wrapper"} >
+                  <button className="uploadbtn" id="imgBtn"
+                      style={isDragging ? { color: "red" } : null}
+                      onClick={ onImageUpload}
+                      {...dragProps}
+                  >
+                  <CloudUpload/> Upload Your Image
+  </button>
+  &nbsp;
+                {
+                 images[0]?<button onClick={onImageRemove} className="closebtn"><Close/> </button>:null
+                }
+                  {imageList.map((image, index) => (
+                      <div key={index} className="image-item">
+                          <img src={image.data_url} alt="" width="100" />
+                         
+                      </div>
+                  ))}
+              </div>
+          )}
+  </ImageUploading></Col>
        </Col>
        </Row>
        <Row className="justify-content-center"> <Col lg={8} >

@@ -26,6 +26,7 @@ import { Dhaka } from './Components/SearchProduct/LocationProduct/DhakaDivision/
 import { AllChat } from './Components/AllChat/AllChat';
 import { Loaders } from './Components/Loader/Loaders';
 import { PostEdit } from './Components/PostEdit/PostEdit';
+import { PromotePost } from './Components/PromotePost/PromotePost';
 
 
 
