@@ -7,7 +7,6 @@ import { PostYourAdd } from './Components/PostYourAdd/PostYourAdd';
 import {  SignleCategorys } from './Components/AllCategory/SignleProductCategory/SignleCategory/SignleCategory';
 import { Contact } from './Components/Contact/Contact';
 import './App.css'
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -23,10 +22,12 @@ import { PostForm } from './Components/PostYourAdd/PostCategory/PostForm/PostFor
 import { UserProfile } from './Components/UserProfile/UserProfile';
 import { PrivateRoute } from './Components/Authentication/PrivateRoute/PrivateRoute';
 import { Dhaka } from './Components/SearchProduct/LocationProduct/DhakaDivision/Dhaka/Dhaka';
-import { AllChat } from './Components/AllChat/AllChat';
+import { AllChat} from './Components/AllChat/AllChat';
 import { Loaders } from './Components/Loader/Loaders';
 import { PostEdit } from './Components/PostEdit/PostEdit';
 import { PromotePost } from './Components/PromotePost/PromotePost';
+import { ChatView } from './Components/AllChat/ChatProductView/ChatProductView';
+
 
 
 
@@ -153,6 +154,9 @@ function App() {
         </Route>
         <Route path="/chat">
         <AllChat/>
+        </Route>
+        <Route path="/chatView/:number/:postId">
+        <ChatView/>
         </Route>  
         <Redirect  to="/"/>
       </Switch>

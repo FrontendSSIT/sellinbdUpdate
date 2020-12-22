@@ -138,7 +138,7 @@ export const ProductDetails = () => {
                     <button className="call" onClick={()=>setCall(!call)}> Call  { call?<p>{productDetail.usernumber1}</p>:null}
                     { call?<p>{productDetail?.usernumber2}</p>:null}</button>
                    
-                    <Link className="chat" to="/chat"> Chat</Link>
+                    <Link className="chat" to={`/chatView/${postId}`}> Chat</Link>
                     </div>
                </Col>
                     

@@ -5,7 +5,7 @@ import {  NavBarSub } from '../Home/NavBars/NavBars'
 import './AllChat.scss';
 import cm from '../../images/Boy.jpg'
 import cm1 from '../../images/Girl.jfif';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { MessageBox,MessageList,ChatList } from 'react-chat-elements'
 
 
@@ -94,22 +94,33 @@ export const AllChat = () => {
 
 
  export const ChatLists=({allChat})=>{
+   const postId=allChat.ref_product;
+   const number =allChat.receiver
     return(
         <Col lg={12} style={{backgroundColor:'color',justifyContent: 'center'}}>
-        <Row>
-        <Col lg={3}>
-        <div>
-        <img src={allChat.image1} alt="chatImage" style={{width:'60px',height:'60px',borderRadius:'50%',marginBottom:'10px'}}/>
-        </div>
-        </Col>
-        <Col lg={9}>
-        <div>
-        <h4>{allChat.productname}</h4>
-        <h6>{allChat.lastmsg}</h6>
-        </div>
-        </Col>
-        </Row>
+         <Link to={`/chatView/${number}/${postId}`}>
+         <Row>
+         <Col lg={3}>
+         <div>
+         <img src={allChat.image1} alt="chatImage" style={{width:'60px',height:'60px',borderRadius:'50%',marginBottom:'10px'}}/>
+         </div>
+         </Col>
+         <Col lg={9}>
+         <div>
+         <h4>{allChat.productname}</h4>
+         <h6>{allChat.lastmsg}</h6>
+         </div>
+         </Col>
+         </Row>
+         </Link>
 
         </Col>
     )
 }
+
+
+
+
+
+
+
