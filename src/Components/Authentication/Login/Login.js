@@ -24,7 +24,6 @@ export const Login = () => {
     const [otp,setOtp] = useState(false);
     const[user,setUser]=useState({});
     const history=useHistory()
-  
     const [loginUser,setLoginUser,userName,setUserName]=useContext(userContext)
     
     // console.log( "Hello",loginUser )
@@ -35,6 +34,7 @@ export const Login = () => {
         toast.success(" Wait for few Seconds !!!!" ,{ delay: -1000 });
     }
 const onSubmit = data =>{
+    console.log(data)
     const formData = new FormData();
     formData.append('usernumber', data.usernumber);
     formData.append('password',data.password);

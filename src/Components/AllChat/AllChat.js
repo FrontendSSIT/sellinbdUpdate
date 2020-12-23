@@ -76,7 +76,7 @@ export const AllChat = () => {
             <Container className="chat-container">
           <div >
           <Row className="justify-content-center" >
-          <Col lg={4} > 
+          <Col lg={4} xs={12}> 
           <Row className="chat-list"> {
             allChats.map(allChat=><ChatLists allChat={allChat}/> )
           }
@@ -97,15 +97,15 @@ export const AllChat = () => {
    const postId=allChat.ref_product;
    const number =allChat.receiver
     return(
-        <Col lg={12} style={{backgroundColor:'color',justifyContent: 'center'}}>
+        <Col lg={12} xs={12}  style={{backgroundColor:'color',justifyContent: 'center'}}>
          <Link to={`/chatView/${number}/${postId}`}>
          <Row>
-         <Col lg={3}>
+         <Col lg={3} xs={3}>
          <div>
          <img src={allChat.image1} alt="chatImage" style={{width:'60px',height:'60px',borderRadius:'50%',marginBottom:'10px'}}/>
          </div>
          </Col>
-         <Col lg={9}>
+         <Col lg={9} xs={9}>
          <div>
          <h4>{allChat.productname}</h4>
          <h6>{allChat.lastmsg}</h6>
