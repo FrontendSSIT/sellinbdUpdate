@@ -55,8 +55,6 @@ export const BannerSlid = () => {
 export const BannerAd=({slid})=>{
     localStorage.setItem('postId',slid.post_id)
     localStorage.setItem('category',slid.category)
-    console.log(slid.post_id)
-    console.log(slid.category)
     return(
         
           <Col lg={8} xs={12}>

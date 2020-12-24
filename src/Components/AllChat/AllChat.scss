@@ -1,7 +1,12 @@
+a{
+    text-decoration: none;
+}
+
 .chat-container{
+   
   .chat-list{
       background:#fff;
-      padding: 10px;
+     overflow-x: hidden;
   }
     padding: 30px;
     
@@ -13,6 +18,7 @@
         background: #fff;
         border: 1px solid #3f3f3f;
         padding: 10px;
+        overflow-x: hidden;
     }
     .chatView{
         background-color: #fff;
@@ -20,39 +26,74 @@
     }
     
 }
+.chat-list-user{
+    a{
+        text-decoration: none;
+    }
+    h3{
+        color: #000;
+    }
+    .ColorMsgSeen{
+        color:#707070;
+    }
+    .ColorMsgUnseen{
+      color: #3F9DFF;
+       position: relative;
+        &::after{
+            position: absolute;
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-bottom: 10px solid red;
+            right: 0;
+            top: 0;
+            border-radius: 50%;
+        }
+    }
+}
 .chatView{
-   border: 1px solid #3F9DFF;
-   background: rgba(112, 112, 112, 0.08);
-   height: 568px;
+   border: 1px solid rgba(112, 112, 112, 0.02);;
+   background: rgba(112, 112, 112, 0.02);
+   height: 60%;
    position: fixed;
    border-radius: 10px;
    width: 28%;
    margin-left: 50px;
    overflow-y:scroll;
    overflow-x: hidden;
+   border-bottom-left-radius: 0 ;
+   border-bottom-right-radius: 0 ;
+   z-index: 1;
+   margin-top: 47px;
   h2{
     vertical-align: bottom;
   }
    form {
        position: fixed;
-       top: 68%;
+       top: 76%;
        width: 29%;
-       right: 32%;
+       right: 29%;
        padding: 5px 5px;
        input[type=text]{
         width: 100%;
         outline: none;
-        padding: 10px;
+        padding: 15px 10px ;
         border-radius: 10px;
         position: relative;
-       
+
+        border: none;
+        
        }
+       ::placeholder{
+        color:#707070;
+    }
        .MuiSvgIcon-root{
         position: absolute;
-        right: 10px;
+        right: 2px;
         top: 50%;
         transform: translate(-50%,-50%);
         color: #3F9DFF;
+        font-size: 40px;
     }
    }
   
@@ -60,13 +101,14 @@
 }
 .chatproductComponent{
     position: fixed;
-    top: 110px;
+    top: 20px;
     width: 82%;
-    left: 160px;
+    left: 202px;
 }
 .ChatProduct{
     background:rgba(255, 255, 255, 0.87);
     border-radius: 10px;
+   width: 520px;margin-left: 30px;
     box-shadow: 0px 5px 5px rgb(184, 182, 182);
 
     margin-left: 20px;
@@ -86,12 +128,14 @@
     }
 }
 .textTwo{
-  
     div{
+       
         div{
          background: #3F9DFF !important;
          float: right !important;
-         margin-right: 10px !important;
+         margin-right: 10px !important;  
+         margin-bottom: 10px !important;
+        
                 p{
             color: #fff !important;
         }
@@ -104,7 +148,7 @@
    div{
        div{
         background: #fff !important;
-      
+        margin-bottom: 10px !important;
        p{
            color: #3F9DFF !important;
        }
@@ -118,6 +162,9 @@
     .viewContainer{
         padding: 0;
         margin-top: 0 !important;
+        background: rgba(112, 112, 112, 0.09);
+        height: 1000px !important;
+        overflow-x: hidden;
       
     }
     .chatView{
@@ -126,12 +173,13 @@
         border: none !important;
         overflow-x: hidden;
         margin-top: 73px;
-        height: 60% !important;
+        height: 46% !important;
+        overflow-x: hidden;
        
         form{
             width: 92.9%;
             right: 4.4%;
-           top: 84%;
+           top: 78%;
            margin-top: 20px;
         }
     }

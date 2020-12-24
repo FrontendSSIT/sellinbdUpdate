@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import {  NavBarSub } from '../Home/NavBars/NavBars'
 import './AllChat.scss';
-import cm from '../../images/Boy.jpg'
-import cm1 from '../../images/Girl.jfif';
 import { Link, useParams } from 'react-router-dom';
 import { MessageBox,MessageList,ChatList } from 'react-chat-elements'
-
+import TimeAgo from 'react-timeago'
+import frenchStrings from 'react-timeago/lib/language-strings/en'
+import buildFormatter from 'react-timeago/lib/formatters/buildFormatter';
 
 
 export const AllChat = () => {
@@ -53,9 +53,10 @@ export const AllChat = () => {
     //     })
     //   },[])
     const [allChats,setAllChats]=useState([])
-    console.log(allChats)
+ 
+
     useEffect(()=>{
-        const formData = new FormData()
+      const formData = new FormData()
             formData.append('usernumber',number)
             fetch('http://sellinbd.com/api330088/chat/readChatlist.php',{
                 method: 'POST',
@@ -63,13 +64,41 @@ export const AllChat = () => {
              
             })
           
-            .then(res=>res.json())
-            .then(result=>{
-                  if(result){
-                    setAllChats(result.records)
-                  }
-            })
+            .then(res=>{
+              if(res.status===200){
+        
+                  res.json()
+                  .then(result=>{
+                      if(result){
+                        setAllChats(result.records)
+                      }
+              })
+              }
+          })
     },[])
+    // useEffect(()=>{
+    //   setTimeout(() => {
+    //     const formData = new FormData()
+    //         formData.append('usernumber',number)
+    //         fetch('http://sellinbd.com/api330088/chat/readChatlist.php',{
+    //             method: 'POST',
+    //             body: formData
+             
+    //         })
+          
+    //         .then(res=>{
+    //           if(res.status===200){
+        
+    //               res.json()
+    //               .then(result=>{
+    //                   if(result){
+    //                     setAllChats(result.records)
+    //                   }
+    //           })
+    //           }
+    //       })
+    //   },100000)
+    // },)
     return (
         <section>
             <NavBarSub/>
@@ -78,7 +107,7 @@ export const AllChat = () => {
           <Row className="justify-content-center" >
           <Col lg={4} xs={12}> 
           <Row className="chat-list"> {
-            allChats.map(allChat=><ChatLists allChat={allChat}/> )
+            allChats.map(allChat=><ChatLists allChat={allChat} ky={allChat.post_id}/> ).reverse()
           }
           </Row>
           </Col>
@@ -95,10 +124,13 @@ export const AllChat = () => {
 
  export const ChatLists=({allChat})=>{
    const postId=allChat.ref_product;
-   const number =allChat.receiver
+   const number =allChat.receiver;
+   const seen=allChat.lastmsg_seen;
+   const seenCount=localStorage.getItem('seen');
+   const formatter = buildFormatter(frenchStrings)
     return(
-        <Col lg={12} xs={12}  style={{backgroundColor:'color',justifyContent: 'center'}}>
-         <Link to={`/chatView/${number}/${postId}`}>
+        <Col lg={12} xs={12}  style={{backgroundColor:'color',justifyContent: 'center'}} className="chat-list-user">
+         <Link to={`/chatView/${seen}/${number}/${postId}`}>
          <Row>
          <Col lg={3} xs={3}>
          <div>
@@ -107,8 +139,9 @@ export const AllChat = () => {
          </Col>
          <Col lg={9} xs={9}>
          <div>
-         <h4>{allChat.productname}</h4>
-         <h6>{allChat.lastmsg}</h6>
+         <h3>{allChat.productname}</h3>
+       <h6 className={allChat.lastmsg_seen ==="1"? "ColorMsgSeen":"ColorMsgUnseen"}>{allChat.lastmsg}</h6>
+       <small><TimeAgo date={allChat.time} formatter={formatter} /></small>
          </div>
          </Col>
          </Row>

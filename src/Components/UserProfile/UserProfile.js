@@ -45,23 +45,22 @@ export const UserProfile = () => {
 },[])
   const number=localStorage.getItem('userNumber')
   const { register, handleSubmit, errors } = useForm();
-  const [images, setImages] = useState([]);
-  console.log(images[0]?.data_url.data)
+  const [imagess, setImages] = useState([]);
   const maxNumber = 69;
   const uploadImage= (imageList, addUpdateIndex) => {
       // data for submit
       console.log(imageList);
       setImages(imageList);
   };
-  const onSubmit =  data => { 
+ const handleProfilImg=()=>{
     const formData = new FormData()
-    formData.append('usernumber1', number)
-    formData.append('profilepicture',images[0]?.data_url)
-    fetch('https://sellinbd.com/api330088/registration/updatepp.php',{
+    formData.append('usernumber',number)
+    formData.append('images[]',imagess[0]?.file)
+    fetch('https://sellinbd.com/api330088/user/updateProfilePicture.php',{
               method:'POST',
               body: formData
             })
-            
+         
       }
   // const[pic,setPic]=useState(null)
   // console.log(pic)
@@ -101,7 +100,7 @@ export const UserProfile = () => {
 
 
     return (
-       <section className="userSection">
+       <section className="userSection" key={number.toString()}>
        <Container fuild>
        <NavBarSub/>
        <Row className="justify-content-center">
@@ -119,14 +118,15 @@ export const UserProfile = () => {
       </Row>
       </div>
       </div>
-      <form onSubmit={handleSubmit(onSubmit)}>
+     
      <Row className="justify-content-center">
-     <Col lg={2}> <div className="text-center" ><input type="submit" value="Confirm" /></div></Col>
-     </Row>
-     </form>
-      <Col lg={4}> <ImageUploading
+     
+     <Col lg={12}>
+    <Row>
+    
+      <Col lg={6}> <ImageUploading
       multiple
-      value={images}
+      value={imagess}
       onChange={uploadImage}
       maxNumber={1}
       dataURLKey="data_url"
@@ -142,7 +142,7 @@ export const UserProfile = () => {
           dragProps
       }) => (
               // write your building UI
-              <div className={images[0]?"upload__image":"upload__image-wrapper"} >
+              <div className={imagess[0]?"upload__image":"upload__image-wrapper"} >
                   <button className="uploadbtn" id="imgBtn"
                       style={isDragging ? { color: "red" } : null}
                       onClick={ onImageUpload}
@@ -152,7 +152,7 @@ export const UserProfile = () => {
   </button>
   &nbsp;
                 {
-                 images[0]?<button onClick={onImageRemove} className="closebtn"><Close/> </button>:null
+                 imagess[0]?<button onClick={onImageRemove} className="closebtn"><Close/> </button>:null
                 }
                   {imageList.map((image, index) => (
                       <div key={index} className="image-item">
@@ -163,6 +163,13 @@ export const UserProfile = () => {
               </div>
           )}
   </ImageUploading></Col>
+  
+     <Col lg={2} className='ConfirmBtn'> <form ><div className="text-center" ><button onClick={handleProfilImg}>confirm</button></div> </form></Col>
+    
+    
+  </Row>
+  </Col>
+  </Row>
        </Col>
        </Row>
        <Row className="justify-content-center"> <Col lg={8} >
@@ -184,7 +191,7 @@ const UserPost=({userPost})=>{
     const category=userPost.category
   return (
  
-       <Row  className="justify-content-center">
+       <Row  className="justify-content-center" key={userPost.post_id}>
        
       
        <Col lg={8} xs={12}>
@@ -203,7 +210,8 @@ const UserPost=({userPost})=>{
        
        </div>
         </Link>
-       <div  className="text-center"> <Link to={`/PostEdit/${postId}`}>Click for Edit, Delete & Promote</Link>  </div>
+       <div  className="text-center"> <Link style={{backgroundColor:' #3F9DFF',color:'#fff',padding:'5px 10px', borderRadius:
+      '10px'}} to={`/PostEdit/${postId}`}>Click for Edit, Delete & Promote</Link>  </div>
        </Col>
       
        </Row>

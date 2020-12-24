@@ -36,7 +36,7 @@ export const ProductDetails = () => {
     const {category}=useParams()
     console.log(category)
     localStorage.setItem('category',category)
-   
+   const loginUserNumber=localStorage.getItem('userNumber')
     return (
     <>   
     <NavBarSub/>
@@ -129,7 +129,7 @@ export const ProductDetails = () => {
                    <Row>
                    <Col lg={12} xs={12} className="text-left">
                    <div >
-                   <h1>{productDetail.productdescription}</h1>
+                   <h4>{productDetail.productdescription}</h4>
                   <h3> {productDetail.item}</h3>
                    </div>
                    
@@ -138,7 +138,9 @@ export const ProductDetails = () => {
                     <button className="call" onClick={()=>setCall(!call)}> Call  { call?<p>{productDetail.usernumber1}</p>:null}
                     { call?<p>{productDetail?.usernumber2}</p>:null}</button>
                    
-                    <Link className="chat" to={`/chatView/${postId}`}> Chat</Link>
+                 {
+                        loginUserNumber===productDetail.usernumber1?null:   <Link className="chat" to={`/chatView/${postId}`}> Chat</Link>
+                 }
                     </div>
                </Col>
                     

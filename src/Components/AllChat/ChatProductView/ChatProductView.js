@@ -5,19 +5,23 @@ import { useForm } from 'react-hook-form';
 import SendIcon from '@material-ui/icons/Send';
 import '../AllChat.scss'
 import { useEffect, useRef, useState } from "react";
-
+import { ToastContainer, toast,Flip } from 'react-toastify';
 
 
 import { ChatFeed, ChatBubble,Message } from 'react-chat-ui'
 
 export const ChatView=()=>{
+  const successNotify = () => {
+    toast.success(" New Message Check Your Message !!!!" ,{ delay: 1 });
+  }
   // const { register, handleSubmit, errors } = useForm();
   const usernumber=localStorage.getItem('userNumber')
   const postUser = localStorage.getItem('productuser')
   const id= localStorage.getItem('postId')
   const [inputValue,setInputValue]=useState('')
  
-const {postId,number}=useParams()
+const {postId,seen,number}=useParams()
+localStorage.setItem('seen',seen)
 localStorage.setItem('postId',postId)
 localStorage.setItem('productuser',number)
 const [messages,setMessage]=useState([])
@@ -80,12 +84,14 @@ const handleMessage=()=>{
               .then(result=>{
                   if(result){
                     setMessage(result.records)
+                    setCount(result.records)
                   }
           })
           }
       })
 }
 const [count, setCount] = useState([]);
+
 useEffect(() => {
   setTimeout(() => {
     const formData = new FormData()
@@ -105,6 +111,7 @@ useEffect(() => {
           .then(result=>{
               if(result){
                 setMessage(result.records)
+                setCount(result.records)
               }
       })
       }
@@ -118,9 +125,11 @@ useEffect(() => {
     });
   }
 },);
- 
+
+
+
    return(
-       <section>
+       <section className="chatViewSecttion">
        <Container className="pt-5 mt-5 viewContainer">
        <Row className="justify-content-center">
        <Col lg={4} xs={12}>
@@ -128,13 +137,21 @@ useEffect(() => {
        <Col lg={12} xs={12}>
        <div className="chatView"  ref={messageEl}>
        <form >
-        <input type="text" name="msg"  onChange={handleValue} value={inputValue} required />
+        <input type="text" name="msg"  placeholder="Type a message....." onChange={handleValue} value={inputValue} required />
         <SendIcon onClick={handleSend}/>
        </form>
         <div> {
           messages.map(chatRead=><ReadChat chatRead={chatRead} key={chatRead.postId}/>)
          }
          </div>
+         <ToastContainer 
+         autoClose={3000}
+    position="top-center"
+    limit={1}
+    transition={Flip}
+    draggable={false}
+    role="alert"
+    />
        </div>
        </Col>
        </Row>

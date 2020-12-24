@@ -39,8 +39,9 @@
 }
 
 @media (max-width: 468px){
-    .call,.chat{
-        margin-left: 40px !important;
+    .chat{
+        margin-left: 15px !important;
+        margin-right: -15px;
     }
     .call{
         margin-left: -30px !important;

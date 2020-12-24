@@ -155,7 +155,7 @@ function App() {
         <Route path="/chat">
         <AllChat/>
         </Route>
-        <Route path="/chatView/:number/:postId">
+        <Route path="/chatView/:seen/:number/:postId">
         <ChatView/>
         </Route>  
         <Redirect  to="/"/>

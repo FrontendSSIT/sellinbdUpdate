@@ -65,7 +65,6 @@ export const Home = () => {
            <Sliderss/>
            <Categorys />
            <AdPost/>
-           <Footer/>
            </>
         }
            </div>:<Loaders/>
