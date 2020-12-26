@@ -67,11 +67,15 @@
    
     
 }
+.userSection button{
+    margin-left: 30px !important;
+}
 
 @media (max-width: 468px) {
     .profilePicture {
         width: 80px !important;
         height: 80px !important;
+        
     }
     .profilePicture img{
    width: 50px !important;
