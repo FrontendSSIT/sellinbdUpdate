@@ -10,19 +10,41 @@ img{
 }
 
 .ReactModal__Content--after-open{
-    height: 700px !important;
+    height: 800px !important;
     width: 350px !important;
     border-radius: 50px !important;
    img{
        width: 300px;
        height: 625px;
        margin-left: -30px !important;
-       margin-top: -20px;
+       margin-top: 40px;
+   }
+   input[type="submit"]{
+       background: #3F9DFF;
+       margin-top: 5px;
+       border: none;
+       border-radius: 10px;
+       margin-left: 10px;
+       padding: 5px 10px;
+       color: #fff;
+   }
+   button{
+    background: #3F9DFF;
+    background: #3F9DFF;
+    padding: 5px 16px;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
    }
 }
 
 @media (max-width: 468px){
     .ReactModal__Content--after-open{
-        margin-top: 370px !important;
+        margin-top: 340px !important;
+        height: 80%!important;
+        img{
+            height: 70% !important;
+            margin-top: 10px !important;
+        }
     }
 }

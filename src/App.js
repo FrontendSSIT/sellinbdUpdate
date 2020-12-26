@@ -68,9 +68,9 @@ function App() {
         <Route path="/catNav">
         <CategoryNav/>
         </Route>
-        <Route path="/postAdd">
+        <PrivateRoute path="/postAdd">
         <PostYourAdd/>
-        </Route>
+        </PrivateRoute>
         <Route path="/PostEdit/:postId">
          <PostEdit/>
         </Route>
@@ -152,12 +152,15 @@ function App() {
                                      <Route path="/contact">
         <Contact/>
         </Route>
-        <Route path="/chat">
+         <Route path="/promotePost">
+         <PromotePost/>
+         </Route>
+        <PrivateRoute path="/chat">
         <AllChat/>
-        </Route>
-        <Route path="/chatView/:seen/:number/:postId">
+        </PrivateRoute>
+        <PrivateRoute path="/chatView/:number/:postId">
         <ChatView/>
-        </Route>  
+        </PrivateRoute>  
         <Redirect  to="/"/>
       </Switch>
       

@@ -12,7 +12,7 @@ import './NavBars.scss'
 
 export const NavBars = ({handleSearchBox,clickSearch,handleSearchClick,setSearchValue}) => {
   const[search,setSearch]=useState(false)
-
+const number=localStorage.getItem('userNumber')
   const handleSearch=()=>{
       setSearch(true)
       
@@ -53,18 +53,20 @@ export const NavBars = ({handleSearchBox,clickSearch,handleSearchClick,setSearch
       <Nav.Link >
         <Link to="/contact">Contact Us</Link>
       </Nav.Link>
-      <Nav.Link>
-        <Link to="/login">Login</Link>
-      </Nav.Link>
+      
       <Nav.Link >
         <Link to="/postAdd">Add Post </Link>
         </Nav.Link>
         <Nav.Link >
         <Link to="/chat">Chat</Link>
       </Nav.Link>
-      <Nav.Link >
-      <Link to="/user"> Account</Link>
-      </Nav.Link>
+     {
+       number? <Nav.Link >
+       <Link to="/user"> Account</Link>
+       </Nav.Link>:<Nav.Link>
+       <Link to="/login">Login</Link>
+     </Nav.Link>
+     }
     
     </Nav>
    
@@ -92,10 +94,6 @@ export const NavBarSub = () => {
 
   <Nav.Link >
     <Link to="/contact">Contact Us</Link>
-  </Nav.Link>
-  <Nav.Link>
-  
-    <Link to="/login">Login</Link>
   </Nav.Link>
   <Nav.Link >
 

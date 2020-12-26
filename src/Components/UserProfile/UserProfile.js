@@ -3,8 +3,8 @@ import { Col, Container, Row } from 'react-bootstrap'
 import { NavBarSub } from '../Home/NavBars/NavBars'
 import './UserProfile.scss'
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom'
-import { Close, CloudUpload } from '@material-ui/icons'
+import { Link, useHistory } from 'react-router-dom'
+import { Close, CloudUpload, HelpOutlineTwoTone, PowerSettingsNewOutlined, RateReviewOutlined,  ReportOffOutlined, Share, ShoppingCartOutlined } from '@material-ui/icons'
 import ImageUploading from "react-images-uploading";
 
 
@@ -62,45 +62,10 @@ export const UserProfile = () => {
             })
          
       }
-  // const[pic,setPic]=useState(null)
-  // console.log(pic)
-  // const onSubmit = async data => { 
-  //   const file=data.file[0]
-  //   const base64= await convertbase(file)
-    
-  //   }
-  // //   const handlePic=()=>{
-  //     const formData = new FormData()
-  //     formData.append('usernumber1',usernumber)
-  //     formData.append('profilepicture',pic)
-  //       fetch('https://sellinbd.com/api330088/registration/updatepp.php',{
-  //         method:'POST',
-  //         body: formData
-  //       })
-  //       .then(response =>response.json())
-  //       .then(resData=>{
-  //         console.log(resData)
-  //       })
-        
-  //   }
 
-// const convertbase=(file)=>{
-//   return  new Promise((resolve, reject) =>{
-//  const fileReader = new FileReader()
-//  fileReader.readAsDataURL(file)
-//  fileReader.onload = () =>{
-//    resolve(fileReader.result)
-//  }
-//  fileReader.onerror = (error) =>{
-//   reject(error)
-// }
-//   });
  
-  
-
-
-    return (
-       <section className="userSection" key={number.toString()}>
+ return (
+       <section className="userSection" key={toString()}>
        <Container fuild>
        <NavBarSub/>
        <Row className="justify-content-center">
@@ -172,6 +137,11 @@ export const UserProfile = () => {
   </Row>
        </Col>
        </Row>
+       <Row className={"justify-content-center"}>
+       <Col lg={8}>
+       <Faq/>
+       </Col>
+       </Row>
        <Row className="justify-content-center"> <Col lg={8} >
        <div className="fqaProfile">
        <h2>MY Ads</h2>
@@ -180,11 +150,34 @@ export const UserProfile = () => {
        {
          userPost.map(userPost=><UserPost userPost={userPost}/>)
        }
+
        </Container>
        </section>
     )
 }
 
+
+export const Faq=()=>{
+  const history =useHistory()
+ const handleLogout=()=>{
+     localStorage.clear('userNumber')
+   history.replace('/')
+ }
+ return(
+  <section>
+  <Container className="fqaProfile">
+  <Row>
+  <Col lg={12}> <h4> <HelpOutlineTwoTone/> FAQ</h4></Col>
+  <Col lg={12}> <h4><ShoppingCartOutlined/> How to sell fast</h4></Col>
+  <Col lg={12}> <h4> <RateReviewOutlined/> <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.xb.shameem.sellinbd&hl=en&gl=US" target="_blank">Rate Us</a></h4></Col>
+  <Col lg={12}> <h4><Share/> Share</h4></Col>
+  <Col lg={12}> <h4> <ReportOffOutlined/> Report Problem/Contact With Developer</h4></Col>
+  <Col lg={12} onClick={handleLogout}> <h4> <PowerSettingsNewOutlined/> Logout</h4></Col>
+  </Row>
+  </Container>
+  </section>
+ )
+}
 
 const UserPost=({userPost})=>{
   const postId=userPost.post_id

@@ -130,7 +130,7 @@ export const AllChat = () => {
    const formatter = buildFormatter(frenchStrings)
     return(
         <Col lg={12} xs={12}  style={{backgroundColor:'color',justifyContent: 'center'}} className="chat-list-user">
-         <Link to={`/chatView/${seen}/${number}/${postId}`}>
+         <Link to={`/chatView/${number}/${postId}`}>
          <Row>
          <Col lg={3} xs={3}>
          <div>

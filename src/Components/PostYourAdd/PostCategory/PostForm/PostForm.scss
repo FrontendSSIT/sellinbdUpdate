@@ -46,10 +46,17 @@
         }
     }
 }
-// @media (max-width: 468px){
+@media (max-width: 468px){
 
-//     .uploadbtn{
-//         padding: 5px 80px;
-//         margin-left: -100px;
-//     }
-// }
+    .uploadbtn{
+        padding: 5px 80px;
+        margin-left: -140px;
+    }
+    .upload__image{
+        margin-left: 10px !important;
+        bottom: 150px !important;
+    }
+    .btn-frm{
+        margin-top: 170px !important;
+    }
+}

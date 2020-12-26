@@ -133,28 +133,22 @@ useEffect(() => {
        <Container className="pt-5 mt-5 viewContainer">
        <Row className="justify-content-center">
        <Col lg={4} xs={12}>
-       <Row>
-       <Col lg={12} xs={12}>
-       <div className="chatView"  ref={messageEl}>
-       <form >
-        <input type="text" name="msg"  placeholder="Type a message....." onChange={handleValue} value={inputValue} required />
-        <SendIcon onClick={handleSend}/>
-       </form>
-        <div> {
-          messages.map(chatRead=><ReadChat chatRead={chatRead} key={chatRead.postId}/>)
-         }
-         </div>
-         <ToastContainer 
-         autoClose={3000}
-    position="top-center"
-    limit={1}
-    transition={Flip}
-    draggable={false}
-    role="alert"
-    />
-       </div>
-       </Col>
-       </Row>
+         
+          <Row>
+           <Col lg={12} xs={12}>
+           <div className="chatView"  ref={messageEl}>
+           <form >
+            <input type="text" name="msg"  placeholder="Type a message....." onChange={handleValue} value={inputValue} required />
+            <SendIcon onClick={handleSend}/>
+           </form>
+            <div> {
+              messages.map(chatRead=><ReadChat chatRead={chatRead} key={chatRead.postId}/>)
+             }
+             </div>
+           </div>
+           </Col>
+           </Row>
+        
        </Col>
        </Row>
       <Row>

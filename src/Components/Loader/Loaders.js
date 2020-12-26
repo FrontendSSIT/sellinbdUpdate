@@ -12,12 +12,12 @@ export const Loaders = () => {
        <Loader
        type="BallTriangle"
        color="#00BFFF"
-       height={200}
-       width={200}
+       height={100}
+       width={100}
        timeout={3000} //3 secs
       
     />
-       <p>Loading...........</p>
+       <p style={{color: "green"}}>Wait for Few Seconds...........</p>
        </divs>
        </section>
     )

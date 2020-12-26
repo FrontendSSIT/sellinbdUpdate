@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
-import { useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
+import { NavBarSub } from '../Home/NavBars/NavBars';
 
 export const PostEdit = () => {
     const { register, handleSubmit, errors } = useForm();
@@ -69,6 +70,7 @@ export const PostEdit = () => {
     return (
        <section className="postForm">
        <Container>
+       <NavBarSub/>
        <Row className="justify-content-center">
        <Col lg={6}>
        <h2>Edit Your Post</h2>
@@ -78,7 +80,7 @@ export const PostEdit = () => {
          <Row>
          <Col lg={4}> <input type="submit"  value="Edit"/>  </Col>
          <Col lg={4}><input type="submit" value="Delete" onClick={handleDelete}/></Col>
-         <Col lg={4}><input type="submit" value="Promote" /></Col>
+         <Col lg={4} className="mt-2"><Link to="/promotePost" style={{background:'#3F9DFF',color:'#fff',padding:'10px 15px', borderRadius:'10px',}}>Promote </Link></Col>
          </Row>
         </form>
        </Col>
