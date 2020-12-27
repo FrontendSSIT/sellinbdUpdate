@@ -10,10 +10,11 @@ import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import {  NavBarSub } from '../../Home/NavBars/NavBars';
 import Modal from 'react-modal';
 import { ForgatePassword } from '../ForgatePassWord/ForgatePassword';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { userContext } from '../../../App';
 import { ToastContainer, toast,Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Col, Row } from 'react-bootstrap';
 
 export const Login = () => {
     const { register, handleSubmit,errors} = useForm();
@@ -46,26 +47,31 @@ const onSubmit = data =>{
         if(res.status===200){
             res.json()
             .then(dataUser=>{
-          if(dataUser.message==="i"){
+          if(dataUser.message=="i"){
               console.log("invailed")
               notify()
           }
-          if(dataUser.message==="f"){
+          if(dataUser.message=="f"){
+            history.push("/login")
+            notify()
+        }
+        if(dataUser.message=="x"){
             history.replace("/login")
             notify()
         }
-        
         else{
-           
             history.push('/')
+            console.log(dataUser)
+          
         }
         setUser(dataUser)
         setUserName(dataUser)
+        localStorage.setItem('userNumber',data.usernumber) 
       
         })
         }
         setLoginUser(data)
-        localStorage.setItem('userNumber',data.usernumber) 
+       
     })   
         
 }
@@ -149,24 +155,7 @@ const  openModal=()=>    {
          </Grid>
          
          </Grid>
-             <p onClick={openModal} className="fogatetext">Forgate Password?</p>
-             
-             <Modal
-                 isOpen={modalIsOpen}
-                 onRequestClose={closeModal}
-                 contentLabel="Example Modal"
-                 > 
-                 
-      <ForgatePassword 
-      forgate={forgate} otp={otp}
-       submitOtp={submitOtp} 
-       visiableIcon={visiableIcon}
-       IconShow={IconShow}
-     handleForgate={handleForgate}
-     ShowPassword={ShowPassword}
-       />
-                 
-                 </Modal>
+             <Link to="/forgate" className="fogatetext">Forgate Password?</Link>
                  <Grid container spacing={1}>
              <Grid item xs={12} className="reg">
              <p className="noAccount">Don't have an account?</p>
@@ -181,5 +170,3 @@ const  openModal=()=>    {
 </section>
     )
 }
-
-

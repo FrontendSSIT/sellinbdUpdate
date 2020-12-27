@@ -4,14 +4,15 @@ import { userContext } from '../../../App'
 
 export const PrivateRoute = ({ children, ...rest }) => {
     const [loginUser,setLoginUser,userName,setUserName,productD,setProductD]=useContext(userContext)
-    const number=localStorage.getItem('userNumber')
+    const userMessage=localStorage.getItem('userMessage')
+   
     const history=useHistory()
     const location=useLocation()
     return (
         <Route
         {...rest}
         render={ location =>
-           userName.message || number? (
+           userName.message!=="f" || userName.message!=="i" || userName.message!=="x"? (
             children
           ) : (
             <Redirect

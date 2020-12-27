@@ -27,7 +27,7 @@ import { Loaders } from './Components/Loader/Loaders';
 import { PostEdit } from './Components/PostEdit/PostEdit';
 import { PromotePost } from './Components/PromotePost/PromotePost';
 import { ChatView } from './Components/AllChat/ChatProductView/ChatProductView';
-
+import { ForgatePassword, Otp } from './Components/Authentication/ForgatePassWord/ForgatePassword';
 
 
 
@@ -41,6 +41,10 @@ function App() {
   useEffect(()=>{
     setLoader(true)
   },[])
+
+  const userMessage=localStorage.getItem('userMessage')
+  console.log(userMessage)
+
   return (
   <userContext.Provider value={[productD,setProductD,userName,setUserName,loginUser,setLoginUser]}>
     {
@@ -52,8 +56,11 @@ function App() {
         <Route  path="/home">
         <Home/>
         </Route>
-        <Route  path="/login">
+        <PrivateRoute  path="/login">
         <Login/>
+        </PrivateRoute>
+        <Route  path="/forgate">
+        <ForgatePassword />
         </Route>
         <Route path="/produtcDetails/:category/:postId">
         <ProductDetails/>

@@ -29,11 +29,11 @@ export const Location = () => {
           <Row className="justify-content-center">
             <Col lg={6}>
              <ul>
-  <li onClick={()=>setMymensingh(!mymensingh)}>{mymensingh?<ArrowUpward/>:<ArrowDownward/>  } Mymensingh Division
+  <li onClick={()=>setMymensingh(!mymensingh)}>{mymensingh?<ArrowUpward/>:<ArrowDownward/>  }Mymensingh Division
                {mymensingh?
                 <ul>
                   <li><Link to="/location" onFocus={handleCategoryLoc}>Mymensingh</Link></li>
-                  <li><Link to="/location" onFocus={handleCategoryLoc}>jamalpur</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Jamalpur</Link></li>
                   <li><Link to="/location" onFocus={handleCategoryLoc}>Sherpur</Link></li>
                   <li><Link to="/location" onFocus={handleCategoryLoc}>Netrokona</Link></li>
                 </ul>:null
@@ -43,11 +43,11 @@ export const Location = () => {
                {rangpur?
                 <ul>
                   <li><Link to="/location" onFocus={handleCategoryLoc}>Rangpur</Link></li>
-                  <li><Link to="/location" onFocus={handleCategoryLoc}>dibajpur</Link></li>
-                  <li><Link to="/location" onFocus={handleCategoryLoc}> Kurigram</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Dinajpur</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Kurigram</Link></li>
                   <li><Link to="/location" onFocus={handleCategoryLoc}>Nilphamari</Link></li>
                   <li><Link to="/location" onFocus={handleCategoryLoc}>Lalmonirhat</Link></li>
-                  <li><Link to="/location" onFocus={handleCategoryLoc}> Gaibandha</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Gaibandha</Link></li>
                   <li><Link to="/location" onFocus={handleCategoryLoc}>Thakurgaon</Link></li>
                   <li><Link to="/location" onFocus={handleCategoryLoc}>Panchagarh</Link></li>
                 </ul>:null
@@ -60,7 +60,7 @@ export const Location = () => {
                   <li><Link to="/location" onFocus={handleCategoryLoc}>Khulna</Link></li>
                   <li><Link to="/location" onFocus={handleCategoryLoc}>Jessore</Link></li>
                   <li><Link to="/location" onFocus={handleCategoryLoc}>Khustia</Link></li>
-                  <li><Link to="/location" onFocus={handleCategoryLoc}>jhenaidha</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Jhenaidha</Link></li>
                   <li><Link to="/location" onFocus={handleCategoryLoc}>Satkhira</Link></li>
                   <li><Link to="/location" onFocus={handleCategoryLoc}>Bagerhat</Link></li>
                   <li><Link to="/location" onFocus={handleCategoryLoc}>Chuadanga</Link></li>
@@ -82,8 +82,8 @@ export const Location = () => {
                   <li><Link to="/location" onFocus={handleCategoryLoc}>Faridpur</Link></li>
                   <li><Link to="/location" onFocus={handleCategoryLoc}>Kishorganj</Link></li>
                   <li><Link to="/location" onFocus={handleCategoryLoc}>Manikganj</Link></li>
-                  <li><Link to="/location" onFocus={handleCategoryLoc}>madaripur</Link></li>
-                  <li><Link to="/location" onFocus={handleCategoryLoc}>Munshiuuganj</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Madaripur</Link></li>
+                  <li><Link to="/location" onFocus={handleCategoryLoc}>Munshiganj</Link></li>
                   <li><Link to="/location" onFocus={handleCategoryLoc}>Rajbari</Link></li>
                   <li><Link to="/location" onFocus={handleCategoryLoc}>Shariatpur</Link></li>
                 </ul>:null
@@ -112,11 +112,10 @@ export const Location = () => {
                   <li><Link to="/location" onFocus={handleCategoryLoc}>Naogaon</Link></li>
                   <li><Link to="/location" onFocus={handleCategoryLoc}>Chapainawabganj</Link></li>
                   <li><Link to="/location" onFocus={handleCategoryLoc}>Joypurhat</Link></li>
-                 
                 </ul>:null
-}  
+} 
                </li>
-               <li onClick={()=>setSylhet(!sylhet)}> {sylhet?<ArrowUpward/>:<ArrowDownward/>}Sylhet Sylhet
+               <li onClick={()=>setSylhet(!sylhet)}> {sylhet?<ArrowUpward/>:<ArrowDownward/>}Sylhet
                {sylhet?
                 <ul>
                   <li><Link to="/location" onFocus={handleCategoryLoc}>Sylhet</Link></li>
