@@ -1,29 +1,22 @@
 import React, { useContext, useState } from 'react'
 import {Grid, Container, TextField, Button } from '@material-ui/core';
 import { useForm } from "react-hook-form";
-// import firebase from 'firebase/app';
-// import firebaseConfig from '../FireBase/firebase.config'
 import './Login.scss'
-import { SignUp } from '../SignUp/SignUp';
+
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import {  NavBarSub } from '../../Home/NavBars/NavBars';
-import Modal from 'react-modal';
-import { ForgatePassword } from '../ForgatePassWord/ForgatePassword';
 import { Link, useHistory } from 'react-router-dom';
 import { userContext } from '../../../App';
 import { ToastContainer, toast,Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Col, Row } from 'react-bootstrap';
 
 export const Login = () => {
     const { register, handleSubmit,errors} = useForm();
-    const [signUp,setSignUp]=useState(false)
+   
     const [visiableIcon,setVisiableIcon]=useState(false);
-    const [forgate,setForgate]=useState(false)
-    const [modalIsOpen,setIsOpen] = useState(false);
-    const [otp,setOtp] = useState(false);
     const[user,setUser]=useState({});
+   console.log(user.usernumber)
     const history=useHistory()
     const [loginUser,setLoginUser,userName,setUserName]=useContext(userContext)
     
@@ -34,12 +27,15 @@ export const Login = () => {
     const successNotify = () => {
         toast.success(" Wait for few Seconds !!!!" ,{ delay: -1000 });
     }
+    const [error, setError] = useState()
+    console.log(error)
+    localStorage.setItem('userNumber',user.usernumber)
 const onSubmit = data =>{
     console.log(data)
     const formData = new FormData();
     formData.append('usernumber', data.usernumber);
     formData.append('password',data.password);
-    fetch('https://cors-anywhere.herokuapp.com/http://sellinbd.com/api330088/registration/loginNew.php',{
+    fetch('https://cors-anywhere.herokuapp.com/http://sellinbd.com/api330088/registration/loginWeb.php',{
     method: 'POST',
     body:formData
     })
@@ -47,44 +43,24 @@ const onSubmit = data =>{
         if(res.status===200){
             res.json()
             .then(dataUser=>{
-          if(dataUser.message=="i"){
-              console.log("invailed")
-              notify()
-          }
-          if(dataUser.message=="f"){
-            history.push("/login")
-            notify()
+        if(dataUser.message=="success"){
+            console.log(dataUser.usernumber)
+            setUser(dataUser)
+            history.replace("/")  
         }
-        if(dataUser.message=="x"){
-            history.replace("/login")
-            notify()
-        }
-        else{
-            history.push('/')
-            console.log(dataUser)
-          
-        }
-        setUser(dataUser)
+        
         setUserName(dataUser)
-        localStorage.setItem('userNumber',data.usernumber) 
-      
         })
         }
         setLoginUser(data)
        
     })   
+    
         
 }
 
-const  openModal=()=>    {
-    setIsOpen(true);
-  }
 
-  const closeModal=()=>{
-    setIsOpen(false);
-    setForgate(false);
-    setOtp(false)
-  }
+
     
     const ShowPassword=()=>{
         setVisiableIcon(true)
@@ -92,26 +68,12 @@ const  openModal=()=>    {
     const IconShow=()=>{
     setVisiableIcon(false)
 }
-    const handleSignUp =()=>{
-    setSignUp(true)
-}
-    const handleLogin =()=>{
-    setSignUp(false)
-}
-
-    const handleForgate=()=>{
-     setForgate(true)
-}
-    const submitOtp=()=>{
-    setOtp(true)
-
-}
 
  return (
      <section>
       <div>
          <NavBarSub/>
-  {signUp===false? 
+ 
   
     <Container className="login">  
     
@@ -127,7 +89,7 @@ const  openModal=()=>    {
  
              <Grid container spacing={1}>
              <Grid  item xs={12} className="pass">
-                  <TextField type={visiableIcon? "text" : "password"} name="password" inputRef={register({required: true,minLength: 6})} required label="Password" > </TextField>
+                  <TextField type={visiableIcon? "text" : "password"} name="password" inputRef={register({required: true,})} required label="Password" > </TextField>
                 <div className="icon-eye">
                 {visiableIcon?
                  <VisibilityIcon onClick={IconShow}/>:<VisibilityOffIcon onClick={ShowPassword}/>
@@ -159,11 +121,11 @@ const  openModal=()=>    {
                  <Grid container spacing={1}>
              <Grid item xs={12} className="reg">
              <p className="noAccount">Don't have an account?</p>
-             <Button type="submit" value="Reregistration" className="btn" onClick={handleSignUp}> Reregistration</Button>
+               <Link to="/signup"> <Button type="submit" value="Reregistration" className="btn"> Reregistration</Button></Link> 
           </Grid>
          </Grid>
-     </Container>:<SignUp handleLogin={handleLogin} visiableIcon={visiableIcon} IconShow={IconShow}ShowPassword={ShowPassword}  />
- }
+     </Container>  
+
  
  </div>
      

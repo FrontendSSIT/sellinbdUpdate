@@ -27,7 +27,8 @@ import { Loaders } from './Components/Loader/Loaders';
 import { PostEdit } from './Components/PostEdit/PostEdit';
 import { PromotePost } from './Components/PromotePost/PromotePost';
 import { ChatView } from './Components/AllChat/ChatProductView/ChatProductView';
-import { ForgatePassword, Otp } from './Components/Authentication/ForgatePassWord/ForgatePassword';
+import ForgatePassword from './Components/Authentication/ForgatePassWord/ForgatePassword';
+import SignUp from './Components/Authentication/SignUp/SignUp';
 
 
 
@@ -56,9 +57,12 @@ function App() {
         <Route  path="/home">
         <Home/>
         </Route>
-        <PrivateRoute  path="/login">
+        <Route  path="/login">
         <Login/>
-        </PrivateRoute>
+        </Route>
+        <Route  path="/signup">
+        <SignUp/>
+        </Route>
         <Route  path="/forgate">
         <ForgatePassword />
         </Route>
