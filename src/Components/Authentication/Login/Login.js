@@ -31,12 +31,14 @@ export const Login = () => {
     const [error, setError] = useState(null)
  console.log(error)
     localStorage.setItem('userNumber',user.usernumber)
+    localStorage.setItem('userName',user.username)
+    const [response,setResponse]=useState(null)
 const onSubmit = data =>{
     console.log(data)
     const formData = new FormData();
     formData.append('usernumber', data.usernumber);
     formData.append('password',data.password);
-    fetch('https://cors-anywhere.herokuapp.com/http://sellinbd.com/api330088/registration/loginWeb.php',{
+    fetch('https://cors-anywhere.herokuapp.com/https://sellinbd.com/api330088/registration/loginWeb.php',{
     method: 'POST',
     body:formData
     })
@@ -58,11 +60,19 @@ const onSubmit = data =>{
         setUserName(dataUser)
         })
         }
+        if(res.status !==200){
+         res.json()
+         .then(notRespones=>{
+              setResponse('Please try Again')
+         })
+        }
         setLoginUser(data)
        
     })   
     
-        
+    .catch(rejected => {
+        setResponse('Please  Reload Page && Try Again')
+    });   
 }
 
 
@@ -89,6 +99,9 @@ const onSubmit = data =>{
         {error !==null ? <p style={{color:'red',fontSize:"16px", padding:'10px 1px',border:'1px solid red', borderRadius:'5px', textTransform: "capitalize",}}>{error}</p>:null}
        {errors.usernumber? <p  style={{color:'red',fontSize:"16px", padding:'10px 1px',border:'1px solid red', borderRadius:'5px', textTransform: "capitalize",}}>{errors.usernumber && "Please Give 11 Digit Number"}</p>:null}
        {errors.password? <p  style={{color:'red',fontSize:"16px", padding:'10px 1px',border:'1px solid red', borderRadius:'5px', textTransform: "capitalize",}}>{errors.password && "Please Give 6 Digit password Minimum"}</p>:null}
+
+       {response!==null? <p  style={{color:'red',fontSize:"16px", padding:'10px 1px',border:'1px solid red', borderRadius:'5px', textTransform: "capitalize",}}>{response}</p>:null}
+
          <form onSubmit={handleSubmit(onSubmit)} >
              <Grid container spacing={1}>
              <Grid  item xs={12}>

@@ -10,6 +10,8 @@ export const AgriculturalTools = (props) => {
     const[success,setSuccess]=useState(false)
    
   const productD =localStorage.getItem('items')
+  const [error,setError] = useState(null)
+  console.log(error)
   console.log(productD)
     useEffect(()=>{
         fetch(`https://sellinbd.com/api330088/product/searchbyItem.php?item=${productD}&page_number=1&item_count=1000`)
@@ -23,15 +25,23 @@ export const AgriculturalTools = (props) => {
                     }
             })
             }
+            if(res.status===404){
+                res.json()
+                .then(result=>{
+                    setError(result.message)
+                })
+            }
         })
+        
     },[])
 
 
     return (
         <section  className="category">
+        <Container >
           
            {
-               products.length>0? <Container >
+               products.length>0? <>
                <NavBarSub/>
                   {/* <div className="primimum"> <img src={primimum } alt=""/> </div> */}
                <Row className="justify-content-center">
@@ -47,10 +57,13 @@ export const AgriculturalTools = (props) => {
                    </Row>
                    </Col>
                      </Row>
-               </Container>:<Loaders/>
+                     </>
+               :<p style={{color:'red', texAlign:'center',marginTop:'50%',marginLeft:'50%',transform:'translate(-50%,-50%)'}}>{error !==null?<p>Product not found</p>:null}
+               <Link to="/">Back To Home</Link>
+               </p>
            }
-           
-          
+           </Container>
+        
         </section>
     )
 }

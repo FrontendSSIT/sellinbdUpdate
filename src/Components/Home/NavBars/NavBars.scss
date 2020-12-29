@@ -40,8 +40,15 @@
         }
     
     }
-}
 
+}
+.navbar-toggler{
+    background: #3F9DFF;
+ 
+}
+.navbar-toggler-icon{
+    background: rgba(255, 255, 255, 0.719);
+}
 @media (max-width: 767px){
     .form-control{
         margin-top: 20px;

@@ -1,16 +1,14 @@
 import { Container } from '@material-ui/core';
-import React, { useContext, useEffect, useState } from 'react';
+import React, {  useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import './category.scss';
 import { Link } from 'react-router-dom';
 import primimum from '../../../images/premiumAddBanner.png'
 import {  LocationOn, } from '@material-ui/icons';
-import { userContext } from '../../../App';
 import TimeAgo from 'react-timeago'
 import frenchStrings from 'react-timeago/lib/language-strings/en'
 import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { Loaders } from '../../Loader/Loaders';
 import Loader from 'react-loader-spinner';
 
 

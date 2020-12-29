@@ -16,6 +16,7 @@ export const ProductDetails = () => {
     localStorage.setItem('productuser',productDetail.usernumber1)
   const {postId}=useParams()
   localStorage.setItem('postId',postId)
+  
  const id= localStorage.getItem('postId')
     useEffect(()=>{
         const formData = new FormData()

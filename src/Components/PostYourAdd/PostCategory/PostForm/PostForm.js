@@ -8,6 +8,7 @@ import { userContext } from '../../../../App';
 import ImageUploading from "react-images-uploading";
 import './PostForm.scss'
 import { Close, CloudUpload } from '@material-ui/icons';
+import { useHistory } from 'react-router-dom';
 
 export const PostForm = () => {
     const postcat=localStorage.getItem('postcat')
@@ -21,14 +22,26 @@ export const PostForm = () => {
         setImages(imageList);
     };
      let imagesLength = images.length
-
+const history =useHistory()
+const number =localStorage.getItem('userNumber')
+const name = localStorage.getItem('userName')
+const items= localStorage.getItem('postcat')
     const onSubmit = data => {
         console.log(data)
         const formData = new FormData()
-        formData.append('username', "shakil")
-        formData.append('usernumber1', "+801637623345")
+        formData.append('username', name)
+        formData.append('usernumber1',number)
         formData.append('productname',data.productname)
         formData.append('model',data.model)
+        formData.append('item',items)
+        formData.append('category',data.category)
+        formData.append('district',data.district)
+        formData.append('place',data.place)
+        formData.append('registrationyear',data.registrationyear)
+        formData.append('enginecapacity',data.enginecapacity)
+        formData.append('fueltype',data.fueltype)
+        formData.append('gear',data.gear)
+        formData.append('bodytype',data.bodytype)
         formData.append('productprice',data.productprice)
         formData.append('priceStatus',data.priceStatus)
         formData.append('productStatus',data.productStatus)
@@ -43,11 +56,12 @@ export const PostForm = () => {
         })
         .then(result => {
             console.log(result)
+            history.replace("/user")
+
         })
       
     };
  
-   
     return (
         <section className="postForm">
         <Container fluid>
@@ -102,15 +116,15 @@ export const PostForm = () => {
      <div>  <textarea type="text" placeholder="Description" name="description" ref={register({required: true, minLength: 6, maxLength: 12})} /></div>
 
     <div className="text-center btn-frm" >  <input type="submit" value="Post A Ad"/></div>
-    <p>User Name: {userName?.message}</p> 
-    <p>User Number: {loginUser?.usernumber} </p>
+    <p>User Name: {name}</p> 
+    <p>User Number: {number} </p>
     </form>
       <div>
       <ImageUploading
      multiple
      value={images}
      onChange={uploadImage}
-     maxNumber={5}
+     maxNumber={6}
      dataURLKey="data_url"
  >
      {({
