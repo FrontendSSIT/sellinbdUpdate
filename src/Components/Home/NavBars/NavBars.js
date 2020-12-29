@@ -61,7 +61,7 @@ const number=localStorage.getItem('userNumber')
         <Link to="/chat">Chat</Link>
       </Nav.Link>
      {
-       number? <Nav.Link >
+       number&&number!=="undefined"? <Nav.Link >
        <Link to="/user"> Account</Link>
        </Nav.Link>:<Nav.Link>
        <Link to="/login">Login</Link>

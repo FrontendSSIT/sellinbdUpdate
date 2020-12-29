@@ -12,7 +12,7 @@ export const PrivateRoute = ({ children, ...rest }) => {
         <Route
         {...rest}
         render={ location =>
-           userMessage? (
+          userMessage&&userMessage!=="undefined"? (
             children
           ) : (
             <Redirect
