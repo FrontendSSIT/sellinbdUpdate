@@ -12,7 +12,8 @@ import {
   Switch,
   Route,
   Link,
-  Redirect
+  Redirect,
+  useRouteMatch
 } from "react-router-dom";
 import { AgriculturalTools } from './Components/SearchProduct/Category/Agricultural/AgriculturalTools/AgriculturalTools';
 import { Location } from './Components/Home/Location/Location';
@@ -45,13 +46,18 @@ function App() {
 
   const userMessage=localStorage.getItem('userMessage')
   console.log(userMessage)
-
+  // const match=useRouteMatch({
+  //   path: "/produtcDetails/:category/:postId",
+  //   strict: true,
+  //   sensitive: true
+  //  })
+   
   return (
   <userContext.Provider value={[productD,setProductD,userName,setUserName,loginUser,setLoginUser]}>
     {
       loader? <Router>
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/" >
         <Home/>
         </Route>
         <Route  path="/home">

@@ -8,9 +8,12 @@ import { Link, useParams } from 'react-router-dom';
 import './ProductDetails.scss'
 import { Loaders } from '../../Loader/Loaders';
 import { SignleCategorys } from '../SignleProductCategory/SignleCategory/SignleCategory';
+import { Call, CallMade, CallToAction } from '@material-ui/icons';
+import { useRouteMatch } from "react-router-dom";
 
 
 export const ProductDetails = () => {
+    // let match = useRouteMatch("/produtcDetails/:category/:postId");
     const [productDetail,setProductDetail] =useState([])
     const [call,setCall] = useState(false)
     localStorage.setItem('productuser',productDetail.usernumber1)
@@ -138,8 +141,8 @@ export const ProductDetails = () => {
                     </Col>
                    </Row>
                    {
-                       loginUserNumber===productDetail.usernumber1?null: <button className="call" onClick={()=>setCall(!call)}> Call  { call?<p>{productDetail.usernumber1}</p>:null}
-                       { call?<p>{productDetail?.usernumber2}</p>:null}</button>
+                       loginUserNumber===productDetail.usernumber1?null: <button className="call" onClick={()=>setCall(!call)} > Call  { call?<p>{productDetail.usernumber1} <a href={`tel:${productDetail.usernumber1}`} style={{color:'#fff',padding:'5px'}}> <Call/> </a></p>:null}
+                       { call?<p>{productDetail?.usernumber2}  <a href={`tel:${productDetail.usernumber2}`} style={{color:'#fff',padding:'5px'}}> <Call/> </a></p>:null}</button>
                    }
                    
                      {
@@ -150,16 +153,10 @@ export const ProductDetails = () => {
                          </>
                      }
                     </div>
-               </Col>
-                    
-            </Row>
-            
-            
+               </Col>                
+            </Row>    
         </Container>
-        </Container>
-      
-     
-       
+        </Container>  
     </div>:<Loaders/>
     }
     

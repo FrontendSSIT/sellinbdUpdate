@@ -17,8 +17,12 @@ import Loader from 'react-loader-spinner';
 export const Categorys = (props) => {
     const[products,setProducts]=useState([])
     const[aa,setAA]=useState(1)
-    useEffect(()=>{
+    
+    useEffect((e)=>{
+   
         fetchData()
+       
+  
     },[])
     const fetchData=()=>{
         let plus=aa+1
