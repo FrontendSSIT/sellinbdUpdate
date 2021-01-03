@@ -10,4 +10,8 @@ body {
 a{
 	text-decoration: none !important;
 	cursor: pointer !important;
+	padding: 10px 15px 10px 15px; 
+	
+	color:#fff !important;
+	border-radius: 10px;
 }

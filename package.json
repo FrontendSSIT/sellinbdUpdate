@@ -13,6 +13,7 @@
     "infinite-react-carousel": "^1.2.11",
     "node-sass": "^4.13.1",
     "react": "^17.0.1",
+    "react-adsense": "^0.1.0",
     "react-bootstrap": "^1.4.0",
     "react-chat-elements": "^10.13.0",
     "react-chat-ui": "^0.4.0",

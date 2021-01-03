@@ -13,7 +13,8 @@ import {
   Route,
   Link,
   Redirect,
-  useRouteMatch
+ 
+  HashRouter
 } from "react-router-dom";
 import { AgriculturalTools } from './Components/SearchProduct/Category/Agricultural/AgriculturalTools/AgriculturalTools';
 import { Location } from './Components/Home/Location/Location';
@@ -51,16 +52,16 @@ function App() {
   //   strict: true,
   //   sensitive: true
   //  })
-   
+  console.disableYellowBox = true;
   return (
   <userContext.Provider value={[productD,setProductD,userName,setUserName,loginUser,setLoginUser]}>
     {
-      loader? <Router>
+      loader? <HashRouter>
       <Switch>
         <Route exact path="/" >
         <Home/>
         </Route>
-        <Route  path="/home">
+        <Route  path="/home" >
         <Home/>
         </Route>
         <Route  path="/login">
@@ -72,7 +73,7 @@ function App() {
         <Route  path="/forgate">
         <ForgatePassword />
         </Route>
-        <Route path="/produtcDetails/:category/:postId">
+        <Route path="/produtcDetails/:category/*$@/:postId/10$2*$@90">
         <ProductDetails/>
         </Route>
         <Route path="/produtcDetails/:category/:postId">
@@ -181,7 +182,7 @@ function App() {
         <Redirect  to="/"/>
       </Switch>
       
-    </Router>:<Loaders/>
+    </HashRouter>:<Loaders/>
     }
   </userContext.Provider>
   );

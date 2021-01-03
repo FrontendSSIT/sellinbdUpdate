@@ -45,7 +45,7 @@ const number=localStorage.getItem('userNumber')
     
     </div>
             
-    <Nav className="ml-auto">
+    <Nav className="ml-auto color-text">
       <Nav.Link >
         <Link to="/home" onClick={()=>setSearchValue([])}>Home</Link>
       </Nav.Link>
@@ -83,7 +83,7 @@ export const NavBarSub = () => {
   return (
     <section>
     <Container>
-      <Navbar  expand="lg" className="nav-Bar">
+      <Navbar  expand="lg" className="nav-Bar" style={{marginTop:'0'}}>
 <Navbar.Toggle aria-controls="basic-navbar-nav" />
 <Navbar.Collapse id="basic-navbar-nav">
        

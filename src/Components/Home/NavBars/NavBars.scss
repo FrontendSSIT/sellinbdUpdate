@@ -1,5 +1,10 @@
 .nav-Bar{
    position: relative;
+   background: #3F9DFF;
+   margin-bottom: 10px;
+   border-radius: 10px;
+   margin-top: -50px;
+
     img{
         width:60px;
         height:60px;
@@ -29,13 +34,12 @@
         a{
             margin-right: 10px;
             border:none;
-            border:2px solid #3F9DFF;
-            background: #3F9DFF;
-            color: #fff;
+            border:2px solid #ffF;
+            background: #fff;
+            color: #3F9DFF !important;
             border-radius: 10px;
             margin-bottom: 10px;
-            padding: 10px 15px 10px 15px;
-            
+            padding: 10px 15px 10px 15px;       
             
         }
     
@@ -53,6 +57,7 @@
     .form-control{
         margin-top: 20px;
     }
+   
 
      .nav-Bar .search-btn{
          margin-top:  30px;
@@ -78,4 +83,10 @@
             }
         }
     
+}
+@media(max-width: 468px){
+    .nav-Bar{
+     
+       margin-top: 0;    
+    }
 }

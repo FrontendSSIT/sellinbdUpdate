@@ -12,7 +12,7 @@ import { LocationOn } from '@material-ui/icons';
 import TimeAgo from 'react-timeago'
 import frenchStrings from 'react-timeago/lib/language-strings/en'
 import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
-
+import AdSense from 'react-adsense';
 
 export const SignleCategorys = (props) => {
     const [signleProduct,setSignleProduct]=useState([])
@@ -42,6 +42,13 @@ export const SignleCategorys = (props) => {
                <Col lg={7} ><h1>{props.name}</h1></Col>
                </Row>
                <Row className="justify-content-center" >
+               <Col lg={2}>
+               <AdSense.Google
+               client='ca-pub-8079553022041537'
+               slot='7806394673'
+               format='auto'
+             />
+             </Col>
                    <Col lg={8} xs={12}>
                    <Row className="justify-content-center" >
                   
@@ -50,6 +57,13 @@ export const SignleCategorys = (props) => {
                    }
                    </Row>
                    </Col>
+                   <Col lg={2}>
+                   <AdSense.Google
+                   client='ca-pub-8079553022041537'
+                   slot='7806394673'
+                   format='auto'
+                 />
+                 </Col>
                      </Row>
                </Container>:<Loaders/>
            }

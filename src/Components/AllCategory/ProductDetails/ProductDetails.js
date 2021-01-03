@@ -8,8 +8,8 @@ import { Link, useParams } from 'react-router-dom';
 import './ProductDetails.scss'
 import { Loaders } from '../../Loader/Loaders';
 import { SignleCategorys } from '../SignleProductCategory/SignleCategory/SignleCategory';
-import { Call, CallMade, CallToAction } from '@material-ui/icons';
-import { useRouteMatch } from "react-router-dom";
+import { Call } from '@material-ui/icons';
+
 
 
 export const ProductDetails = () => {
@@ -34,7 +34,10 @@ export const ProductDetails = () => {
                     setProductDetail(result[0])
                 }
         })
-
+        window.scroll({
+            top: 0,
+            behavior: 'smooth',
+          });
     },[id])
 
     const {category}=useParams()
@@ -42,6 +45,13 @@ export const ProductDetails = () => {
     localStorage.setItem('category',category)
    const loginUserNumber=localStorage.getItem('userNumber')
    const number=productDetail.usernumber1;
+
+   const [index, setIndex] = useState(0);
+console.log(index)
+   const handleSelect = (selectedIndex, e) => {
+     setIndex(selectedIndex);
+   };
+ 
     return (
     <>   
     <NavBarSub/>
@@ -53,7 +63,7 @@ export const ProductDetails = () => {
           
             <Row className="justify-content-center">
                 <Col lg={8} xs={12}>
-                <Carousel className="CarouselSlider">
+                <Carousel className="CarouselSlider" activeIndex={index} onSelect={handleSelect}>
               {
                   productDetail?.image1!=="NULL"?
                   <Carousel.Item>

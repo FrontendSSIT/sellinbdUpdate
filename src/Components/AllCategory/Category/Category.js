@@ -10,7 +10,7 @@ import frenchStrings from 'react-timeago/lib/language-strings/en'
 import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Loader from 'react-loader-spinner';
-
+import AdSense from 'react-adsense';
 
 
 
@@ -46,6 +46,13 @@ export const Categorys = (props) => {
             <Col lg={7} ><h1>{props.name}</h1></Col>
             </Row>
             <Row className="justify-content-center" >
+            <Col lg={2}>
+            <AdSense.Google
+            client='ca-pub-7292810486004926'
+            slot='7806394673'
+            format='auto'
+          />
+          </Col>
                 <Col lg={8} xs={12}>
                 <InfiniteScroll
                 dataLength={products.length}
@@ -61,6 +68,13 @@ export const Categorys = (props) => {
                 </Row>
                 </InfiniteScroll>
                 </Col>
+                <Col lg={2}>
+            <AdSense.Google
+            client='ca-pub-8079553022041537'
+            slot='7806394673'
+            format='auto'
+          />
+          </Col>
                   </Row>
             </Container>
            
@@ -78,7 +92,7 @@ export const Category = ({product}) => {
     return (
               
                <Col lg={5} xs={6} m-auto>
-                     <Link to={`/produtcDetails/${category}/${postId}`}>
+                     <Link to={`/produtcDetails/${category}/*$@/${postId}/10$2*$@90`}>
                        <div className="category-items " id={product.status==="PREMIUM"?"bgColor":null}>
                            <img src={product.image1} alt=""/>
                             <p style={{color:'#3F9DFF'}}><strong>{product.productname}</strong></p>
