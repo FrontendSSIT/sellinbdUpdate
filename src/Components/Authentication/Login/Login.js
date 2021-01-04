@@ -139,7 +139,7 @@ const onSubmit = data =>{
          </Grid>
          
          </Grid>
-             <Link to="/forgate" className="fogatetext" >Forgate Password?</Link>
+             <Link to="/forgate" className="fogatetext" ><p style={{color:'#000'}}>Forgate Password?</p></Link>
                  <Grid container spacing={1}>
              <Grid item xs={12} className="reg">
              <p className="noAccount">Don't have an account?</p>

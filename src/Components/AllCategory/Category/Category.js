@@ -46,12 +46,15 @@ export const Categorys = (props) => {
             <Col lg={7} ><h1>{props.name}</h1></Col>
             </Row>
             <Row className="justify-content-center" >
-            <Col lg={2}>
-            <AdSense.Google
-            client='ca-pub-7292810486004926'
-            slot='7806394673'
-            format='auto'
-          />
+            <Col lg={2} >
+           <div className="AdsenceAd">
+           <AdSense.Google
+           client='ca-pub-7292810486004926'
+           slot='7806394673'
+           format=''
+          
+         />
+           </div>
           </Col>
                 <Col lg={8} xs={12}>
                 <InfiniteScroll

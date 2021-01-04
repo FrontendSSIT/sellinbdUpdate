@@ -123,7 +123,7 @@ console.log(index)
                   <h2>Title: {productDetail.productname}</h2>
                   <h2>BTD: {productDetail.productprice} ({productDetail.priceStatus})</h2>
                   <h4>Product Status: {productDetail.productStatus}</h4>
-                  <h6>Seller info: {productDetail.username}</h6>
+                  <h6 style={{color:'#3F9DFF'}}>Seller info: {productDetail.username}</h6>
                    </div>
                    
                     </Col>
@@ -132,7 +132,9 @@ console.log(index)
                     <Row>
                     <Col lg={12} xs={12} className="text-left" >
                    <div >
-                  <h3>Model:{productDetail.model}</h3>
+                 {
+                    productDetail.model !=="NULL"?<h3>Model:{productDetail.model}</h3>:null
+                 }
                   <h3>Category: {productDetail.category}</h3>
                   <h5>Location: {productDetail.place} {productDetail.district}</h5>
                   
@@ -144,8 +146,8 @@ console.log(index)
                    <Row>
                    <Col lg={12} xs={12} className="text-left">
                    <div >
-                   <h4>{productDetail.productdescription}</h4>
-                  <h3> {productDetail.item}</h3>
+                   <h4> <p style={{color:'#3F9DFF',fontSize:'20px'}}>Description</p>{productDetail.productdescription}</h4>
+                
                    </div>
                    
                     </Col>

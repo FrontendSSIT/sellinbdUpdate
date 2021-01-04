@@ -43,11 +43,14 @@ export const SignleCategorys = (props) => {
                </Row>
                <Row className="justify-content-center" >
                <Col lg={2}>
+               <div className="AdsenceAd">
                <AdSense.Google
                client='ca-pub-8079553022041537'
                slot='7806394673'
                format='auto'
              />
+               </div>
+              
              </Col>
                    <Col lg={8} xs={12}>
                    <Row className="justify-content-center" >

@@ -13,8 +13,6 @@ import {
   Route,
   Link,
   Redirect,
- 
-  HashRouter
 } from "react-router-dom";
 import { AgriculturalTools } from './Components/SearchProduct/Category/Agricultural/AgriculturalTools/AgriculturalTools';
 import { Location } from './Components/Home/Location/Location';
@@ -56,7 +54,7 @@ function App() {
   return (
   <userContext.Provider value={[productD,setProductD,userName,setUserName,loginUser,setLoginUser]}>
     {
-      loader? <HashRouter>
+      loader? <Router>
       <Switch>
         <Route exact path="/" >
         <Home/>
@@ -182,7 +180,7 @@ function App() {
         <Redirect  to="/"/>
       </Switch>
       
-    </HashRouter>:<Loaders/>
+    </Router>:<Loaders/>
     }
   </userContext.Provider>
   );
