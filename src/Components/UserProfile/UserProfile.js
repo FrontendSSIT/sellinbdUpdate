@@ -194,9 +194,9 @@ const UserPost=({userPost})=>{
         <Col lg={4} xs={4}> <div className="userpostImg"><img src={userPost?.image1} alt=''/></div> </Col>
         <Col lg={8} xs={8}> 
         <div>      
-        <h3>{userPost?.item}</h3> 
-        <h3>BDT. {userPost?.productprice}</h3>
-        <h3>{userPost?.place} {userPost?.district}</h3>
+        <h3 style={{color:'#000'}}>{userPost?.item}</h3> 
+        <h3 style={{color:'#000'}}>BDT. {userPost?.productprice}</h3>
+        <h3 style={{color:'#000'}}>{userPost?.place} {userPost?.district}</h3>
          </div>  
         </Col>
         </Row>

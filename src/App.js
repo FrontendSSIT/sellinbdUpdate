@@ -20,7 +20,7 @@ import { BuyPost, PostJob, SellAgricultural, SellDaily, SellMedicine, SellPets, 
 import { BusinessIndustrialPost, MobileTabletsPost, SportsHobbiesPost,FashionsPost, FurniturePost, VehiclesPost, ElectronicsPost,ComputerLaptopsPost } from './Components/PostYourAdd/SellProduct/ItemSelect/ItemSelect';
 import { PostForm } from './Components/PostYourAdd/PostCategory/PostForm/PostForm';
 import { UserProfile } from './Components/UserProfile/UserProfile';
-import { PrivateRoute } from './Components/Authentication/PrivateRoute/PrivateRoute';
+import  PrivateRoute from './Components/Authentication/PrivateRoute/PrivateRoute';
 import { Dhaka } from './Components/SearchProduct/LocationProduct/DhakaDivision/Dhaka/Dhaka';
 import { AllChat} from './Components/AllChat/AllChat';
 import { Loaders } from './Components/Loader/Loaders';
@@ -38,19 +38,17 @@ function App() {
   const [userName,setUserName]=useState({})
   const [productD,setProductD]=useState()
   const [loader,setLoader]=useState(false)
-
+  console.log(userName,'hi')
   useEffect(()=>{
     setLoader(true)
   },[])
 
-  const userMessage=localStorage.getItem('userMessage')
-  console.log(userMessage)
   // const match=useRouteMatch({
   //   path: "/produtcDetails/:category/:postId",
   //   strict: true,
   //   sensitive: true
   //  })
-  console.disableYellowBox = true;
+ 
   return (
   <userContext.Provider value={[productD,setProductD,userName,setUserName,loginUser,setLoginUser]}>
     {

@@ -13,13 +13,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export const Login = () => {
     const { register, handleSubmit,errors} = useForm();
-  
+    const [loginUser,setLoginUser,userName,setUserName]=useContext(userContext)
     const [visiableIcon,setVisiableIcon]=useState(false);
     const[user,setUser]=useState({});
    console.log(user.usernumber)
    const location=useLocation().location?.pathname
-    const history=useHistory()
-    const [loginUser,setLoginUser,userName,setUserName]=useContext(userContext)
+    const history=useHistory();
+   
     
     // console.log( "Hello",loginUser )
     const notify = () => {
