@@ -43,6 +43,7 @@ function App() {
     setLoader(true)
   },[])
 
+ 
   // const match=useRouteMatch({
   //   path: "/produtcDetails/:category/:postId",
   //   strict: true,
@@ -50,7 +51,7 @@ function App() {
   //  })
  
   return (
-  <userContext.Provider value={[productD,setProductD,userName,setUserName,loginUser,setLoginUser]}>
+  <userContext.Provider value={[loginUser,setLoginUser,userName,setUserName]}>
     {
       loader? <Router>
       <Switch>

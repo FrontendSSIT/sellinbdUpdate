@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Redirect, Route, useHistory, useLocation } from 'react-router-dom'
 import { userContext } from '../../../App'
 
@@ -8,13 +8,14 @@ import { userContext } from '../../../App'
     const username=localStorage.getItem('userName')
     const history=useHistory()
     const location=useLocation()
+  
     const [loginUser,setLoginUser,userName,setUserName]=useContext(userContext)
   console.log(userName)
     return (
         <Route
         {...rest}
         render={ location =>
-          userMessage!=="undefined"||username!=="undefined"&&userName.username?(
+          userName.username||userMessage?(
             children
           ) : (
             <Redirect
