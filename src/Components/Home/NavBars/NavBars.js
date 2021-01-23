@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from 'react'
-
+import React, { useState } from 'react'
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Avatar, Container } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import {SearchOutlined} from '@material-ui/icons';
 import './NavBars.scss'
+import { Container } from 'react-bootstrap';
 
 export const NavBars = ({handleSearchBox,clickSearch,handleSearchClick,setSearchValue}) => {
   const[search,setSearch]=useState(false)
@@ -88,7 +86,7 @@ export const NavBarSub = () => {
 <Navbar.Collapse id="basic-navbar-nav">
        
 <Nav className="ml-auto">
-  <Nav.Link >
+  <Nav.Link>
     <Link to="/home">Home</Link>
   </Nav.Link>
 

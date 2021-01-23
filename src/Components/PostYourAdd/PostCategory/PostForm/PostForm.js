@@ -27,7 +27,7 @@ const number =localStorage.getItem('userNumber')
 const name = localStorage.getItem('userName')
 const items= localStorage.getItem('postcat')
     const onSubmit = data => {
-        console.log(data)
+        console.log(data.division)
         const formData = new FormData()
         formData.append('username', name)
         formData.append('usernumber1',number)
@@ -61,7 +61,14 @@ const items= localStorage.getItem('postcat')
         })
       
     };
- 
+
+    const [division,setDivision]=useState({})
+  console.log(division)
+    const handleChange=(e)=>{
+      const newDivision={...division}
+      newDivision[e.target.name]=e.target.value;
+      setDivision(newDivision)
+    }
     return (
         <section className="postForm">
         <Container fluid>
@@ -75,7 +82,7 @@ const items= localStorage.getItem('postcat')
       <div><input type="text" placeholder="Price (BDT)" name="productprice" ref={register({required: true, })} /></div>
     
      <div> 
-     <select name="division" ref={register({ required: true })}>
+     <select name="division" ref={register({ required: true })} onChange={handleChange}>
      <option >Location</option>
      <option >Mymensingh Division</option>
      <option >Rangpur  Division</option>
@@ -85,8 +92,18 @@ const items= localStorage.getItem('postcat')
      <option >Rajshahi Division</option>
      <option >Sylhet Sylhet</option>
      <option >Chattogram Division</option>
- 
    </select>
+   <select name="district" ref={register({ required: true })} onChange={handleChange}>
+   <option >Location</option>
+   <option >Mymensingh Division</option>
+   <option >Rangpur  Division</option>
+   <option >Khulna Division</option>
+   <option >Dhaka Division</option>
+   <option >Barishal Division</option>
+   <option >Rajshahi Division</option>
+   <option >Sylhet Sylhet</option>
+   <option >Chattogram Division</option>
+ </select>
 </div>
      <div className="radioBox">
      <div >

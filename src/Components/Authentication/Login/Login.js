@@ -71,7 +71,7 @@ const onSubmit = data =>{
     })   
     
     .catch(rejected => {
-        setResponse('Please  Reload Page && Try Again')
+        setResponse('Please  Reload Page & Try Again')
     });   
 }
 
@@ -92,7 +92,7 @@ const onSubmit = data =>{
  
   
     <Container className="login">  
-    
+       
          <h2>Log in to manage your account</h2>
          <Grid container spacing={1}>
          <Grid  item xs={12} md={6} className="m-auto">

@@ -14,6 +14,7 @@ import {
   Link,
   Redirect,
 } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { AgriculturalTools } from './Components/SearchProduct/Category/Agricultural/AgriculturalTools/AgriculturalTools';
 import { Location } from './Components/Home/Location/Location';
 import { BuyPost, PostJob, SellAgricultural, SellDaily, SellMedicine, SellPets, SellProduct, SellService } from './Components/PostYourAdd/PostCategory/SelectCategory/SelectCategory';
@@ -52,6 +53,7 @@ function App() {
  
   return (
   <userContext.Provider value={[loginUser,setLoginUser,userName,setUserName]}>
+  
     {
       loader? <Router>
       <Switch>
@@ -181,6 +183,7 @@ function App() {
       
     </Router>:<Loaders/>
     }
+
   </userContext.Provider>
   );
 }

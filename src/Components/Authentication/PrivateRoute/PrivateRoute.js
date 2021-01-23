@@ -7,21 +7,22 @@ import { userContext } from '../../../App'
     const userMessage=localStorage.getItem('userNumber')
     const username=localStorage.getItem('userName')
     const history=useHistory()
-    const location=useLocation()
+  
   
     const [loginUser,setLoginUser,userName,setUserName]=useContext(userContext)
+    const location=useLocation()
   console.log(userName)
     return (
         <Route
         {...rest}
-        render={ location =>
-          userName.username||userMessage?(
+        render={location =>
+         (userName.username&&  userMessage!=="undefined")?(
             children
           ) : (
             <Redirect
               to={{
                 pathname:"/login",
-               location 
+                location 
               }}
             />
           )
