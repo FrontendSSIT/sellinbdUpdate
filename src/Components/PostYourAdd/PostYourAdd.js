@@ -34,7 +34,7 @@ export const PostYourAdd = () => {
                     <Nav.Link > <Link to="/sellDailyPost"><img src={fig} alt=""/> Sell Daily Needs</Link></Nav.Link>
                     <Nav.Link > <Link to="/sellMedicinePost"><img src={fig} alt=""/> Sell Medicine</Link></Nav.Link>
                     <Nav.Link > <Link to="/sellServicePost"><img src={fig} alt=""/> Sell a Service</Link></Nav.Link>
-                    <Nav.Link > <Link to="/sellDailyPost"><img src={fig} alt=""/> Sell a Service</Link></Nav.Link>
+                    
                     <Nav.Link > <Link to="/PostAJob"><img src={fig} alt=""/>Post a Job</Link></Nav.Link>
                     <Nav.Link > <Link to="/buyPost"><img src={fig} alt=""/>Buy Something</Link></Nav.Link>
                 

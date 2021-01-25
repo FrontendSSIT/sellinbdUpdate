@@ -56,7 +56,7 @@ export const Categorys = (props) => {
             <Row className="justify-content-center" >
           
                  
-          <Col lg={2}>     <AdSense.Google
+          <Col lg={2} className="ads-side">     <AdSense.Google
           client='ca-pub-8079553022041537'
           slot='7806394673'
           style={{ display: 'block' }}
@@ -83,7 +83,7 @@ export const Categorys = (props) => {
                 </InfiniteScroll>
                 </Col>
                
-          <Col lg={2}>     <AdSense.Google
+          <Col lg={2} className="ads-side">     <AdSense.Google
           client='ca-pub-8079553022041537'
           slot='7806394673'
           style={{ display: 'block' }}

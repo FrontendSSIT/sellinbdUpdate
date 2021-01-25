@@ -42,16 +42,7 @@ export const SignleCategorys = (props) => {
                <Col lg={7} ><h1>{props.name}</h1></Col>
                </Row>
                <Row className="justify-content-center" >
-               <Col lg={2}>
-               <AdSense.Google
-               client='ca-pub-8079553022041537'
-               slot='7806394673'
-               style={{ display: 'block' }}
-               format='auto'
-               responsive='true'
-               layoutKey='-gw-1+2a-9x+5c'
-             />
-             </Col>
+              
                    <Col lg={8} xs={12}>
                    <Row className="justify-content-center" >
                   
@@ -61,16 +52,7 @@ export const SignleCategorys = (props) => {
                    </Row>
                    </Col>
                   
-                 <Col lg={2}>
-               <AdSense.Google
-               client='ca-pub-8079553022041537'
-               slot='7806394673'
-               style={{ display: 'block' }}
-               format='auto'
-               responsive='true'
-               layoutKey='-gw-1+2a-9x+5c'
-             />
-             </Col>
+                
                
                      </Row>
                </Container>:<Loaders/>

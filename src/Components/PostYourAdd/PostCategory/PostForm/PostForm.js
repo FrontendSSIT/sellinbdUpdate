@@ -816,100 +816,109 @@ const items= localStorage.getItem('postcat')
   </select>:null
 }
 {
-    division.district==="Barguna"?
+    division.district==="Bogura"?
     <select name="place" ref={register({ required: true })} onChange={handleChange}>
     <option >Place</option>
-    <option >Amtali</option>
-    <option >Bamna</option>
-    <option >Barguna Sadar</option>
-    <option>Betagi</option>
-    <option>Parthoghata</option>
-    <option>Nesarabad</option>
-    <option>Taltali</option>
+    <option >Bogura Sadar</option>
+    <option >Gabtali</option>
+    <option >Shariakandi</option>
+    <option>Adamdighi</option>
+    <option>Sonatala</option>
+    <option>Sherpur</option>
+    <option>Kahaloo</option>
+    <option>Shibganj</option>
+    <option>Dupchanchia</option>
+    <option>Nandigram</option>
+    <option>Sahajanpur</option>
+    <option>Dhunat</option>
 
   </select>:null
 }
 {
-    division.district==="Barguna"?
+    division.district==="Dhunat"?
     <select name="place" ref={register({ required: true })} onChange={handleChange}>
     <option >Place</option>
-    <option >Amtali</option>
-    <option >Bamna</option>
-    <option >Barguna Sadar</option>
-    <option>Betagi</option>
-    <option>Parthoghata</option>
-    <option>Nesarabad</option>
-    <option>Taltali</option>
+    <option >Aminpur</option>
+    <option >Atgharia</option>
+    <option >Bera</option>
+    <option>Bhangura</option>
+    <option>Chatmohar</option>
+    <option>Faridpur</option>
+    <option>Pabna Sadar</option>
+    <option>Santhia</option>
+    <option>Sujanagar</option>
 
   </select>:null
 }
 {
-    division.district==="Barguna"?
+    division.district==="Natore"?
     <select name="place" ref={register({ required: true })} onChange={handleChange}>
     <option >Place</option>
-    <option >Amtali</option>
-    <option >Bamna</option>
-    <option >Barguna Sadar</option>
-    <option>Betagi</option>
-    <option>Parthoghata</option>
-    <option>Nesarabad</option>
-    <option>Taltali</option>
+    <option >Bagatipara</option>
+    <option >Baraigram</option>
+    <option >Gurudaspur</option>
+    <option>Lalpur</option>
+    <option>Naldanga</option>
+    <option>Natore Sadar</option>
+    <option>Singra</option>
 
   </select>:null
 }
 {
-    division.district==="Barguna"?
+    division.district==="Sirajganj"?
     <select name="place" ref={register({ required: true })} onChange={handleChange}>
     <option >Place</option>
-    <option >Amtali</option>
-    <option >Bamna</option>
-    <option >Barguna Sadar</option>
-    <option>Betagi</option>
-    <option>Parthoghata</option>
-    <option>Nesarabad</option>
-    <option>Taltali</option>
+    <option >Belkuchi</option>
+    <option >Chauhali</option>
+    <option >Kamarkhanda</option>
+    <option>Kazipur</option>
+    <option>Raiganj</option>
+    <option>Shahjadpur</option>
+    <option>Sirajganj Sadar</option>
+    <option>Tarash</option>
+    <option>Ullahpara</option>
 
   </select>:null
 }
 {
-    division.district==="Barguna"?
+    division.district==="Naogaon"?
     <select name="place" ref={register({ required: true })} onChange={handleChange}>
     <option >Place</option>
-    <option >Amtali</option>
-    <option >Bamna</option>
-    <option >Barguna Sadar</option>
-    <option>Betagi</option>
-    <option>Parthoghata</option>
-    <option>Nesarabad</option>
-    <option>Taltali</option>
+    <option >Atrai</option>
+    <option >Badalgachhi</option>
+    <option >Dhanmoirhat</option>
+    <option>Manda</option>
+    <option>Mahadevpur</option>
+    <option>Naogaon Sadar</option>
+    <option>Niamatpur</option>
+    <option>Patnitala</option>
+    <option>Porsha</option>
+    <option>Raninagar</option>
+    <option>SaPahar</option>
 
   </select>:null
 }
 {
-    division.district==="Barguna"?
+    division.district==="Chapainawabganj"?
     <select name="place" ref={register({ required: true })} onChange={handleChange}>
     <option >Place</option>
-    <option >Amtali</option>
-    <option >Bamna</option>
-    <option >Barguna Sadar</option>
-    <option>Betagi</option>
-    <option>Parthoghata</option>
-    <option>Nesarabad</option>
-    <option>Taltali</option>
-
+    <option >Bholahat</option>
+    <option >Chapai </option>
+    <option >Nawabganj Sadar</option>
+    <option>Gomostapur</option>
+    <option>Nachol</option>
+    <option>Sibganj</option>
   </select>:null
 }
 {
-    division.district==="Barguna"?
+    division.district==="Joypurhat"?
     <select name="place" ref={register({ required: true })} onChange={handleChange}>
     <option >Place</option>
-    <option >Amtali</option>
-    <option >Bamna</option>
-    <option >Barguna Sadar</option>
-    <option>Betagi</option>
-    <option>Parthoghata</option>
-    <option>Nesarabad</option>
-    <option>Taltali</option>
+    <option >Akkelpur</option>
+    <option >Joypurhat Sadar</option>
+    <option >Kalai</option>
+    <option>Khetlal</option>
+    <option>Panchbibi</option>
 
   </select>:null
 }
@@ -924,6 +933,92 @@ const items= localStorage.getItem('postcat')
     <option >Habiganj</option>
     <option >Sunamganj</option>
   </select>:null
+}
+{
+  division.district==="Sylhet"?
+  <select name="place" ref={register({ required: true })} onChange={handleChange}>
+  <option >Place</option>
+  <option >Bandar Bazar</option>
+  <option >Zinda Bazar</option>
+  <option >Shibgonj</option>
+  <option>Amber Khana</option>
+  <option>Uposhohor</option>
+  <option>South Surma</option>
+  <option>Subid Bazar</option>
+  <option>Akhalia</option>
+  <option>Golapganj</option>
+  <option>Shahi Eidgah</option>
+  <option>Shahporan</option>
+  <option>BaghBari</option>
+  <option>Nayasarak</option>
+  <option> Bishwanath</option>
+  <option>Majortila</option>
+  <option> Kumar Para</option>
+  <option>Pathan Tula</option>
+  <option>Lama Bazar</option>
+  <option>Osmani Nagar</option>
+  <option>Beanibazar</option>
+  <option> Dargah Mahalla</option>
+  <option>Kajal Shah</option>
+  <option> Subhani Ghat</option>
+  <option>Companiganj</option>
+  <option>Bimanbondor</option>
+  <option>Jaintapur</option>
+  <option>Fenchuganj</option>
+  <option>Chouhatta</option>
+  <option>Balaganj</option>
+  <option>Zakiganj</option>
+  <option>Kanaighat</option>
+  <option>Gowainghat</option>
+
+</select>:null
+}
+{
+  division.district==="Maulvi Bazar"?
+  <select name="place" ref={register({ required: true })} onChange={handleChange}>
+  <option >Place</option>
+  <option >Barlekha</option>
+  <option >Kamolganj</option>
+  <option >Kulaura</option>
+  <option>Maulvibazar Sadar</option>
+  <option>Rajnagar</option>
+  <option>Sreemangal</option>
+  <option>Juri </option>
+
+</select>:null
+}
+{
+  division.district==="Habiganj"?
+  <select name="place" ref={register({ required: true })} onChange={handleChange}>
+  <option >Place</option>
+  <option >Ajmiriganj</option>
+  <option >Bahubal</option>
+  <option >Baniachong</option>
+  <option>Chunarughat</option>
+  <option>Habiganj Sadar</option>
+  <option>Lakhai</option>
+  <option>Madhabpur</option>
+  <option>Nabiganj</option>
+  <option>Shayestaganj</option>
+
+</select>:null
+}
+{
+  division.district==="Sunamganj"?
+  <select name="place" ref={register({ required: true })} onChange={handleChange}>
+  <option >Place</option>
+  <option >Bishwambarpur</option>
+  <option >Chhatak</option>
+  <option >South Sunamganj</option>
+  <option>Derai</option>
+  <option>Dharamapasha</option>
+  <option>Dowarabazar</option>
+  <option>Jagannathpur</option>
+  <option>Jamalganj</option>
+  <option>Shalla</option>
+  <option>Sunamganj Sadar</option>
+  <option>Tahirpur</option>
+</select>:null
 }
 {
     division.division==="Chattogram Division"?
@@ -941,6 +1036,173 @@ const items= localStorage.getItem('postcat')
     <option >Khagrachari</option>
     <option >Rangamati   </option>
   </select>:null
+}
+{
+  division.district==="Chattogram"?
+  <select name="place" ref={register({ required: true })} onChange={handleChange}>
+  <option >Place</option>
+  <option >Agrabad</option>
+  <option >Kotwali</option>
+  <option >Halishahar</option>
+  <option>Chandgaon</option>
+  <option>Baizid</option>
+  <option>Pahartali</option>
+  <option>Cornelhat</option>
+  <option>Muradpur</option>
+  <option>Khulsi</option>
+  <option>CDA Avenue</option>
+  <option>Patenga</option>
+  <option>Hathazari</option>
+  <option>Bandar</option>
+  <option> Lalkhan Bazar</option>
+  <option>Panchlaish</option>
+  <option>Anderkilla</option>
+  <option>Bakoliya</option>
+  <option>Double Mooring</option>
+  <option>Jamalkhan</option>
+  <option>Raozan</option>
+  <option>Mirsharai</option>
+  <option>Karnafuly Sholashahar</option>
+  <option>Patiya</option>
+  <option>Fatikchari</option>
+  <option>Boakhali</option>
+  <option>Anwara</option>
+  <option>Satkania</option>
+  <option>Rangunia</option>
+  <option>Banskhali</option>
+  <option>Lohagara</option>
+  <option>Sandwip</option>
+  <option>Chandanaish</option>
+  <option>Chakaria</option>
+  <option>Shitakundo</option>
+</select>:null
+}
+{
+  division.district==="Cumilla"?
+  <select name="place" ref={register({ required: true })} onChange={handleChange}>
+  <option >Place</option>
+  <option >Barura</option>
+  <option >Brahamanpara</option>
+  <option >Burichong</option>
+  <option>Somilla Sadar</option>
+  <option>Comilla Sadar Dakshin</option>
+  <option>Chandina</option>
+  <option>Chauddagram</option>
+  <option>Daudkandi</option>
+  <option>Debidwar</option>
+  <option>Homna</option>
+  <option>laksam</option>
+  <option>Lalmai</option>
+  <option>Monohorgonj</option>
+  <option>Meghna</option>
+  <option>Muradnagar</option>
+  <option>Nangalkot</option>
+  <option>Titas</option>
+</select>:null
+}
+{
+  division.district==="Brahmanbaria"?
+  <select name="place" ref={register({ required: true })} onChange={handleChange}>
+  <option >Place</option>
+  <option >Brahmanbaria Sadar</option>
+  <option >Kesba</option>
+  <option >Nasirnagar</option>
+  <option>Sarail</option>
+  <option>Ashuganj</option>
+  <option>Akhaura</option>
+  <option>Nabinagar</option>
+  <option>Bancharampur</option>
+  <option>Bijoynagar</option>
+</select>:null
+}
+{
+  division.district==="Feni"?
+  <select name="place" ref={register({ required: true })} onChange={handleChange}>
+  <option >Place</option>
+  <option >Chhagalnaiya</option>
+  <option >Daganbhuyan</option>
+  <option >Feni Sadar</option>
+  <option>Fulgazi</option>
+  <option>Parshuram</option>
+  <option>Sonagazi</option>
+ 
+</select>:null
+}
+{
+  division.district==="Noakhali"?
+  <select name="place" ref={register({ required: true })} onChange={handleChange}>
+  <option >Place</option>
+  <option >Begumganj</option>
+  <option >Chatkhil</option>
+  <option >Companiganj</option>
+  <option>Hatiya</option>
+  <option>Kabirhat</option>
+  <option>Noakhali Sadar</option>
+  <option>Senbug</option>
+  <option>Sonaimuri</option>
+  <option> Suboro Char</option>
+</select>:null
+}
+{
+  division.district==="Chandpur"?
+  <select name="place" ref={register({ required: true })} onChange={handleChange}>
+  <option >Place</option>
+  <option >Chandpur Sadar</option>
+  <option >Dhakirgaon</option>
+  <option >Faridganj</option>
+  <option>Haimchar</option>
+  <option>Haziganj</option>
+  <option>Kachua</option>
+  <option>Matlab South</option>
+  <option>Matlab Uttar</option>
+  <option>Shahrasti</option>
+</select>:null
+}
+{
+  division.district==="Cox’s Bazar"?
+  <select name="place" ref={register({ required: true })} onChange={handleChange}>
+  <option >Place</option>
+  <option >Ukhia</option>
+  <option >Cox’s BazarSadar</option>
+  <option >Kutubdia</option>
+  <option>Chakaria</option>
+  <option>Teknaf</option>
+  <option>Pekua</option>
+  <option>Maheshkhali</option>
+  <option>Ramu</option>
+</select>:null
+}
+{
+  division.district==="Lakshmipur"?
+  <select name="place" ref={register({ required: true })} onChange={handleChange}>
+  <option >Place</option>
+  <option >Kamalnagar</option>
+  <option >Ramganj</option>
+  <option >Ramgati</option>
+  <option>Raipur</option>
+  <option>Lakshmipur Sadar</option>
+</select>:null
+}
+{
+  division.district==="Bandarban"?
+  <select name="place" ref={register({ required: true })} onChange={handleChange}>
+  <option >Place</option>
+  <option >Bandarban</option>
+</select>:null
+}
+{
+  division.district==="Khagrachari"?
+  <select name="place" ref={register({ required: true })} onChange={handleChange}>
+  <option >Place</option>
+  <option >Khagrachari</option>
+</select>:null
+}
+{
+  division.district==="Rangamati"?
+  <select name="place" ref={register({ required: true })} onChange={handleChange}>
+  <option >Place</option>
+  <option >Rangamati</option>
+</select>:null
 }
 </div>
      <div className="radioBox">

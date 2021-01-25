@@ -1,19 +1,19 @@
 import React, { useState } from 'react'
+import {Link} from 'react-router-dom';
+import {Container} from 'react-bootstrap';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
-import { Link } from 'react-router-dom';
 import {SearchOutlined} from '@material-ui/icons';
 import './NavBars.scss'
-import { Container } from 'react-bootstrap';
 
-export const NavBars = ({handleSearchBox,clickSearch,handleSearchClick,setSearchValue}) => {
+
+export const NavBars=({handleSearchBox,clickSearch,handleSearchClick,setSearchValue})=>{
   const[search,setSearch]=useState(false)
 const number=localStorage.getItem('userNumber')
   const handleSearch=()=>{
-      setSearch(true)
-      
+      setSearch(true) 
   }
   const handleLoc=()=>{
       setSearch(false)
@@ -34,21 +34,19 @@ const number=localStorage.getItem('userNumber')
       <SearchOutlined  onClick={handleSearchClick}/>
       </Form>
       <div className="search-btn">
-      {
+     {
        
-        search? <> <Link to="/LocNav" onClick={handleLoc}>Location</Link>
-        <Link to="/catNav" onClick={handleNav}>Category</Link> <br/> <br/></>:null
-       
-    }
-    
-    </div>
-            
+      search? <div> <Link to="/LocNav" onClick={handleLoc}>Location</Link>
+      <Link to="/catNav" onClick={handleNav}>Category</Link> <br/> <br/></div>:null
+     
+  }
+    </div>          
     <Nav className="ml-auto color-text">
       <Nav.Link >
         <Link to="/home" onClick={()=>setSearchValue([])}>Home</Link>
       </Nav.Link>
 
-      <Nav.Link >
+      <Nav.Link>
         <Link to="/contact">Contact Us</Link>
       </Nav.Link>
       

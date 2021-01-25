@@ -40,9 +40,7 @@ function App() {
   const [productD,setProductD]=useState()
   const [loader,setLoader]=useState(false)
   console.log(userName,'hi')
-  useEffect(()=>{
-    setLoader(true)
-  },[])
+  
 
  
   // const match=useRouteMatch({
@@ -54,8 +52,7 @@ function App() {
   return (
   <userContext.Provider value={[loginUser,setLoginUser,userName,setUserName]}>
   
-    {
-      loader? <Router>
+     <Router>
       <Switch>
         <Route exact path="/" >
         <Home/>
@@ -182,7 +179,7 @@ function App() {
       </Switch>
       
     </Router>:<Loaders/>
-    }
+  
 
   </userContext.Provider>
   );
