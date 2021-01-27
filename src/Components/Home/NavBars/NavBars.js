@@ -1,10 +1,6 @@
 import React, { useState } from 'react'
 import {Link} from 'react-router-dom';
-import {Container} from 'react-bootstrap';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl';
+import {Container,Navbar,Nav,FormControl,Form  } from 'react-bootstrap';
 import {SearchOutlined} from '@material-ui/icons';
 import './NavBars.scss'
 
@@ -42,25 +38,33 @@ const number=localStorage.getItem('userNumber')
   }
     </div>          
     <Nav className="ml-auto color-text">
-      <Nav.Link >
-        <Link to="/home" onClick={()=>setSearchValue([])}>Home</Link>
+      <Nav.Link   href='/' onClick={()=>setSearchValue([])}>
+      Home
       </Nav.Link>
 
-      <Nav.Link>
-        <Link to="/contact">Contact Us</Link>
+      <Nav.Link href='/contact'>
+       Contact Us
       </Nav.Link>
       
-      <Nav.Link >
-        <Link to="/postAdd">Add Post </Link>
-        </Nav.Link>
-        <Nav.Link >
-        <Link to="/chat">Chat</Link>
-      </Nav.Link>
      {
-       number&&number!=="undefined"? <Nav.Link >
-       <Link to="/user"> Account</Link>
-       </Nav.Link>:<Nav.Link>
-       <Link to="/login">Login</Link>
+      number&&number!=="undefined"?<Nav.Link  href='/postAdd'>
+      Add Post 
+       </Nav.Link>:<Nav.Link  href='/login'>
+       Add Post 
+        </Nav.Link>
+     }
+      {
+        number&&number!=="undefined"?<Nav.Link  href='/chat'>
+        Chat
+         </Nav.Link>:<Nav.Link  href='/login'>
+         chat
+          </Nav.Link>
+       }
+     {
+       number&&number!=="undefined"? <Nav.Link href='/user'>
+       Account
+       </Nav.Link>:<Nav.Link href='/login'>
+      Login
      </Nav.Link>
      }
     
@@ -76,6 +80,7 @@ const number=localStorage.getItem('userNumber')
 
 
 export const NavBarSub = () => {
+  const number=localStorage.getItem('userNumber')
   return (
     <section>
     <Container>
@@ -84,21 +89,27 @@ export const NavBarSub = () => {
 <Navbar.Collapse id="basic-navbar-nav">
        
 <Nav className="ml-auto">
-  <Nav.Link>
-    <Link to="/home">Home</Link>
+  <Nav.Link href='/home'>
+    Home
   </Nav.Link>
 
-  <Nav.Link >
-    <Link to="/contact">Contact Us</Link>
+  <Nav.Link href='/contact'>
+   Contact Us
   </Nav.Link>
-  <Nav.Link >
-
-    <Link to="/postAdd">Add Post </Link>
-    </Nav.Link>
-
-    <Nav.Link >
-    <Link to="/chat">Chat</Link>
-  </Nav.Link>
+  {
+    number&&number!=="undefined"?<Nav.Link  href='/postAdd'>
+    Add Post 
+     </Nav.Link>:<Nav.Link  href='/login'>
+     Add Post 
+      </Nav.Link>
+   }
+    {
+      number&&number!=="undefined"?<Nav.Link  href='/chat'>
+     Chat
+       </Nav.Link>:<Nav.Link  href='/login'>
+      Chat
+        </Nav.Link>
+     }
 </Nav>
 
 </Navbar.Collapse>

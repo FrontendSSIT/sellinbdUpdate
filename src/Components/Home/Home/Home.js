@@ -52,8 +52,7 @@ export const Home = () => {
     return (
         <section className="home-section">
 
-       {
-           loader?<div>
+      <div>
            {
             searchValue.length>10 ? <SearchBox searchValue={searchValue} success={success}  handleSearchBox={handleSearchBox} handleSearchClick={handleSearchClick}  setSearchValue={setSearchValue}/>:
           <>
@@ -67,8 +66,8 @@ export const Home = () => {
            <AdPost/>
            </>
         }
-           </div>:<Loaders/>
-       }
+           </div>
+    
        <ToastContainer 
        autoClose={5000}
   position="top-left"

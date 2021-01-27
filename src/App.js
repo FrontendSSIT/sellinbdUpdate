@@ -17,7 +17,7 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { AgriculturalTools } from './Components/SearchProduct/Category/Agricultural/AgriculturalTools/AgriculturalTools';
 import { Location } from './Components/Home/Location/Location';
-import { BuyPost, PostJob, SellAgricultural, SellDaily, SellMedicine, SellPets, SellProduct, SellService } from './Components/PostYourAdd/PostCategory/SelectCategory/SelectCategory';
+import {  SellAgricultural, SellDaily, SellMedicine, SellPets, SellProduct, SellService } from './Components/PostYourAdd/PostCategory/SelectCategory/SelectCategory';
 import { BusinessIndustrialPost, MobileTabletsPost, SportsHobbiesPost,FashionsPost, FurniturePost, VehiclesPost, ElectronicsPost,ComputerLaptopsPost } from './Components/PostYourAdd/SellProduct/ItemSelect/ItemSelect';
 import { PostForm } from './Components/PostYourAdd/PostCategory/PostForm/PostForm';
 import { UserProfile } from './Components/UserProfile/UserProfile';
@@ -40,9 +40,6 @@ function App() {
   const [productD,setProductD]=useState()
   const [loader,setLoader]=useState(false)
   console.log(userName,'hi')
-  
-
- 
   // const match=useRouteMatch({
   //   path: "/produtcDetails/:category/:postId",
   //   strict: true,
@@ -54,128 +51,122 @@ function App() {
   
      <Router>
       <Switch>
-        <Route exact path="/" >
+        <Route exact path='/' >
         <Home/>
         </Route>
-        <Route  path="/home" >
+        <Route  path='/home' >
         <Home/>
         </Route>
-        <Route  path="/login">
+        <Route  path='/login'>
         <Login/>
         </Route>
-        <Route  path="/signup">
+        <Route  path='/signup'>
         <SignUp/>
         </Route>
-        <Route  path="/forgate">
+        <Route  path='/forgate'>
         <ForgatePassword />
         </Route>
-        <Route path="/produtcDetails/:category/*$@/:postId/10$2*$@90">
+        <Route path='/produtcDetails/:category/*$@/:postId/10$2*$@90'>
         <ProductDetails/>
         </Route>
-        <Route path="/produtcDetails/:category/:postId">
+        <Route path='/produtcDetails/:category/:postId'>
         <ProductDetails/>
         </Route>
         {/* categoryNavbar &  */}
-        <Route path="/LocNav">
+        <Route path='/LocNav'>
         <Location/>
         </Route>
-        <Route path="/catNav">
+        <Route path='/catNav'>
         <CategoryNav/>
         </Route>
-        <PrivateRoute path="/postAdd">
+        <PrivateRoute path='/postAdd'>
         <PostYourAdd/>
         </PrivateRoute>
-        <Route path="/PostEdit/:postId">
+        <Route path='/PostEdit/:postId'>
          <PostEdit/>
         </Route>
-        <Route  path="/signleCategory">
+        <Route  path='/signleCategory'>
         <SignleCategorys/>
         </Route>
       {/*category Start &  */}
     
-        <Route  path="/category">
+        <Route  path='/category'>
         <AgriculturalTools/>
         </Route>
          {/*category end &  */}
                                {/* Search  By Place category start*/}
-                                    <Route path="/location">
+                                    <Route path='/location'>
                                     <Dhaka/>
                                     </Route>           
                                   {/* Search  By Place category End*/}
                                   {/* Post  category Start*/}
-                                  <Route path="/sellProductPost">
+                                  <Route path='/sellProductPost'>
                                   <SellProduct/>
                                   </Route>
-                                  <Route path="/sellPetsPost">
+                                  <Route path='/sellPetsPost'>
                                   <SellPets/>
                                   </Route>
-                                  <Route path="/sellAgriculturalPost">
+                                  <Route path='/sellAgriculturalPost'>
                                   <SellAgricultural/>
                                   </Route>
-                                  <Route path="/sellDailyPost">
+                                  <Route path='/sellDailyPost'>
                                   <SellDaily/>
                                   </Route>
-                                  <Route path="/sellMedicinePost">
+                                  <Route path='/sellMedicinePost'>
                                   <SellMedicine/>
                                   </Route>
-                                  <Route path="/sellServicePost">
+                                  <Route path='/sellServicePost'>
                                   <SellService/>
-                                  </Route>
-                                  <Route path="/PostAJob">
-                                  <PostJob/>
-                                  </Route>
-                                  <Route path="/buyPost">
-                                  <BuyPost/>
                                   </Route>
                                   <Route path="/mobilePost">
                                   <MobileTabletsPost/>
                                   </Route>\
-                                  <Route path="/computerLaptopsPost">
+                                  <Route path='/computerLaptopsPost'>
                                   <ComputerLaptopsPost/>
                                   </Route>
-                                  <Route path="/electronicsPost">
+                                  <Route path='/electronicsPost'>
                                   <ElectronicsPost/>
                                   </Route>
-                                  <Route path="/vehiclesPost">
+                                  <Route path='/vehiclesPost'>
                                   <VehiclesPost/>
                                   </Route>
-                                  <Route path="/propertyPost">
+                                  <Route path='/propertyPost'>
                                   <VehiclesPost/>
                                   </Route>
-                                  <Route path="/furniturePost">
+                                  <Route path='/furniturePost'>
                                   <FurniturePost/>
                                   </Route>
-                                  <Route path="/fashionsPost">
+                                  <Route path='/fashionsPost'>
                                   <FashionsPost/>
                                   </Route>
-                                  <Route path="/sportsHobbiesPost">
+                                  <Route path='/sportsHobbiesPost'>
                                   <SportsHobbiesPost/>
                                   </Route>
-                                  <Route path="/businessIndustrialPost">
+                                  <Route path='/businessIndustrialPost'>
                                   <BusinessIndustrialPost/>
                                   </Route>
-                                  <Route path="/posForm">
+                                  <Route path='/posForm'>
                                   <PostForm/>
                                   </Route>
                                   {/*Post category End*/}
                                    {/*user PRofile  start*/}
-                                   <Route path="/user">
+                                   <Route path='/user'>
                                    <UserProfile/>
                                    </Route>
                                     {/*user Profile End*/}
-                                     <Route path="/contact">
+                                     <Route path='/contact'>
         <Contact/>
         </Route>
-         <Route path="/promotePost">
+         <Route path='/promotePost'>
          <PromotePost/>
          </Route>
-        <PrivateRoute path="/chat">
+        <PrivateRoute path='/chat'>
         <AllChat/>
         </PrivateRoute>
-        <PrivateRoute path="/chatView/:number/:postId">
+        <PrivateRoute path='/chatView/:number/:postId'>
         <ChatView/>
         </PrivateRoute>  
-        <Redirect  to="/"/>
+        <Redirect  to='/'/>
       </Switch>
       
     </Router>:<Loaders/>

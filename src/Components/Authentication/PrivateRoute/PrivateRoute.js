@@ -16,7 +16,7 @@ import { userContext } from '../../../App'
         <Route
         {...rest}
         render={location =>
-         (userName.username&&  userMessage!=="undefined")?(
+         (userMessage!=="Null")?(
             children
           ) : (
             <Redirect

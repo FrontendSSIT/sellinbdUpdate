@@ -38,7 +38,7 @@ const onSubmit = data =>{
     const formData = new FormData();
     formData.append('usernumber', data.usernumber);
     formData.append('password',data.password);
-    fetch('https://cors-anywhere.herokuapp.com/https://sellinbd.com/api330088/registration/loginWeb.php',{
+    fetch('https://cors-anywhere.herokuapp.com/http://sellinbd.com/api330088/registration/loginWeb.php',{
     method: 'POST',
     body:formData
     })
@@ -49,7 +49,7 @@ const onSubmit = data =>{
         if(dataUser.message=="successful"){
             console.log(dataUser.usernumber)
             setUser(dataUser)
-            history.replace("/" || location)  
+            history.replace('/'||location)  
         }
         if(dataUser.message !=="successful"){
             setError(dataUser.message) 

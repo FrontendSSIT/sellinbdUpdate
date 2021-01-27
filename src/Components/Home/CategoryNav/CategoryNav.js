@@ -24,13 +24,10 @@ export const CategoryNav = () => {
   const [business,setBusiness]=useState(false)
   const [daily,setDaily]=useState(false)
   const [property,setProperty]=useState(false)
-
-  const [loginUser,setLoginUser,userName,setUserName,productD,setProductD]=useContext(userContext)
    const [navValue,setNavValue]=useState('')
   const handleCategoryNav=(e)=>{
     const data=e.target.innerText;
     setNavValue(data)
-    setProductD(data)
     localStorage.setItem('items',data)
   }
 
