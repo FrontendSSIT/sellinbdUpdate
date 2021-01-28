@@ -120,7 +120,7 @@ function App() {
                                   </Route>
                                   <Route path="/mobilePost">
                                   <MobileTabletsPost/>
-                                  </Route>\
+                                  </Route>
                                   <Route path='/computerLaptopsPost'>
                                   <ComputerLaptopsPost/>
                                   </Route>

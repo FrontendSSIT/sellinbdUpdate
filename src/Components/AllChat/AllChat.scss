@@ -24,7 +24,7 @@ a{
         background-color: #fff;
         height: auto;
     }
-    
+   
 }
 .chat-list-user{
     a{
@@ -57,7 +57,7 @@ a{
    height: 60%;
    position: fixed;
    border-radius: 10px;
-   width: 28%;
+   width: 70%;
    margin-left: 50px;
    overflow-y:scroll;
    overflow-x: hidden;
@@ -71,8 +71,8 @@ a{
    form {
        position: fixed;
        top: 76%;
-       width: 29%;
-       right: 29%;
+       width: 70%;
+      
        padding: 5px 5px;
        input[type=text]{
         width: 100%;
@@ -85,7 +85,7 @@ a{
         
        }
        ::placeholder{
-        color:#707070;
+        color:#3F9DFF;
     }
        .MuiSvgIcon-root{
         position: absolute;
@@ -108,7 +108,7 @@ a{
 .ChatProduct{
     background:rgba(255, 255, 255, 0.87);
     border-radius: 10px;
-    width: 520px;margin-left: 30px;
+    width: 100%;margin-left: 30px;
     box-shadow: 0px 5px 5px rgb(184, 182, 182);
 
     margin-left: 20px;

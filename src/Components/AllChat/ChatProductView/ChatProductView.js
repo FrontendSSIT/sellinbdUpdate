@@ -27,12 +27,15 @@ localStorage.setItem('productuser',number)
 const [messages,setMessage]=useState([])
 
 const handleValue=(e)=>{
+  
   const dataValue=e.target.value
   setInputValue(dataValue)
+  
 }
 
 const messageEl = useRef(null);
 const handleSend=(e)=>{
+  e.preventDefault();
   const formData = new FormData()
   formData.append('msg', inputValue)
   formData.append('sender',usernumber)
@@ -130,14 +133,14 @@ useEffect(() => {
 
    return(
        <section className="chatViewSecttion">
-       <Container className="pt-5 mt-5 viewContainer">
+       <Container className="pt-5 mt-5 viewContainer" >
        <Row className="justify-content-center">
-       <Col lg={4} xs={12}>
+       <Col lg={12} xs={12} >
          
           <Row>
            <Col lg={12} xs={12}>
            <div className="chatView"  ref={messageEl}>
-           <form >
+           <form onSubmit={handleSend}>
             <input type="text" name="msg"  placeholder="Type a message....." onChange={handleValue} value={inputValue} required />
             <SendIcon onClick={handleSend}/>
            </form>
