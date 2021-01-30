@@ -46,6 +46,14 @@
         width: 480px !important;
         height:220px !important;
     }
+    .carousel-control-next {
+        right: 150px;
+      
+    }
+    .carousel-control-prev{
+        left: 150px;
+    }
+   
 }
 
 @media (max-width: 468px){
