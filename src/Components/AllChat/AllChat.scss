@@ -70,9 +70,8 @@ a{
   }
    form {
        position: fixed;
-       top: 76%;
+       top: 82%;
        width: 70%;
-      
        padding: 5px 5px;
        input[type=text]{
         width: 100%;
@@ -80,9 +79,7 @@ a{
         padding: 15px 10px ;
         border-radius: 10px;
         position: relative;
-
-        border: none;
-        
+        border: none; 
        }
        ::placeholder{
         color:#3F9DFF;

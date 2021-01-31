@@ -120,7 +120,7 @@ useEffect(() => {
       }
   })
     console.log('hi')
-  }, 1000);
+  },500);
   if (messageEl) {
     messageEl.current.addEventListener('DOMNodeInserted', event => {
       const { currentTarget: target } = event;
@@ -236,7 +236,7 @@ const postId=id;
     <div className='textTwo '>
     {
       chatRead.receiver===reciverNumber?  <ChatBubble
-      message={new Message({ id: 1, message: chatRead.msg })}
+      message={new Message({ id: 1, message: chatRead.msg})}
     />:null
     }
     </div>

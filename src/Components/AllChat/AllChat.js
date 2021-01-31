@@ -15,43 +15,6 @@ export const AllChat = () => {
     const number =localStorage.getItem('userNumber')
     const postUser=localStorage.getItem('productuser')
     const id=localStorage.getItem('postId')
-    // useEffect(()=>{
-    //     const formData = new FormData()
-    //     formData.append('msg','')
-    //     formData.append('sender',number)
-    //     formData.append('receiver',postUser)
-    //     formData.append('ref_product',id)
-    //     fetch('http://sellinbd.com/api330088/chat/createMsg.php',{
-    //         method: 'POST',
-    //         body: formData
-         
-    //     })
-      
-    //     .then(res=>res.json())
-    //     .then(result=>{
-    //           console.log(result)
-    //     })
-    //   },[])
-    //   const [message,setMessage]=useState([])
-    //   console.log(message)
-    //   useEffect(()=>{
-    //     const formData = new FormData()
-    //     formData.append('sender',number)
-    //     formData.append('receiver',postUser)
-    //     formData.append('ref_product',id)
-    //     fetch('http://sellinbd.com/api330088/chat/readMsg.php',{
-    //         method: 'POST',
-    //         body: formData
-         
-    //     })
-      
-    //     .then(res=>res.json())
-    //     .then(result=>{
-    //           if(result){
-    //               setMessage(result.records[0])
-    //           }
-    //     })
-    //   },[])
     const [allChats,setAllChats]=useState([])
  
 
@@ -76,29 +39,6 @@ export const AllChat = () => {
               }
           })
     },[])
-    // useEffect(()=>{
-    //   setTimeout(() => {
-    //     const formData = new FormData()
-    //         formData.append('usernumber',number)
-    //         fetch('http://sellinbd.com/api330088/chat/readChatlist.php',{
-    //             method: 'POST',
-    //             body: formData
-             
-    //         })
-          
-    //         .then(res=>{
-    //           if(res.status===200){
-        
-    //               res.json()
-    //               .then(result=>{
-    //                   if(result){
-    //                     setAllChats(result.records)
-    //                   }
-    //           })
-    //           }
-    //       })
-    //   },100000)
-    // },)
     return (
         <section>
             <NavBarSub/>
@@ -130,7 +70,7 @@ export const AllChat = () => {
    const formatter = buildFormatter(frenchStrings)
     return(
         <Col lg={12} xs={12}  style={{backgroundColor:'color',justifyContent: 'center'}} className="chat-list-user">
-         <Link to={`/chatView/${number}/${postId}`}>
+         <Link to={`/chatView/${number}/${postId}`} refresh="true" >
          <Row>
          <Col lg={3} xs={3}>
          <div>
